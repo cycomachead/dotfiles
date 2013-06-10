@@ -1,0 +1,19 @@
+Font Size view settings for finder
+Disable auto brightness
+Add flag and/or options for machine name
+Add user accounts setup
+Pull drag and drop apps folder from server
+setup dock
+(Apps ordering / clean up)
+Setup Dropbox/ etc defaults.
+Aperture Settings
+Clean up OS X defaults from script or move to separte file
+Auto download Xcode/Twitter/1Pass/other MAS apps
+Auto install Xcode command line tools
+Add apps to startup at login
+Confirm command to move home directory?
+Pull Dashboard widges and set positions
+Use iCloud to autodl some settings?
+Consider replacing plists instead of just using defaults command
+Update and verify with 10.9
+
