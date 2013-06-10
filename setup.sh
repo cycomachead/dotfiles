@@ -2,7 +2,7 @@
 
 # New Mac Config
 #########################
-DEST='/Volumes/Macintosh HD/Users/Michael/'
+DEST="/Volumes/Macintosh HD/Users/Michael"
 
 sudo -v
 
@@ -16,14 +16,12 @@ mkdir setup && cd setup
 FILE='{.aliases,.bash,.bash_profile,.bash_prompt,.bashrc,.exports,.extra,.functions,.gitattributes,.gitconfig,.gitignore,.osx,.tm_properties,.zsh,Michael.terminal}'
 curl -# ${URL}/${FILE} -o "#1"
 
-pwd
-
 # Copy Source files.
-cp .bash_profile ${DEST}.bash_profile
-cp .bashrc ${DEST}.bashrc
-cp .gitconfig ${DEST}.gitconfig
-cp .gitignore ${DEST}.gitignore
-cp .tm_properties ${DEST}.tm_properties
+cp -f .bash_profile ${DEST}/.bash_profile
+cp -f .bashrc ${DEST}/.bashrc
+cp -f .gitconfig ${DEST}/.gitconfig
+cp -f .gitignore ${DEST}/.gitignore
+cp -f .tm_properties ${DEST}/.tm_properties
 
 
 # Break to install Xcode and CL tools
@@ -34,12 +32,14 @@ if [[ $REPLY =~ ^[A-Za-z0-9]$ ]]; then
 fi
 
 # Disable auto brightness settings
+# TODO
 
 # Homebrew
 # ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 # brew install wget
 
 # Configure Defaults
+chmod 777 .osx
 ./.osx
 
 #Cleanup.
