@@ -16,16 +16,20 @@ mkdir setup && cd setup
 FILE='{.aliases,.bash,.bash_profile,.bash_prompt,.bashrc,.exports,.extra,.functions,.gitattributes,.gitconfig,.gitignore,.osx,.tm_properties,.zsh,Michael.terminal}'
 curl -# ${URL}/${FILE} -o "#1"
 
+pwd
+
 # Copy Source files.
-for file in ./.{bash_profile,bashrc,gitconfig,gitignore,tm_properties}
-do
-    cp ${file} ${DEST}${file}
-done
+cp .bash_profile ${DEST}.bash_profile
+cp .bashrc ${DEST}.bashrc
+cp .gitconfig ${DEST}.gitconfig
+cp .gitignore ${DEST}.gitignore
+cp .tm_properties ${DEST}.tm_properties
+
 
 # Break to install Xcode and CL tools
-read -p "Delaying to Install Apps. " -n 1
+read -p "Delaying to Install Apps. Type Done to continue. " -n 1
 echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+if [[ $REPLY =~ ^[A-Za-z0-9]$ ]]; then
 	echo "Continuing."
 fi
 
@@ -37,3 +41,7 @@ fi
 
 # Configure Defaults
 ./.osx
+
+#Cleanup.
+cd
+rm -rf ~/Desktop/setup
