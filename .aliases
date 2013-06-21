@@ -6,7 +6,6 @@ alias p="cd ~/Dropbox/Projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
-alias v="vim"
 alias m="mate ."
 alias s="subl ."
 alias o="open"
@@ -29,7 +28,7 @@ alias la="ls -la ${colorflag}"
 alias lsd='ls -l ${colorflag} | grep "^d"'
 
 # Always use color output for `ls`
-alias ls="command ls ${colorflag}"
+alias ls="ls ${colorflag}"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '

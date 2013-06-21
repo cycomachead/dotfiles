@@ -1,5 +1,4 @@
 # work when piping: ls | less
-alias lsc="ls --color=always"
 alias lsl="ls -FlaG"
 
 # some cd aliases
@@ -9,11 +8,11 @@ alias cd..='cd ..'
 # Defined Variables:
 # =====================================
 ser="cs.berkeley.edu"
-cs10="cs10-tb@torus.cs.berkeley.edu"
-cs61c="cs61c-mx@torus.cs.berkeley.edu"
+cs10="cs10-tb@torus.$ser"
+cs61c="cs61c-mx@torus.$ser"
 cs70="cs70-ha@torus.$ser"
-# CS194-23 Master account.
-cs194="cs194-23@torus.cs.berkeley.edu"
+cs194="cs194-23@torus.$ser" # CS194-23 Master account.
+
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
 specf="~/SpecialistForecasting"
@@ -22,7 +21,8 @@ specf="~/SpecialistForecasting"
 # ====================================
 alias stk="stk-simply"
 alias ditto="ditto -v"
-alias makw="make"
+alias makw="make" #fix for common typo
+alias matw="mate"
 alias cdproj="cd ${proj}"
 alias cddot="cd ${dotf}"
 alias mate.="mate . * */*"
@@ -32,12 +32,13 @@ alias cdsf="cd ${specf}"
 alias cdsfb="cd ${specf}/tools/build"
 alias jekylls="jekyll --server --auto --url http://0.0.0.0:4000"
 alias gc="git commit -am"
-alias gca="git commit -am" #hold-over for muscle memory.
 alias gcm="git commit"
 alias gp="git push"
-alias gpull="git pull"
+alias gs="git status"
 alias push-post="~/Dropbox/Projects/Website/tools/push-post.sh"
 alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
+
+# Salesforce specific config.
 function buildsf 
 {
     cdsfb

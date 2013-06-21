@@ -36,9 +36,6 @@ if [[ $REPLY =~ ^[A-Za-z0-9]$ ]]; then
 	echo "Continuing."
 fi
 
-# Disable auto brightness settings
-# TODO
-
 # Homebrew
 # ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 # brew install wget

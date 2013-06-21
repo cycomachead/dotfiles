@@ -79,6 +79,7 @@ echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
 sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
 # NO LONGER WORKS IN 10.9
 
+# TODO Use only if Mac is a laptop
 # Automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
 # Turn off keyboard illumination when computer is not used for 5 minutes
@@ -114,7 +115,7 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 defaults write com.apple.Safari AlwaysShowTabBar -int 1
 
 ###############################################################################
-# Text Edit                                                                   #
+# TextEdit   (Controls QuickLook Settings too...)                             #
 ###############################################################################
 defaults write com.apple.TextEdit NSFixedPitchFont -string "Helvetica"
 defaults write com.apple.TextEdit NSFixedPitchFontSize -string "24"
@@ -130,6 +131,7 @@ defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 # Follow the keyboard focus while zoomed in
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -int 0
 
+# TODO THESE DO NOT WORK.
 defaults write com.apple.universalaccess closeViewFarPoint -int 1
 defaults write com.apple.universalaccess closeViewHotkeysEnabled -int 1
 defaults write com.apple.universalaccess closeViewNearPoint -string "2.246111"
@@ -183,7 +185,7 @@ defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-# Automatically open a new Finder window when a volume is mounted
+# Automatically open a new Finder window when a disk image is mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool false
@@ -192,11 +194,8 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool false
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-# Force the warning before emptying the Trash
-defaults write com.apple.finder WarnOnEmptyTrash -bool true
-
-# Empty Trash securely by default
-defaults write com.apple.finder EmptyTrashSecurely -bool true
+# Change AirDrop Downloads location to Desktop
+# TODO
 
 # Enable AirDrop over Ethernet and on unsupported Macs running Lion
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
@@ -206,7 +205,6 @@ sudo nvram boot-args="mbasd=1"
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
-
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -324,15 +322,12 @@ defaults write com.apple.mail DisableSendAnimations -bool true
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
-# Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
-defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\\U21a9"
-
 ###############################################################################
 # Terminal                                                                    #
 ###############################################################################
 
 # Use a modified version of the Pro theme by default in Terminal.app
-open "$HOME/Dropbox/Projects/dotfiles/Michael.terminal"
+open "~/Dropbox/Projects/dotfiles/Michael.terminal"
 sleep 1 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Default Window Settings" -string "Michael"
 defaults write com.apple.terminal "Startup Window Settings" -string "Michael"
@@ -350,9 +345,6 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Enable the debug menu in Address Book
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
-
-# Enable Dashboard dev mode (allows keeping widgets on the desktop)
-defaults write com.apple.dashboard devmode -bool true
 
 # Enable the debug menu in iCal (pre-10.8)
 defaults write com.apple.iCal IncludeDebugMenu -bool true
@@ -380,10 +372,9 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 ###############################################################################
 # Transmission.app                                                            #
 ###############################################################################
-
-# Use `~/Desktop` to store incomplete downloads
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Desktop/"
+# TODO --make sure this works.
+# Use `~/Desktop` to store  downloads
+defaults write org.m0k.transmission DownloadFolder -string "${HOME}/Desktop/"
 
 # Don’t prompt for confirmation before downloading
 defaults write org.m0k.transmission DownloadAsk -bool false
@@ -419,6 +410,12 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 defaults write com.twitter.twitter-mac HideInBackground -bool true
 
 ###############################################################################
+# TextMate                                                 #
+###############################################################################
+defaults write findInSelectionByDefault -bool YES
+defaults write com.macromates.TextMate.preview fontSmoothing 2
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
@@ -428,4 +425,5 @@ for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
 	killall "$app" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
- sys
+
+
