@@ -14,24 +14,41 @@ cs61c="cs61c-mx@torus.cs.berkeley.edu"
 cs70="cs70-ha@torus.$ser"
 # CS194-23 Master account.
 cs194="cs194-23@torus.cs.berkeley.edu"
+proj="~/Dropbox/Projects"
+dotf="${proj}/dotfiles/"
+specf="~/SpecialistForecasting"
 
 # ALIASES:
 # ====================================
 alias stk="stk-simply"
 alias ditto="ditto -v"
 alias makw="make"
-alias cdproj="cd ~/Dropbox/Projects"
-alias cdcol="cd ~/Dropbox/College/"
+alias cdproj="cd ${proj}"
+alias cddot="cd ${dotf}"
 alias mate.="mate . * */*"
 alias cdd="cd ~/Dropbox/"
 alias cdc="cd ~/Dropbox/College/"
+alias cdsf="cd ${specf}"
+alias cdsfb="cd ${specf}/tools/build"
 alias jekylls="jekyll --server --auto --url http://0.0.0.0:4000"
-alias gca="git commit -a"
+alias gc="git commit -am"
+alias gca="git commit -am" #hold-over for muscle memory.
+alias gcm="git commit"
 alias gp="git push"
 alias gpull="git pull"
 alias push-post="~/Dropbox/Projects/Website/tools/push-post.sh"
 alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
+function buildsf 
+{
+    cdsfb
+    ant deployForecastSFDC
+}
 
+function buildtest 
+{
+    cdsfb
+    ant deployTestForecast
+}
 # CLASSES
 # CS10
 alias cd10="cd ~/Dropbox/College/Sp13/CS10"
@@ -96,7 +113,7 @@ export TM_SUPPORT_PATH='/Applications/TextMate.app/Contents/SharedSupport/Suppor
 # Temporary Fix for the above...
 function cront
 {
-	unset EDITOR
-	sudo crontab -e
-	export EDITOR="/usr/local/bin/mate -w"
+    unset EDITOR
+    sudo crontab -e
+    export EDITOR="/usr/local/bin/mate -w"
 }
