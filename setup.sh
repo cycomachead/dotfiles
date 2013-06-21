@@ -2,19 +2,21 @@
 
 # New Mac Config
 #########################
-DEST="/Volumes/Macintosh HD/Users/Michael"
+DEST="/Volumes/Michael/Users/Michael"
 
 sudo -v
 
 # Setup Users Dir
 # dscl . Michael -change dsAttrTypeNative:home /Users/Michael ${DEST}
 
+#TODO .ssh in setup script
 # Grab the full GH repo and cd into it.
 URL='https://raw.github.com/cycomachead/dotfiles/master'
 cd ~/Desktop
 mkdir setup && cd setup
-FILE='{.aliases,.bash,.bash_profile,.bash_prompt,.bashrc,.exports,.extra,.functions,.gitattributes,.gitconfig,.gitignore,.osx,.tm_properties,.zsh,Michael.terminal}'
+FILE='.{aliases,bash,bash_profile,bash_prompt,bashrc,exports,extra,functions,gitattributes,gitconfig,gitignore,osx,tm_properties,inputrc}'
 curl -# ${URL}/${FILE} -o "#1"
+curl -# ${URL}/'Michael.terminal' -o "#1"
 
 cd ~/Desktop/setup/
 # Copy Source files.
@@ -23,10 +25,12 @@ cp -f .bashrc "${DEST}/.bashrc"
 cp -f .gitconfig "${DEST}/.gitconfig"
 cp -f .gitignore "${DEST}/.gitignore"
 cp -f .tm_properties "${DEST}/.tm_properties"
+cp -f .tm_properties "${DEST}/.inputrc"
 
 
 # Break to install Xcode and CL tools
-read -p "Delaying to Install Apps. Type Done to continue. " -n 1
+git #Will force download of dev tools in 10.9 if they aren't installed.
+read -p "Delaying to Install Apps. Type something to continue. " -n 1
 echo
 if [[ $REPLY =~ ^[A-Za-z0-9]$ ]]; then
 	echo "Continuing."
@@ -45,4 +49,4 @@ chmod 777 .osx
 
 #Cleanup.
 cd
-rm -rf ~/Desktop/setup
+rm -rf ~/Desktop/setup/
