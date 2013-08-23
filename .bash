@@ -15,22 +15,19 @@ cs194="cs194-23@torus.$ser" # CS194-23 Master account.
 
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
-specf="~/SpecialistForecasting"
 
 # ALIASES:
 # ====================================
 alias stk="stk-simply"
 alias ditto="ditto -v"
-alias makw="make" #fix for common typo
+alias makw="make" #fix for common typos
 alias matw="mate"
 alias cdproj="cd ${proj}"
 alias cddot="cd ${dotf}"
 alias mate.="mate . * */*"
 alias cdd="cd ~/Dropbox/"
 alias cdc="cd ~/Dropbox/College/"
-alias cdsf="cd ${specf}"
-alias cdsfb="cd ${specf}/tools/build"
-alias jekylls="jekyll --server --auto --url http://0.0.0.0:4000"
+alias jekylls="jekyll --config _config-dev.yml"
 alias gc="git commit -am"
 alias gcm="git commit"
 alias gp="git push"
@@ -38,18 +35,6 @@ alias gs="git status"
 alias push-post="~/Dropbox/Projects/Website/tools/push-post.sh"
 alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
 
-# Salesforce specific config.
-function buildsf 
-{
-    cdsfb
-    ant deployForecastSFDC
-}
-
-function buildtest 
-{
-    cdsfb
-    ant deployTestForecast
-}
 # CLASSES
 # CS10
 alias cd10="cd ~/Dropbox/College/Sp13/CS10"

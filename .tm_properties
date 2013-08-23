@@ -12,7 +12,8 @@ TM_MAKE_FILE     = '${TM_PROJECT_DIRECTORY}/Makefile'
 
 # Extra files to include
 #
-fileBrowserGlob  = "{*}"
+fileBrowserGlob  = "{*,.*}"
+includeInBrowser = "{.*}"
 
 # Hide log, vendor and tmp directories from search popups.
 #

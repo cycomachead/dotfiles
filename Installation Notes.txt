@@ -1,0 +1,30 @@
+Apps to Reinstall:
+
+Drag and Drop Apps Folder
+
+Mac App Store
+
+Dev tools from terminal
+
+Installers, Downloads:
+Aperture
+Adobe CS6
+EOS Utility (latest works for 10.8)
+iWork (9.2 update)
+Microsoft Office 2011
+Wacom Pen Tablet
+i1 Display
+Python 3.2
+Tascam drivers
+Photomatix aperture plugin (and CS6)
+
+Optional/As Needed:
+AirDisplay
+Flip4Mac
+Flash Player :(
+Java
+
+
+Other stuff -- Maybe
+Brew / homebrew and wget
+Jewelry Box (DnD) -Doesn't work ML
