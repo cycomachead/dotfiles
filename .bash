@@ -1,3 +1,4 @@
+
 # work when piping: ls | less
 alias lsl="ls -FlaG"
 
@@ -8,13 +9,15 @@ alias cd..='cd ..'
 # Defined Variables:
 # =====================================
 ser="cs.berkeley.edu"
-cs10="cs10-tb@torus.$ser"
+cs10="cs10@cory.$ser" # CS10 Master Account
+cs10t="cs10-th@cory.$ser"
 cs61c="cs61c-mx@torus.$ser"
 cs70="cs70-ha@torus.$ser"
 cs194="cs194-23@torus.$ser" # CS194-23 Master account.
 
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
+cur="Fa13"
 
 # ALIASES:
 # ====================================
@@ -22,11 +25,10 @@ alias stk="stk-simply"
 alias ditto="ditto -v"
 alias makw="make" #fix for common typos
 alias matw="mate"
-alias cdproj="cd ${proj}"
 alias cddot="cd ${dotf}"
 alias mate.="mate . * */*"
 alias cdd="cd ~/Dropbox/"
-alias cdc="cd ~/Dropbox/College/"
+alias cdc="cd ~/Dropbox/College/$curr"
 alias jekylls="jekyll --config _config-dev.yml"
 alias gc="git commit -am"
 alias gcm="git commit"
@@ -38,9 +40,10 @@ alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
 # CLASSES
 # CS10
 alias cd10="cd ~/Dropbox/College/Sp13/CS10"
-alias ssh10="ssh cs10-th@torus.cs.berkeley.edu"
+alias ssh10="ssh $cs10"
 alias cs10="open -a Safari http://inst.eecs.berkeley.edu/~cs10/"
-alias scp10="scp -r ../ cs10-tb@nova.cs.berkeley.edu"
+alias scp10="scp -r ../ $cs10"
+alias pull10="scp -r $cs10:~/* ~/Documents/CS10/"
 # CS61C
 alias cd61="cd ~/Dropbox/College/Sp13/CS61C/61c"
 alias ssh61="ssh cs61c-mx@hive16.cs.berkeley.edu"
