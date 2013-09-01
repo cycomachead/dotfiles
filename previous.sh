@@ -1,4 +1,8 @@
 # Previous Semester Settings and alaises to be used for reference
+
+cs61c="cs61c-mx@torus.$ser"
+cs70="cs70-ha@torus.$ser"
+cs194="cs194-23@torus.$ser" # CS194-23 Master account.
 # CS61C
 alias cd61="cd ~/Dropbox/College/Sp13/CS61C/61c"
 alias ssh61="ssh cs61c-mx@hive16.cs.berkeley.edu"
