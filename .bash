@@ -2,16 +2,18 @@
 # It contains shortcuts for often used commands for moving files and homework
 # Defined Variables:
 # ==============================================================================
-sync="rsync -avz --delete"
+sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 classsite="open -a Safari http://inst.eecs.berkeley.edu/" #all EECS sites
 ser="cs.berkeley.edu"
 master10="~/Documents/CS10/" # Master account Cloned Folder
 cs10="cs10@cory.$ser" # CS10 Master Account
 cs10t="cs10-th@cory.$ser"
+ph="public_html"
 
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
 cur="Fa13"
+ssite="/$ph/fa13/"
 
 # ALIASES:
 # ==============================================================================
@@ -35,11 +37,13 @@ alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
 # CS10 Fa13 (updated)
 alias cd10="cd ~/Dropbox/College/$cur/CS10"
 alias ssh10="ssh $cs10"
-alias cs10="$classite~cs10/$cur"
+alias open10="${classite}~cs10/$cur"
 alias push10="$sync ${master10} $cs10"
 alias pull10="$sync $cs10:~/* ${master10}"
-alias pushsite="scp -r ${master10}/public_html/* $cs10/public_html/"
-alias pullsite="scp - $cs10:~/pulic_html/* ${master10}/public_html/"
+alias pushsite="scp -r ${master10}$ssite/ $cs10:~$ssite"
+alias pullsite="scp -r $cs10:~$ssite ${master10}$ssite"
+alias pullr="$sync $cs10:~$ssite ${master10}$ssite"
+alias pushr="$sync ${master10}$ssite/ $cs10:~$ssite"
 
 # EE122 Fa13
 alias cd122="cd ~/Dropbox/College/$cur/ee122"
