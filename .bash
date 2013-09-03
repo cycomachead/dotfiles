@@ -3,7 +3,7 @@
 # Defined Variables:
 # ==============================================================================
 sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
-classsite="open -a Safari http://inst.eecs.berkeley.edu/" #all EECS sites
+classsite="open -a Safari http://inst.eecs.berkeley.edu" #all EECS sites
 ser="cs.berkeley.edu"
 master10="~/Documents/CS10/" # Master account Cloned Folder
 cs10="cs10@cory.$ser" # CS10 Master Account
@@ -37,13 +37,14 @@ alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
 # CS10 Fa13 (updated)
 alias cd10="cd ~/Dropbox/College/$cur/CS10"
 alias ssh10="ssh $cs10"
-alias open10="${classite}~cs10/$cur"
+alias open10="${classite}/~cs10/$cur"
 alias push10="$sync ${master10} $cs10"
 alias pull10="$sync $cs10:~/* ${master10}"
 alias pushsite="scp -r ${master10}$ssite/ $cs10:~$ssite"
 alias pullsite="scp -r $cs10:~$ssite ${master10}$ssite"
 alias pullr="$sync $cs10:~$ssite ${master10}$ssite"
 alias pushr="$sync ${master10}$ssite/ $cs10:~$ssite"
+alias pusht="$sync ${master10}$ssite/ $cs10t:~$ssite"
 
 # EE122 Fa13
 alias cd122="cd ~/Dropbox/College/$cur/ee122"

@@ -13,14 +13,14 @@ TM_MAKE_FILE     = '${TM_PROJECT_DIRECTORY}/Makefile'
 # Extra files to include
 #
 fileBrowserGlob  = "{*,.*}"
-includeInBrowser = "{.*}"
+include = "{$include,.*}"
 
 # Hide log, vendor and tmp directories from search popups.
 #
 myExtraExcludes = "log,vendor,tmp,.svn,*.pyc,*.class"
 excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
-excludeInBrowser      = "{$excludeInBrowser}"
+#xcludeInBrowser      = "{$excludeInBrowser}"
 
 
 # Configure git and hg
