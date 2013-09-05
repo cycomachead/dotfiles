@@ -86,6 +86,11 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
+# Start and stop apache server in >= 10.8
+# Use -w after load and unload to make changes stick after restarts
+alias startserver="sudo launchctl load /System/Library/LaunchDaemons/org.apache.httpd.plist"
+alias stopserver="sudo launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist"
+
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
