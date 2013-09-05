@@ -37,7 +37,7 @@ alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
 # CS10 Fa13 (updated)
 alias cd10="cd ~/Dropbox/College/$cur/cs10"
 alias ssh10="ssh $cs10"
-alias open10="${classsite}/~cs10/$cur/"
+alias cs10="${classsite}/~cs10/$cur/"
 alias push10="$sync ${master10} $cs10"
 alias pull10="$sync $cs10:~/* ${master10}"
 alias pushsite="scp -r ${master10}$ssite/ $cs10:~$ssite"
