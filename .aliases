@@ -1,5 +1,5 @@
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Dropbox/Projects"
@@ -9,8 +9,8 @@ alias j="jobs"
 alias m="mate ."
 alias o="open"
 alias oo="open ."
-alias cd.='cd .'
-alias cd..='cd ..'
+alias .='cd .'
+alias ..='cd ..'
 
 # Useful for *Nix boxes, but not necessary
 # Detect which `ls` flavor is in use
@@ -87,9 +87,8 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 # Start and stop apache server in >= 10.8
-# Use -w after load and unload to make changes stick after restarts
-alias startserver="sudo launchctl load /System/Library/LaunchDaemons/org.apache.httpd.plist"
-alias stopserver="sudo launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist"
+alias startserver="sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist"
+alias stopserver="sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist"
 
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'

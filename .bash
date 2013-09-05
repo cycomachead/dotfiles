@@ -12,7 +12,7 @@ ph="public_html"
 
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
-cur="Fa13"
+cur="fa13"
 ssite="/$ph/fa13/"
 
 # ALIASES:
@@ -35,9 +35,9 @@ alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
 # CLASSES
 # ==============================================================================
 # CS10 Fa13 (updated)
-alias cd10="cd ~/Dropbox/College/$cur/CS10"
+alias cd10="cd ~/Dropbox/College/$cur/cs10"
 alias ssh10="ssh $cs10"
-alias open10="${classite}/~cs10/$cur"
+alias open10="${classsite}/~cs10/$cur/"
 alias push10="$sync ${master10} $cs10"
 alias pull10="$sync $cs10:~/* ${master10}"
 alias pushsite="scp -r ${master10}$ssite/ $cs10:~$ssite"
@@ -48,10 +48,10 @@ alias pusht="$sync ${master10}$ssite/ $cs10t:~$ssite"
 
 # EE122 Fa13
 alias cd122="cd ~/Dropbox/College/$cur/ee122"
-alias ee122="$classite~ee122/$cur"
+alias ee122="${classsite}/~ee122/$cur"
 # EE42 Fa13
 alias cd122="cd ~/Dropbox/College/$cur/ee42"
-alias ee122="$classite~ee42/$cur"
+alias ee122="$classsite~ee42/$cur"
 
 # EXPORTS:
 # ==============================================================================
