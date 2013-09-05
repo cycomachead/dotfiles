@@ -50,8 +50,8 @@ alias pusht="$sync ${master10}$ssite/ $cs10t:~$ssite"
 alias cd122="cd ~/Dropbox/College/$cur/ee122"
 alias ee122="${classsite}/~ee122/$cur"
 # EE42 Fa13
-alias cd122="cd ~/Dropbox/College/$cur/ee42"
-alias ee122="$classsite~ee42/$cur"
+alias cd42="cd ~/Dropbox/College/$cur/ee42"
+alias ee42="$classsite~ee42/$cur"
 
 # EXPORTS:
 # ==============================================================================
