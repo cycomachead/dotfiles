@@ -9,5 +9,10 @@
 # MTWR
 # Photos -> Video -> Photos -> Video
 # NAS  -> Drobo -> Drobo -> NAS
-# Photos should keep track of deleted files
-# Videos should not.
+# 
+# Don't backup Images Removed from Aperture Vault
+# 
+#
+rsy_base="rsync -ahvz"
+rsy_opt=""
+rsy_exc1="--exlude"
