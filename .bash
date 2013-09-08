@@ -31,6 +31,9 @@ alias gp="git push"
 alias gs="git status"
 alias push-post="~/Dropbox/Projects/Website/tools/push-post.sh"
 alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
+# Command to update bjc labs for a personal webserver for testing at 
+# localhost/bjc-r/ [Necessary since I can't modify httpd.conf correctly]
+alias bjc="sudo rsync -avz --delete --exclude=".git" --exclude="README.md" --exclude=".nojekyll" ../bjc-r /Library/WebServer/Documents/"
 
 # CLASSES
 # ==============================================================================
