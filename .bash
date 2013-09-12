@@ -6,6 +6,7 @@ sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 classsite="open -a Safari http://inst.eecs.berkeley.edu" #all EECS sites
 ser="cs.berkeley.edu"
 ph="public_html"
+git="git@github.com"
 
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
@@ -25,6 +26,7 @@ alias jekylls="jekyll serve --watch"
 alias gc="git commit -am"
 alias gcm="git commit"
 alias gp="git push"
+alias gpo="git push origin" #push to main remote but specify brnach
 alias gs="git status"
 alias push-post="~/Dropbox/Projects/Website/tools/push-post.sh"
 alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
