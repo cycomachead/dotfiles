@@ -5,9 +5,6 @@
 sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 classsite="open -a Safari http://inst.eecs.berkeley.edu" #all EECS sites
 ser="cs.berkeley.edu"
-master10="~/Documents/CS10/" # Master account Cloned Folder
-cs10="cs10@cory.$ser" # CS10 Master Account
-cs10t="cs10-th@cory.$ser"
 ph="public_html"
 
 proj="~/Dropbox/Projects"
@@ -31,13 +28,16 @@ alias gp="git push"
 alias gs="git status"
 alias push-post="~/Dropbox/Projects/Website/tools/push-post.sh"
 alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
-# Command to update bjc labs for a personal webserver for testing at 
+# Command to update bjc labs for a personal webserver for testing at
 # localhost/bjc-r/ [Necessary since I can't modify httpd.conf correctly]
 alias bjc="sudo rsync -avz --delete --exclude=".git" --exclude="README.md" --exclude=".nojekyll" ../bjc-r /Library/WebServer/Documents/"
 
 # CLASSES
 # ==============================================================================
 # CS10 Fa13 (updated)
+master10="~/Documents/CS10/" # Master account Cloned Folder
+cs10="cs10@cory.$ser" # CS10 Master Account
+cs10t="cs10-th@cory.$ser"
 alias cd10="cd ~/Dropbox/College/$cur/cs10"
 alias ssh10="ssh $cs10"
 alias cs10="${classsite}/~cs10/$cur/"
@@ -50,8 +50,12 @@ alias pushr="$sync ${master10}$ssite/ $cs10:~$ssite"
 alias pusht="$sync ${master10}$ssite/ $cs10t:~$ssite"
 
 # EE122 Fa13
+ee122="ee122-ai"
 alias cd122="cd ~/Dropbox/College/$cur/ee122"
 alias ee122="${classsite}/~ee122/$cur"
+alias ssh122="ssh $ee122@torus.$ser"
+alias scp122="scp -r . $ee122@cory.$ser:~/"
+
 # EE42 Fa13
 alias cd42="cd ~/Dropbox/College/$cur/ee42"
 alias ee42="$classsite~ee42/$cur"
