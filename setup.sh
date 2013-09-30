@@ -4,9 +4,10 @@
 #########################
 DEST="/Volumes/Michael/Users/Michael"
 
-sudo -v
+sudo -v #get password once
 
 # Setup Users Dir
+# disabled until testing.
 # dscl . Michael -change dsAttrTypeNative:home /Users/Michael ${DEST}
 
 # Grab the full GH repo and cd into it.
@@ -44,11 +45,11 @@ if [[ $REPLY =~ ^[A-Za-z0-9]$ ]]; then
 fi
 
 
-
 # Homebrew
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-brew install wget #maybe should disable since it's seldom used.
-brew install ruby
+brew install wget # maybe should disable since it's seldom used.
+brew install ruby # update ruby
+brew install gphoto2 # useful uitily for cameras
 # Update gems and install jekyll
 sudo gem update --system
 sudo gem install jekyll
@@ -58,5 +59,4 @@ chmod 777 .osx
 ./.osx
 
 # Cleanup.
-cd
 rm -rf ~/Desktop/setup
