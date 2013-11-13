@@ -57,6 +57,16 @@ alias cd122="cd ~/Dropbox/College/$cur/ee122"
 alias ee122="${classsite}/~ee122/$cur"
 alias ssh122="ssh $ee122@torus.$ser"
 alias scp122="scp -r . $ee122@cory.$ser:~/"
+# Section for proj3 VM stuff
+function vm() {
+    cd122;
+    cd proj/proj3;
+    open ../proj3spec.pdf;
+    nohup virtualbox --startvm ee122p3 &
+    osascript -e "tell application \"Terminal\"" -e "activate" -e " end tell";
+}
+alias sshvm="ssh ee122@172.16.122.2"
+alias gp122="g push vm master:mac-master"
 
 # EE42 Fa13
 alias cd42="cd ~/Dropbox/College/$cur/ee42"
