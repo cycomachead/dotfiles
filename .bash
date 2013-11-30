@@ -2,7 +2,6 @@
 # It contains shortcuts for often used commands for moving files and homework
 # Defined Variables:
 # ==============================================================================
-sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 classsite="open -a Safari http://inst.eecs.berkeley.edu" #all EECS sites
 ser="cs.berkeley.edu"
 ph="public_html"
@@ -22,7 +21,7 @@ alias matw="mate"
 alias cdd="cd ${dotf}"
 alias mate.="mate . * */*"
 alias cdc="cd ~/Dropbox/College/$curr"
-alias jekylls="jekyll serve --watch"
+alias js="jekyll serve --watch & open http://0.0.0.0:4000"
 alias gc="git commit -am"
 alias gcm="git commit"
 alias gp="git push"
@@ -43,6 +42,7 @@ cs10t="cs10-th@cory.$ser"
 alias cd10="cd ~/Dropbox/College/$cur/cs10"
 alias ssh10="ssh $cs10"
 alias cs10="${classsite}/~cs10/$cur/"
+sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 alias push10="$sync ${master10} $cs10"
 alias pull10="$sync $cs10:~/* ${master10}"
 alias pushsite="scp -r ${master10}$ssite/ $cs10:~$ssite"
@@ -61,7 +61,7 @@ alias scp122="scp -r . $ee122@cory.$ser:~/"
 function vm() {
     cd122;
     cd proj/proj3;
-    open ../proj3spec.pdf;
+    open ../proj3bspec.pdf;
     nohup virtualbox --startvm ee122p3 &
     osascript -e "tell application \"Terminal\"" -e "activate" -e " end tell";
 }
@@ -74,8 +74,8 @@ alias ee42="$classsite~ee42/$cur"
 
 # EXPORTS:
 # ==============================================================================
-export RMATE_HOST=auto
-export RMATE_PORT=12345
+# export RMATE_HOST=auto
+# export RMATE_PORT=12345
 # this needs to be fixed for editing crontabs:
 export EDITOR="/usr/local/bin/mate -w"
 export TM_SUPPORT_PATH='/Applications/TextMate.app/Contents/SharedSupport/Support'
