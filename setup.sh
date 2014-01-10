@@ -45,13 +45,16 @@ fi
 
 
 
-# Homebrew
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-brew install wget #maybe should disable since it's seldom used.
-brew install ruby
+# Homebrew and tools.
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+brew doctor
+brew install wget exiv2 gphoto2 python3 node
+sudo easy_install pip
+# brew install ruby -- no longer necessary in Mavericks
 # Update gems and install jekyll
-sudo gem update --system
 sudo gem install jekyll
+sudo gem update --system
+
 
 # Configure Defaults
 chmod 777 .osx

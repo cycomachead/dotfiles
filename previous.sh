@@ -1,5 +1,28 @@
 # Previous Semester Settings and alaises to be used for reference
+# Fall 2013
+# EE122 Fa13
+ee122="ee122-ai"
+alias cd122="cd ~/Dropbox/College/$cur/ee122"
+alias ee122="${classsite}/~ee122/$cur"
+alias ssh122="ssh $ee122@torus.$ser"
+alias scp122="scp -r . $ee122@cory.$ser:~/"
+# Section for proj3 VM stuff
+function vm() {
+    cd122;
+    cd proj/proj3;
+    open ../proj3bspec.pdf;
+    nohup virtualbox --startvm ee122p3 &
+    osascript -e "tell application \"Terminal\"" -e "activate" -e " end tell";
+}
+alias sshvm="ssh ee122@172.16.122.2"
+alias gp122="g push vm master:mac-master"
 
+# EE42 Fa13
+alias cd42="cd ~/Dropbox/College/$cur/ee42"
+alias ee42="$classsite~ee42/$cur"
+
+# =========================================================================== #
+# Spring 2013
 cs61c="cs61c-mx@torus.$ser"
 cs70="cs70-ha@torus.$ser"
 cs194="cs194-23@torus.$ser" # CS194-23 Master account.
@@ -24,13 +47,6 @@ function push-70 {
     unset temp
 }
 
-# OLD 61B ================================
-# alias hw="~/Dropbox/College/Fa12/CS61B/support/hw"
-# A specific mate command modified for each class project.
-# alias mate..="make clean; mate . loa/*.java"
-# alias hwc="make clean; hw commit"
-# alias hws="make clean; hw submit"
-
 # CS194
 # Master account.
 cs194="cs194-23@torus.cs.berkeley.edu"
@@ -45,8 +61,17 @@ function push_194 {
     cd "$temp"
     unset temp
 }
-# Update this for each semester.
 alias push-194="push_194 sp13"
+
+
+# =========================================================================== #
+# Fall 2012
+# CS61B
+alias hw="~/Dropbox/College/Fa12/CS61B/support/hw"
+# A specific mate command modified for each class project.
+alias mate..="make clean; mate . loa/*.java"
+alias hwc="make clean; hw commit"
+alias hws="make clean; hw submit"
 
 # For CS61B, probably doesn't work well anymore.
 export CLASSPATH=/lib/junit.jar:/lib/ucb.jar:

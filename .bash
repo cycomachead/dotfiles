@@ -6,11 +6,11 @@ classsite="open -a Safari http://inst.eecs.berkeley.edu" #all EECS sites
 ser="cs.berkeley.edu"
 ph="public_html"
 git="git@github.com"
-
+sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
-cur="fa13"
-ssite="/$ph/fa13/"
+cur="sp14"
+ssite="/$ph/$cu/"
 
 # ALIASES:
 # ==============================================================================
@@ -42,7 +42,6 @@ cs10t="cs10-th@cory.$ser"
 alias cd10="cd ~/Dropbox/College/$cur/cs10"
 alias ssh10="ssh $cs10"
 alias cs10="${classsite}/~cs10/$cur/"
-sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 alias push10="$sync ${master10} $cs10"
 alias pull10="$sync $cs10:~/* ${master10}"
 alias pushsite="scp -r ${master10}$ssite/ $cs10:~$ssite"
