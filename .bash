@@ -7,10 +7,12 @@ ser="cs.berkeley.edu"
 ph="public_html"
 git="git@github.com"
 sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
+
+
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
 cur="sp14"
-ssite="/$ph/$cu/"
+ssite="/$ph/$cur/"
 
 # ALIASES:
 # ==============================================================================
@@ -27,6 +29,7 @@ alias gcm="git commit"
 alias gp="git push"
 alias gpo="git push origin" #push to main remote but specify brnach
 alias gs="git status"
+alias gl="git log"
 alias push-post="~/Dropbox/Projects/Website/tools/push-post.sh"
 alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
 # Command to update bjc labs for a personal webserver for testing at
@@ -50,26 +53,6 @@ alias pullr="$sync $cs10:~$ssite ${master10}$ssite"
 alias pushr="$sync ${master10}$ssite/ $cs10:~$ssite"
 alias pusht="$sync ${master10}$ssite/ $cs10t:~$ssite"
 
-# EE122 Fa13
-ee122="ee122-ai"
-alias cd122="cd ~/Dropbox/College/$cur/ee122"
-alias ee122="${classsite}/~ee122/$cur"
-alias ssh122="ssh $ee122@torus.$ser"
-alias scp122="scp -r . $ee122@cory.$ser:~/"
-# Section for proj3 VM stuff
-function vm() {
-    cd122;
-    cd proj/proj3;
-    open ../proj3bspec.pdf;
-    nohup virtualbox --startvm ee122p3 &
-    osascript -e "tell application \"Terminal\"" -e "activate" -e " end tell";
-}
-alias sshvm="ssh ee122@172.16.122.2"
-alias gp122="g push vm master:mac-master"
-
-# EE42 Fa13
-alias cd42="cd ~/Dropbox/College/$cur/ee42"
-alias ee42="$classsite~ee42/$cur"
 
 # EXPORTS:
 # ==============================================================================

@@ -48,7 +48,7 @@ fi
 # Homebrew and tools.
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
-brew install wget exiv2 gphoto2 python3 node
+brew install wget exiv2 gphoto2 python3 node hg
 sudo easy_install pip
 # brew install ruby -- no longer necessary in Mavericks
 # Update gems and install jekyll
