@@ -34,6 +34,15 @@ cp -f .gitignore "${DEST}/.ssh/id_rsa.pub"
 chmod 755 ~/.ssh
 chmod 600 ~/.ssh/id*
 
+# FIXME:
+# Grab and download Dropbox installer
+# Open it
+# Link Files
+mkdir ~/Dropbox
+rm -rf ~/Desktop
+ln -s ~/Dropbox/Desktop/ ~/Desktop
+# Apps Folder
+# ln -s ~/Dropbox/Desktop/ ~/Desktop
 
 # Break to install Xcode and CL tools
 git #Will force download of dev tools in 10.9 if they aren't installed.
@@ -54,7 +63,6 @@ sudo easy_install pip
 # Update gems and install jekyll
 sudo gem install jekyll
 sudo gem update --system
-
 
 # Configure Defaults
 chmod 777 .osx

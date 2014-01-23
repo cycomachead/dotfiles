@@ -11,6 +11,7 @@ sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
+cls="~/Dropbox/College"
 cur="sp14"
 ssite="/$ph/$cur/"
 
@@ -22,7 +23,7 @@ alias makw="make" #fix for common typos
 alias matw="mate"
 alias cdd="cd ${dotf}"
 alias mate.="mate . * */*"
-alias cdc="cd ~/Dropbox/College/$curr"
+alias cdc="cd $cls/$curr"
 alias js="jekyll serve --watch & open http://0.0.0.0:4000"
 alias gc="git commit -am"
 alias gcm="git commit"
@@ -38,11 +39,11 @@ alias bjc="sudo rsync -avz --delete --exclude=".git" --exclude="README.md" --exc
 
 # CLASSES
 # ==============================================================================
-# CS10 Fa13 (updated)
+# CS10 Sp14 (updated)
 master10="~/Documents/CS10/" # Master account Cloned Folder
 cs10="cs10@cory.$ser" # CS10 Master Account
-cs10t="cs10-th@cory.$ser"
-alias cd10="cd ~/Dropbox/College/$cur/cs10"
+cs10t="cs10-ta@cory.$ser"
+alias cd10="cd $cls/$cur/cs10"
 alias ssh10="ssh $cs10"
 alias cs10="${classsite}/~cs10/$cur/"
 alias push10="$sync ${master10} $cs10"
@@ -53,6 +54,14 @@ alias pullr="$sync $cs10:~$ssite ${master10}$ssite"
 alias pushr="$sync ${master10}$ssite/ $cs10:~$ssite"
 alias pusht="$sync ${master10}$ssite/ $cs10t:~$ssite"
 
+# CS 184
+cs184="cs184-XX@cory.$ser" # cs184 Master Account
+alias cd18="cd /$cur/cs184"
+alias ssh10="ssh $cs184"
+alias cs184="${classsite}/~cs10/$cur/"
+
+# INFO 290
+alias cd290="cd $cls/$cur/info290-ml"
 
 # EXPORTS:
 # ==============================================================================
