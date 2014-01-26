@@ -27,6 +27,7 @@ cp -f .gitconfig "${DEST}/.gitconfig"
 cp -f .gitignore "${DEST}/.gitignore"
 cp -f .tm_properties "${DEST}/.tm_properties"
 cp -f .tm_properties "${DEST}/.inputrc"
+# FIXME -- move RSA from encrypted file
 cp -f .gitconfig "${DEST}/.ssh/id_rsa"
 cp -f .gitignore "${DEST}/.ssh/id_rsa.pub"
 
@@ -36,13 +37,14 @@ chmod 600 ~/.ssh/id*
 
 # FIXME:
 # Grab and download Dropbox installer
+DBOX = "Dropbox.app.zip"
+
 # Open it
 # Link Files
 mkdir ~/Dropbox
-rm -rf ~/Desktop
-ln -s ~/Dropbox/Desktop/ ~/Desktop
 # Apps Folder
-# ln -s ~/Dropbox/Desktop/ ~/Desktop
+ln -s ~/Dropbox/Drag\ and\ Drop\ apps/ /Applications/Drag\ and\ Drop\ apps
+
 
 # Break to install Xcode and CL tools
 git #Will force download of dev tools in 10.9 if they aren't installed.

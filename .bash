@@ -57,7 +57,7 @@ alias pusht="$sync ${master10}$ssite/ $cs10t:~$ssite"
 # CS 184
 cs184="cs184-XX@cory.$ser" # cs184 Master Account
 alias cd18="cd /$cur/cs184"
-alias ssh10="ssh $cs184"
+alias ssh184="ssh $cs184"
 alias cs184="${classsite}/~cs10/$cur/"
 
 # INFO 290
