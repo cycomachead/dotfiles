@@ -45,11 +45,11 @@ cs10="cs10@cory.$ser" # CS10 Master Account
 cs10t="cs10-ta@cory.$ser"
 alias cd10="cd $cls/$cur/cs10"
 alias ssh10="ssh $cs10"
-alias cs10="${classsite}/~cs10/$cur/"
-alias push10="$sync ${master10} $cs10"
-alias pull10="$sync $cs10:~/public_html/* ${master10}/public_html"
-alias pushsite="scp -r ${master10}$ssite/ $cs10:~$ssite"
-alias pullsite="scp -r $cs10:~$ssite ${master10}$ssite"
+alias cs10="$classsite/~cs10/$cur/"
+alias push10="$sync $master10 $cs10"
+alias pull10="$sync $cs10:~/public_html/* $master10/public_html"
+alias pushimg="$sync $master10/public_html/images/* $cs10:~/public_html/images"
+alias pullimg="$sync $cs10:~/public_html/images/* $master10/public_html/images"
 alias pullr="$sync $cs10:~$ssite ${master10}$ssite"
 alias pushr="$sync ${master10}$ssite/ $cs10:~$ssite"
 alias pusht="$sync ${master10}$ssite/ $cs10t:~$ssite"
@@ -59,7 +59,7 @@ cs184="cs184-cl@cory.$ser" # cs184 Master Account
 alias cd184="cd $cls/$cur/cs184"
 alias ssh184="ssh $cs184"
 alias cs184="${classsite}/~cs184/$cur/"
-function 184s 
+function 184s
 {
     cd184;
     cd site
