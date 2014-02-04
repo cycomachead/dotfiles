@@ -48,7 +48,7 @@ alias ssh10="ssh $cs10"
 alias cs10="$classsite/~cs10/$cur/"
 alias push10="$sync $master10 $cs10"
 alias pull10="$sync $cs10:~/public_html/* $master10/public_html"
-alias pushimg="$sync $master10/public_html/images/* $cs10:~/public_html/images"
+alias pushimg="$sync ${master10}/public_html/images/* $cs10:~/public_html/images"
 alias pullimg="$sync $cs10:~/public_html/images/* $master10/public_html/images"
 alias pullr="$sync $cs10:~$ssite ${master10}$ssite"
 alias pushr="$sync ${master10}$ssite/ $cs10:~$ssite"
@@ -65,7 +65,7 @@ function 184s
     cd site
     jekyll build;
     $sync ../out/* $cs184:~/public_html/
-    ssh14 "chmod -R 755 ~/public_html/"
+    ssh184 "chmod -R 755 ~/public_html/"
 }
 
 # INFO 290
