@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>BackgroundBlur</key>
-	<real>0.15404485887096775</real>
+	<real>0.40285630659623578</real>
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NLMCAw
-	IDAgMC44MgAQAYAC0hAREhNaJGNsYXNzbmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5T
+	IDAgMC44OAAQAYAC0hAREhNaJGNsYXNzbmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5T
 	T2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2JucHJ3
 	gouTlp+xtLkAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAAuw==
 	</data>
@@ -76,7 +76,7 @@
 	<key>ShowCommandKeyInTitle</key>
 	<false/>
 	<key>ShowDimensionsInTitle</key>
-	<true/>
+	<false/>
 	<key>ShowShellCommandInTitle</key>
 	<true/>
 	<key>ShowTTYNameInTitle</key>
@@ -112,7 +112,7 @@
 	<key>WindowTitle</key>
 	<string></string>
 	<key>columnCount</key>
-	<integer>104</integer>
+	<integer>110</integer>
 	<key>deleteSendsBackspace</key>
 	<integer>0</integer>
 	<key>name</key>
@@ -141,7 +141,7 @@
 		</dict>
 	</array>
 	<key>rowCount</key>
-	<integer>27</integer>
+	<integer>30</integer>
 	<key>shellExitAction</key>
 	<integer>2</integer>
 	<key>type</key>
