@@ -43,7 +43,7 @@ DBOX = "Dropbox.app.zip"
 # Link Files
 mkdir ~/Dropbox
 # Apps Folder
-ln -s ~/Dropbox/Drag\ and\ Drop\ apps/ /Applications/Drag\ and\ Drop\ apps
+# ln -s ~/Dropbox/Drag\ and\ Drop\ apps/ /Applications/Drag\ and\ Drop\ apps
 
 
 # Break to install Xcode and CL tools
@@ -59,11 +59,11 @@ fi
 # Homebrew and tools.
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
-brew install wget exiv2 gphoto2 python3 node hg
+brew install wget exiv2 gphoto2 python3 node hg hub
 npm install http-server -g
 npm install jshint -g
 npm install jslint -g
-sudo easy_install pip
+sudo easy_install pip # may not be necessary in the future...
 # brew install ruby -- no longer necessary in Mavericks
 # Update gems and install jekyll
 sudo gem install jekyll
