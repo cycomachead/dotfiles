@@ -63,6 +63,7 @@ brew install wget exiv2 gphoto2 python3 node hg hub
 npm install http-server -g
 npm install jshint -g
 npm install jslint -g
+npm install -g localtunnel
 sudo easy_install pip # may not be necessary in the future...
 # brew install ruby -- no longer necessary in Mavericks
 # Update gems and install jekyll
