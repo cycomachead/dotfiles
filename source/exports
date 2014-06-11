@@ -20,3 +20,6 @@ export GREP_OPTIONS="--color=auto"
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Put the current directory in the window title
+PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"'

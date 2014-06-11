@@ -37,3 +37,14 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+
+BREW=/usr/local/Cellar
+export ANT_HOME=$BREW/ant/1.9.4
+export GRADLE_HOME=$BREW/gradle/1.12
+export JETTY_HOME=$BREW/jetty8/8.1.15/libexec
+export JMETER_HOME=/$BEW/jmeter/2.11
+export JDK_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+export JAVA_HOME=$JDK_HOME
+ # put paths here
+export PATH=$PATH:$GRADLE_HOME/bin/
