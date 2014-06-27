@@ -2,6 +2,10 @@
 
 # New Mac Config
 #########################
+# Setup Variables
+BREW_PACKAGES=''
+NPM_PACKAGES=''
+
 DEST="/Volumes/Michael/Users/Michael"
 
 sudo -v
