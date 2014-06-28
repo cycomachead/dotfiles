@@ -51,7 +51,7 @@ mkdir ~/Dropbox
 
 
 # Break to install Xcode and CL tools
-git #Will force download of dev tools in 10.9 if they aren't installed.
+git # Will force download of dev tools in 10.9 if they aren't installed.
 read -p "Delaying to Install Apps. Type something to continue. " -n 1
 echo
 if [[ $REPLY =~ ^[A-Za-z0-9]$ ]]; then
@@ -63,11 +63,11 @@ fi
 # Homebrew and tools.
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
-brew install wget exiv2 gphoto2 python3 node hg hub
-npm install http-server -g
-npm install jshint -g
-npm install -g localtunnel
-npm install -g psi
+brew install git wget exiv2 gphoto2 python3 node hg hub git hubot \
+             bfg coffee-script
+
+npm install -g localtunnel psi jshint http-server grunt-cli
+
 sudo easy_install pip # may not be necessary in the future...
 # brew install ruby -- no longer necessary in Mavericks
 # Update gems and install jekyll
