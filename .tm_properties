@@ -1,9 +1,9 @@
 # Basic Settings
 
-TM_PYTHON        = "/usr/local/bin/python"
+# Assumes brew as been installed
+TM_PYTHON        = "/usr/local/bin/python3"
 TM_C_FLAGS       = "-Wall -include stdio.h -std=c99"
 TM_FULLNAME      = "Michael Ball"
-spellChecking    = true
 
 projectDirectory = "$CWD"
 TM_FILEPATH      = ""
@@ -28,14 +28,17 @@ excludeInBrowser      = "{$excludeInBrowser, $myExtraExcludes}"
 
 # Default editing configuration
 #
-fontSize         = 24
+fontName         = SourceCodePro-Light
+fontSize         = 24.000000
+lineEndings      = '\n'
+showInvisibles   = true
 showWrapColumn   = true
 softTabs         = true
-softWrap         = true
+softWrap         = false
+spellChecking    = true
 tabSize          = 4
 theme            = 06CD1FB2-A00A-4F8C-97B2-60E131980454
 wrapColumn       = 80
-lineEndings      = '\n'
 
 
 # File type specific configuration
@@ -43,20 +46,18 @@ lineEndings      = '\n'
 [ text ]
 showInvisibles   = true
 spellChecking    = true
-fontSize         = 22
 tabSize          = 4
 
 [ .git/COMMIT_EDITMSG ]
 spellChecking    = true
 spellingLanguage = 'en'
 
-[ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib,class} ]
+[ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib,class,o} ]
 binary           = true
 
 [ source ]
 softTabs         = true
 tabSize          = 4
-fontSize         = 22
 
 [ source.python ]
 softTabs         = true
@@ -72,8 +73,89 @@ tabSize         = 2
 
 [ *.{html,css} ]
 softTabs        = true
+softWrap        = false
 tabSize         = 2
 
 [ source.tex, source.latex ]
 softTabs         = true
 tabSize          = 2
+
+[ *.md ]
+fileType         = text.html.markdown
+
+[ *.stderrout.log ]
+fileType         = text.plain
+
+[ .aliases ]
+fileType         = text.plain
+
+[ .bash_prompt ]
+fileType         = text.plain
+
+[ .classpath ]
+fileType         = text.xml
+
+[ .exports ]
+fileType         = text.plain
+
+[ .extra ]
+fileType         = text.plain
+
+[ .functions ]
+fileType         = text.plain
+
+[ .gitattributes ]
+fileType         = text.plain
+
+[ .gitignore ]
+fileType         = text.plain
+
+[ .gitingore ]
+fileType         = source.git-config
+
+[ .inputrc ]
+fileType         = text.plain
+
+[ .project ]
+fileType         = source.yaml
+
+[ bash_prompt ]
+fileType         = source.shell
+
+[ source ]
+softWrap         = false
+tabSize          = 4
+
+[ source.java ]
+softWrap         = false
+
+[ source.js ]
+tabSize          = 4
+
+[ source.json ]
+tabSize          = 2
+
+[ text ]
+showInvisibles   = true
+softWrap         = false
+tabSize          = 2
+
+[ text.html ]
+showInvisibles   = true
+softWrap         = false
+tabSize          = 2
+
+[ text.html.basic ]
+softWrap         = false
+tabSize          = 2
+
+[ text.html.markdown ]
+showInvisibles   = true
+softWrap         = true
+tabSize          = 4
+
+[ text.plain ]
+softWrap         = false
+
+[ text.xml ]
+softWrap         = false

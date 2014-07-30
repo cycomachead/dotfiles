@@ -63,8 +63,8 @@ fi
 # Homebrew and tools.
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
-brew install git wget exiv2 gphoto2 python3 node hg hub git hubot \
-             bfg coffee-script heroku-toolbelt
+brew install git wget exiv2 gphoto2 python3 node hg hub hubot \
+             bfg coffee-script heroku hubot-hipchat
 
 npm install -g localtunnel psi jshint http-server grunt-cli
 
