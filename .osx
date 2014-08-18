@@ -429,6 +429,8 @@ defaults write com.twitter.twitter-mac HideInBackground -bool true
 defaults write findInSelectionByDefault -bool YES
 # Turn off font smoothing for all displays on dark themes
 defaults write com.macromates.TextMate.preview fontSmoothing 2
+# Selecting items in file finder will loop around
+defaults write com.macromates.TextMate.preview enableLoopFilterList --bool YES
 
 ###############################################################################
 # Kill affected applications                                                  #
