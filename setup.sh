@@ -32,7 +32,7 @@ cp -f .gitignore "${DEST}/.gitignore"
 cp -f .tm_properties "${DEST}/.tm_properties"
 cp -f .tm_properties "${DEST}/.inputrc"
 # FIXME -- move RSA from encrypted file
-cp -f .gitconfig "${DEST}/.ssh/id_rsa"
+# cp -f .gitconfig "${DEST}/.ssh/id_rsa"
 cp -f .gitignore "${DEST}/.ssh/id_rsa.pub"
 
 # set RSA permissions
@@ -68,16 +68,24 @@ brew install git wget exiv2 gphoto2 python3 node hg hub hubot \
 
 npm install -g localtunnel psi jshint http-server grunt-cli
 
-sudo easy_install pip # may not be necessary in the future...
+# Install the hk client for heroku
+# source github/heroku/hk (This is beta and may change!)
+L=/usr/local/bin/hk && curl -sL -A "`uname -sp`" https://hk.heroku.com/hk.gz | zcat >$L && chmod +x $L
+
+# Pip for default python
+sudo easy_install pip
+pip install virtualenv
+
 # brew install ruby -- no longer necessary in Mavericks
 # Update gems and install jekyll
 sudo gem install jekyll
 sudo gem update --system
 
 # Configure Defaults
-chmod 777 .osx
-./.osx
+Setup='./setup/.osx'
+chmod 777 $Setup
+$Setup
 
 # Cleanup.
 cd
-rm -rf ~/Desktop/setup
+# rm -rf ~/Desktop/setup
