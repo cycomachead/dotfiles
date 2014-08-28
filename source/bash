@@ -12,9 +12,9 @@ sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
 cls="~/Dropbox/College"
-cur="sp14"
-ssite="/$ph/$cur/"
-snaploc="$proj/snap/snap.html"
+cur="fa14"
+# ssite="/$ph/$cur/"
+snaploc="$proj/CS10/snap/snap.html"
 
 # ALIASES:
 # ==============================================================================
@@ -72,7 +72,7 @@ function 184s
 }
 
 # INFO 290
-alias cd290="cd $cls/$cur/info290-ml"
+alias cd290="cd $cls/$cur/info290"
 
 # EXPORTS:
 # ==============================================================================
