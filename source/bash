@@ -18,9 +18,12 @@ snaploc="$proj/CS10/snap/snap.html"
 
 # ALIASES:
 # ==============================================================================
+# Use the hub command for githu
+alias git=hub
 alias stk="stk-simply"
 alias ditto="ditto -v"
-alias makw="make" #fix for common typos
+#fix for common typos
+alias makw="make" 
 alias matw="mate"
 alias cdd="cd ${dotf}"
 alias mate.="mate . * */*"
