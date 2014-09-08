@@ -58,28 +58,8 @@ if [[ $REPLY =~ ^[A-Za-z0-9]$ ]]; then
 	echo "Continuing."
 fi
 
-
-
-# Homebrew and tools.
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-brew doctor
-brew install git wget exiv2 gphoto2 python3 node hg hub hubot \
-             bfg coffee-script heroku hubot-hipchat
-
-npm install -g localtunnel psi jshint http-server grunt-cli
-
-# Install the hk client for heroku
-# source github/heroku/hk (This is beta and may change!)
-L=/usr/local/bin/hk && curl -sL -A "`uname -sp`" https://hk.heroku.com/hk.gz | zcat >$L && chmod +x $L
-
-# Pip for default python
-sudo easy_install pip
-pip install virtualenv
-
-# brew install ruby -- no longer necessary in Mavericks
-# Update gems and install jekyll
-sudo gem install jekyll
-sudo gem update --system
+# Install a bunch of development tools
+./setup/tools.sh
 
 # Configure Defaults
 Setup='./setup/.osx'
