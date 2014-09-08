@@ -335,7 +335,8 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 ###############################################################################
 
 # Use a modified version of the Pro theme by default in Terminal.app
-open "~/Dropbox/Projects/dotfiles/Michael.terminal"
+# TODO: Fix project based on display type
+open "~/Dropbox/Projects/dotfiles/apps/Michael.terminal"
 sleep 1 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Default Window Settings" -string "Michael"
 defaults write com.apple.terminal "Startup Window Settings" -string "Michael"
@@ -356,7 +357,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
 # Enable the debug menu in iCal (pre-10.8)
-defaults write com.apple.iCal IncludeDebugMenu -bool true
+# defaults write com.apple.iCal IncludeDebugMenu -bool true
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
