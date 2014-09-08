@@ -1,4 +1,33 @@
 # Previous Semester Settings and alaises to be used for reference
+# ==================
+# Spring 2014
+# CS10 (No longer need these)
+master10="~/Documents/CS10/" # Master account Cloned Folder
+alias push10="$sync $master10 $cs10"
+alias pull10="$sync $cs10:~/public_html/* $master10/public_html"
+alias pushimg="$sync ${master10}/public_html/images/* $cs10:~/public_html/images"
+alias pullimg="$sync $cs10:~/public_html/images/* $master10/public_html/images"
+alias pullr="$sync $cs10:~$ssite ${master10}$ssite"
+alias pushr="$sync ${master10}$ssite/ $cs10:~$ssite"
+alias pusht="$sync ${master10}$ssite/ $cs10t:~$ssite"
+
+# CS 184
+cs184="cs184-cl@cory.$ser" # cs184 Master Account
+alias cd184="cd $cls/$cur/cs184"
+alias as4="cd $cls/$cur/cs184/repo/as4"
+alias ssh184="ssh $cs184"
+alias cs184="${classsite}/~cs184/$cur/"
+function 184s
+{
+    cd184;
+    cd site
+    jekyll build;
+    $sync ../out/* $cs184:~/public_html/
+    ssh184 "chmod -R 755 ~/public_html/"
+}
+
+# INFO 290
+alias cd290="cd $cls/$cur/info290"
 # Fall 2013
 # EE122 Fa13
 ee122="ee122-ai"
