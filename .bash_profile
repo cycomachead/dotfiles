@@ -1,5 +1,5 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
+# export PATH="$HOME/bin:$PATH"
 
 # Load the shell dotfiles, and then some:
 # * .bash is my short quick settings changes.
@@ -47,4 +47,4 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # export JDK_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 # export JAVA_HOME=$JDK_HOME
  # put paths here
-export PATH=$PATH:$GRADLE_HOME/bin/
+# export PATH=$PATH:$GRADLE_HOME/bin/
