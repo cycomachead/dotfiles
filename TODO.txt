@@ -1,21 +1,18 @@
 Font Size view settings for finder
 Disable auto brightness
-Add flag and/or options for machine name
+Better Machine name settings
+    -- remove from OS X file and have a config
 Add user accounts setup
 Pull drag and drop apps folder from server
-setup dock
 (Apps ordering / clean up)
 Setup Dropbox/ etc defaults.
 Aperture Settings
-Clean up OS X defaults from script or move to separte file
+Clean up OS X defaults from script or move to separate file
 Auto download Xcode/Twitter/1Pass/other MAS apps
-Auto install Xcode command line tools
 Add apps to startup at login
-Confirm command to move home directory?
 Pull Dashboard widgets and set positions
 Use iCloud to auto dl some settings?
-Consider replacing plists instead of just using defaults command
-Update and verify with 10.9
+Update and verify with 10.9 / 10.10
 iTunes 11 Settings
 	-- Show sidebar and status bar
 	-- Set library path
