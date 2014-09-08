@@ -62,7 +62,7 @@ fi
 ./setup/tools.sh
 
 # Configure Defaults
-Setup='./setup/.osx'
+Setup='./setup/osx.sh'
 chmod 777 $Setup
 $Setup
 
