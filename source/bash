@@ -23,10 +23,10 @@ alias git=hub
 alias stk="stk-simply"
 alias ditto="ditto -v"
 #fix for common typos
-alias makw="make" 
+alias makw="make"
 alias matw="mate"
 alias cdd="cd ${dotf}"
-alias mate.="mate . * */*"
+alias mate.="mate ."
 alias cdc="cd $cls/$cur"
 alias js="jekyll serve --watch & open http://0.0.0.0:4000"
 alias gc="git commit -am"
