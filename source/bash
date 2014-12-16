@@ -7,7 +7,7 @@ ser="cs.berkeley.edu"
 ph="public_html"
 git="git@github.com"
 sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
-
+tmtunnel='-R 52698:localhost:52698'
 
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
@@ -41,6 +41,7 @@ alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
 # localhost/bjc-r/ [Necessary since I can't modify httpd.conf correctly]
 # alias bjc="sudo rsync -avz --delete --exclude=".git" --exclude="README.md" --exclude=".nojekyll" ../bjc-r /Library/WebServer/Documents/"
 alias snap="open $snaploc"
+alias sshbjc="ssh $tmtunnel michael@abbenay.$ser"
 
 # CLASSES
 # ==============================================================================
