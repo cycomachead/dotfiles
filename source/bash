@@ -12,7 +12,7 @@ tmtunnel='-R 52698:localhost:52698'
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
 cls="~/Dropbox/College"
-cur="fa14"
+cur="sp15"
 # ssite="/$ph/$cur/"
 snaploc="$proj/CS10/snap/snap.html"
 
@@ -51,16 +51,6 @@ cs10t="cs10-ta@cory.$ser"
 alias cd10="cd $cls/$cur/cs10"
 alias ssh10="ssh $cs10"
 alias cs10="$classsite/~cs10/$cur/"
-
-# CS170
-cs170="cs170-iu@cory.$ser"
-alias ssh170="ssh $cs170"
-alias cd170="cd $cls/$cur/cs170"
-
-
-# CS194-26
-cs194="cs194-ft@hive8.$ser"
-alias ssh194="ssh -X -R 52698:localhost:52698 $cs194"
 
 # EXPORTS:
 # ==============================================================================

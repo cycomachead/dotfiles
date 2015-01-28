@@ -14,6 +14,19 @@ npm install -g localtunnel psi jshint grunt-cli coffee-script bower
 # hubot hubot-hipchat
 
 # My Apps Brew-Casks
+brew install caskroom/cask/brew-cask
+brew cask install google-chrome
+brew cask install carbon-copy-cloner
+brew cask install hipchat
+brew cask install skype
+brew cask install google-earth
+brew cask install google-drive
+brew cask install google-webdesigner
+brew cask install transmission
+brew cask install textmate
+brew cask install sourcetree
+brew cask install transmission
+brew cask install transmission
 
 
 
