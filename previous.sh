@@ -1,5 +1,16 @@
 # Previous Semester Settings and alaises to be used for reference
 # ==================
+# Fall 2014
+# CS170
+cs170="cs170-iu@cory.$ser"
+alias ssh170="ssh $cs170"
+alias cd170="cd $cls/$cur/cs170"
+
+
+# CS194-26
+cs194="cs194-ft@hive8.$ser"
+alias ssh194="ssh -X $tmtunnel $cs194"
+# ==================
 # Spring 2014
 # CS10 (No longer need these)
 master10="~/Documents/CS10/" # Master account Cloned Folder
