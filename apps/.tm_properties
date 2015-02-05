@@ -1,6 +1,7 @@
 # Default editing configuration
 encoding         = UTF-8
-fontName         = SourceCodePro-Light
+# Use -Light on a retina display
+fontName         = SourceCodePro-Regular
 fontSize         = 24
 spellChecking    = true
 showWrapColumn   = true
@@ -13,6 +14,8 @@ wrapColumn       = 80
 lineEndings      = '\n'
 # Disable display of space characters
 invisiblesMap    = '~ '
+# Show the branch in the window title
+windowTitle      = "$TM_DISPLAYNAME — (git: $TM_SCM_BRANCH)"
 
 
 TM_C_FLAGS       = "-Wall -include stdio.h -std=c99"
@@ -76,6 +79,22 @@ tabSize         = 2
 softTabs        = true
 tabSize         = 2
 
-[ source.tex, source.latex ]
-softTabs         = true
-tabSize          = 2
+[ text.html.markdown ]
+spellChecking    = true
+softWrap         = true
+wrapColumn       = 80
+softTabs         = false
+tabSize          = 4
+
+[ source.plist ]
+softTabs       = false
+tabSize        = 4
+
+[ source.tm-properties ]
+spellChecking  = false
+
+[ "{Capfile,Gemfile,Gemfile.lock,Guardfile}" ]
+fileType         = source.ruby
+
+[ Procfile ]
+fileType         = source.yaml
