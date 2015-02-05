@@ -1,9 +1,22 @@
-# Basic Settings
+# Default editing configuration
+encoding         = UTF-8
+fontName         = SourceCodePro-Light
+fontSize         = 24
+spellChecking    = true
+showWrapColumn   = true
+softTabs         = true
+softWrap         = true
+tabSize          = 4
+# Cobalt Theme
+theme            = 06CD1FB2-A00A-4F8C-97B2-60E131980454
+wrapColumn       = 80
+lineEndings      = '\n'
+# Disable display of space characters
+invisiblesMap    = '~ '
 
-TM_PYTHON        = "/usr/local/bin/python3"
+
 TM_C_FLAGS       = "-Wall -include stdio.h -std=c99"
 TM_FULLNAME      = "Michael Ball"
-spellChecking    = true
 
 projectDirectory = "$CWD"
 # TM_FILEPATH      = ""
@@ -11,33 +24,19 @@ TM_MAKE_FILE     = '${TM_PROJECT_DIRECTORY}/Makefile'
 # TM_MAKE_TARGET   = ""
 
 # Extra files to include
-#
 fileBrowserGlob  = "{*}"
 
 # Hide log, vendor and tmp directories from search popups.
-#
-myExtraExcludes = "log,vendor,tmp,.svn,*.pyc,*.class"
+myExtraExcludes       = "log,vendor,tmp,.svn,*.pyc,*.class"
 excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 excludeInBrowser      = "{$excludeInBrowser}"
 
 
-# Configure git and hg
-TM_GIT              = "/usr/local/bin/git"
-
-# Default editing configuration
-#
-fontName         = SourceCodePro-Light
-fontSize         = 24
-showWrapColumn   = true
-softTabs         = true
-softWrap         = true
-tabSize          = 4
-theme            = 06CD1FB2-A00A-4F8C-97B2-60E131980454
-wrapColumn       = 80
-lineEndings      = '\n'
-# Disable display of space characters
-invisiblesMap    = '~ '
+# Configure Default Programs
+TM_GIT    = "/usr/local/bin/git"
+TM_RUBY   = "~/.rvm/bin/rvm-auto-ruby"
+TM_PYTHON = "/usr/local/bin/python3"
 
 
 # File type specific configuration
@@ -50,7 +49,8 @@ tabSize          = 4
 
 [ .git/COMMIT_EDITMSG ]
 spellChecking    = true
-spellingLanguage = 'en'
+wrapColumn       = 72
+
 
 [ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib,class} ]
 binary           = true
@@ -74,7 +74,7 @@ tabSize         = 2
 
 [ *.{html,css} ]
 softTabs        = true
-tabSize         = 4
+tabSize         = 2
 
 [ source.tex, source.latex ]
 softTabs         = true
