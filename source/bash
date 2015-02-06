@@ -48,9 +48,15 @@ alias sshbjc="ssh $tmtunnel michael@abbenay.$ser"
 # CS10 fa14 (updated)
 cs10="cs10@cory.$ser" # CS10 Master Account
 cs10t="cs10-ta@cory.$ser"
-alias cd10="cd $cls/$cur/cs10"
 alias ssh10="ssh $cs10"
 alias cs10="$classsite/~cs10/$cur/"
+
+# Info 290T
+alias cd290="cd $cls/$cur/info290"
+alias ssh10="ssh $tmtunnel info290t@dlab-matlab.berkeley.edu"
+
+# CS169
+alias cd169="cd $cls/$cur/cs169"
 
 # EXPORTS:
 # ==============================================================================
