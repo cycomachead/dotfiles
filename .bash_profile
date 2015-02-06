@@ -1,10 +1,9 @@
 # Add `~/bin` to the `$PATH`
 # export PATH="$HOME/bin:$PATH"
+projpath='~/Dropbox/Projects/dotfiles/source/'
 
 # Load the shell dotfiles, and then some:
-# * .bash is my short quick settings changes.
-# * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/Dropbox/Projects/dotfiles/source/*; do
+for file in "$projpath"*; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
@@ -37,14 +36,3 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-
-# SFDC Tools
-# BREW=/usr/local/Cellar
-# export ANT_HOME=$BREW/ant/1.9.4
-# export GRADLE_HOME=$BREW/gradle/1.12
-# export JETTY_HOME=$BREW/jetty8/8.1.15/libexec
-# export JMETER_HOME=/$BEW/jmeter/2.11
-# export JDK_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-# export JAVA_HOME=$JDK_HOME
- # put paths here
-# export PATH=$PATH:$GRADLE_HOME/bin/
