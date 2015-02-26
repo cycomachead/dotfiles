@@ -53,7 +53,7 @@ alias cs10="$classsite/~cs10/$cur/"
 
 # Info 290T
 alias cd290="cd $cls/$cur/info290"
-alias ssh10="ssh $tmtunnel info290t@dlab-matlab.berkeley.edu"
+alias ssh290="ssh $tmtunnel info290t@dlab-matlab.berkeley.edu"
 
 # CS169
 alias cd169="cd $cls/$cur/cs169"
