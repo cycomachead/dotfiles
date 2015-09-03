@@ -12,7 +12,7 @@ tmtunnel='-R 52698:localhost:52698'
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
 cls="~/Dropbox/College"
-cur="sp15"
+cur="fa15"
 # ssite="/$ph/$cur/"
 snaploc="$proj/CS10/snap/snap.html"
 
