@@ -34,7 +34,7 @@ alias lsd='ls -l ${colorflag} | grep "^d"'
 alias ls="ls ${colorflag}"
 
 # work when piping: ls | less
-alias lsl="ls -FlaG"
+alias lsl="ls -FlaGh"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
