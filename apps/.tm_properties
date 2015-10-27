@@ -2,7 +2,7 @@
 encoding         = UTF-8
 # Use -Light on a retina display
 fontName         = SourceCodePro-Regular
-fontSize         = 24
+fontSize         = 22
 spellChecking    = true
 showWrapColumn   = true
 softTabs         = true
