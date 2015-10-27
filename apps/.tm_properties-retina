@@ -28,7 +28,7 @@ TM_GIT              = "/usr/local/bin/git"
 # Default editing configuration
 #
 fontName         = SourceCodePro-Regular
-fontSize         = 24
+fontSize         = 22
 showWrapColumn   = true
 softTabs         = true
 softWrap         = true
