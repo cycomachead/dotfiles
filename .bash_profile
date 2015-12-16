@@ -1,5 +1,3 @@
-# Add `~/bin` to the `$PATH`
-# export PATH="$HOME/bin:$PATH"
 projpath='~/Dropbox/Projects/dotfiles/source/'
 
 # Load the shell dotfiles, and then some:
