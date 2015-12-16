@@ -8,6 +8,7 @@ ph="public_html"
 git="git@github.com"
 sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 tmtunnel='-R 52698:localhost:52698'
+export RMATE=${tmtunnel}
 
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
