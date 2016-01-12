@@ -75,3 +75,12 @@ function cront
     sudo crontab -e
     export EDITOR="/usr/local/bin/mate -w"
 }
+
+
+export LANG='en_US.UTF-8'
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/usr/local/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/usr/local/google-cloud-sdk/completion.bash.inc'
