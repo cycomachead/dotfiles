@@ -13,7 +13,7 @@ export RMATE=${tmtunnel}
 proj="~/Dropbox/Projects"
 dotf="${proj}/dotfiles/"
 cls="~/Dropbox/College"
-cur="fa15"
+cur="sp16"
 # ssite="/$ph/$cur/"
 snaploc="$proj/CS10/snap/snap.html"
 
@@ -52,12 +52,17 @@ cs10t="cs10-ta@cory.$ser"
 alias ssh10="ssh $cs10"
 alias cs10="$classsite/~cs10/$cur/"
 
+# CS186
+cs186="cs186-anv@hive16.$ser" #ARGH
+JUPYTERPORT=16360
+alias ssh186="ssh -L ${JUPYTERPORT}:localhost:${JUPYTERPORT} $tmtunnel $cs186"
+
 # Info 290T
-alias cd290="cd $cls/$cur/info290"
-alias ssh290="ssh $tmtunnel info290t@dlab-matlab.berkeley.edu"
+# alias cd290="cd $cls/$cur/info290"
+# alias ssh290="ssh $tmtunnel info290t@dlab-matlab.berkeley.edu"
 
 # CS169
-alias cd169="cd $cls/$cur/cs169"
+# alias cd169="cd $cls/$cur/cs169"
 
 # EXPORTS:
 # ==============================================================================
