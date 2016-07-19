@@ -98,3 +98,6 @@ fileType         = source.ruby
 
 [ Procfile ]
 fileType         = source.yaml
+
+[ source.ruby]
+tabSize          = 2

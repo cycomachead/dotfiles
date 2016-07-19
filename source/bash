@@ -53,7 +53,7 @@ alias ssh10="ssh $cs10"
 alias cs10="$classsite/~cs10/$cur/"
 
 # CS186
-cs186="cs186-anv@hive16.$ser" #ARGH
+export cs186="cs186-anv@hive16.$ser" #ARGH
 JUPYTERPORT=16360
 export fwd186="-L ${JUPYTERPORT}:localhost:${JUPYTERPORT}"
 alias ssh186="ssh $fwd186 $tmtunnel $cs186"
