@@ -13,12 +13,11 @@ npm install -g localtunnel psi jshint grunt-cli coffee-script bower
 
 # My Apps Brew-Casks
 brew install caskroom/cask/brew-cask
-brew cask install google-chrome
+# brew cask install google-chrome
 brew cask install carbon-copy-cloner
 brew cask install hipchat
 brew cask install skype
 brew cask install google-earth
-brew cask install google-drive
 brew cask install transmission
 brew cask install textmate
 brew cask install sourcetree
@@ -32,7 +31,7 @@ pip install virtualenv
 # Setup Ruby
 curl -sSL https://get.rvm.io | bash -s stable
 
-rvm install 2.2.0
+rvm install 2.3.1
 rvm install 1.9.3 # legacy projects
 rvm use 2.2.0
 gem install jekyll bundler
