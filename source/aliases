@@ -40,7 +40,7 @@ alias lsl="ls -FlaGh"
 alias mconflicts='mate $(conflicts | cut -d " " -f 2)'
 
 # List conflicting files
-alias conflicts='git status --short | grep -e (U[A-Z])|([A-Z]U)'
+alias conflicts="git status --short | egrep '(U[A-Z])|([A-Z]U)'"
 
 # Create a new PR on github and then open it in Safari
 alias new_pr='open $(hub pull-request)'
