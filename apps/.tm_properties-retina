@@ -79,3 +79,4 @@ tabSize         = 4
 [ source.tex, source.latex ]
 softTabs         = true
 tabSize          = 2
+

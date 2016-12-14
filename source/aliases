@@ -36,7 +36,8 @@ alias ls="ls ${colorflag}"
 # work when piping: ls | less
 alias lsl="ls -FlaGh"
 
-alias conflicts='m `g s | grep UU | cut -d ' ' -f 2`'
+# Open up git conflicts in textmate.
+alias conflicts='mate $(git status --short | grep UU | cut -d " " -f 2)'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
