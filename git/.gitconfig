@@ -77,3 +77,6 @@
 	email = cycomachead@gmail.com
 [pull]
 	rebase = true
+[alias]
+	deletemerged = !git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d
+
