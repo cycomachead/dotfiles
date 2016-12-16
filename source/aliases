@@ -3,7 +3,6 @@ alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Dropbox/Projects"
-alias g="git"
 alias h="history"
 alias j="jobs"
 alias m="mate ."
@@ -12,6 +11,17 @@ alias oo="open ."
 alias .='cd .'
 alias ..='cd ..'
 alias be='bundle exec'
+
+## GIT ##
+alias g="git"
+alias gd="git diff"
+alias gco="git checkout"
+alias gc="git commit -am"
+alias gcm="git commit"
+alias gp="git push"
+alias gpo="git push origin" #push to main remote but specify brnach
+alias gs="git status"
+alias gl="git log"
 
 # Useful for *Nix boxes, but not necessary
 # Detect which `ls` flavor is in use
