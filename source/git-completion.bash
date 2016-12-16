@@ -2793,6 +2793,7 @@ __git_main ()
 	fi
 }
 
+
 __gitk_main ()
 {
 	__git_has_doubledash && return
