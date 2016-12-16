@@ -1078,7 +1078,13 @@ _git_checkout ()
 		if [ -n "$(__git_find_on_cmdline "$flags")" ]; then
 			track=''
 		fi
-		__gitcomp_nl "$(__git_refs '' $track)"
+		# MB: __gitcomp_nl "$(__git_refs '' $track)"
+        # https://cmetcalfe.ca/blog/git-checkout-autocomplete-local-branches-only.html
+        if [ "$command" = "checkoutr" ]; then
+            __gitcomp_nl "$(__git_refs '' $track)"
+        else
+            __gitcomp_nl "$(__git_heads '' $track)"
+        fi
 		;;
 	esac
 }
