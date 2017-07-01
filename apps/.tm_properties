@@ -61,7 +61,6 @@ binary           = true
 [ source ]
 softTabs         = true
 tabSize          = 4
-fontSize         = 22
 
 [ source.python ]
 softTabs         = true
@@ -100,4 +99,5 @@ fileType         = source.ruby
 fileType         = source.yaml
 
 [ source.ruby]
-
+softTabs        = true
+tabSize         = 2
