@@ -77,14 +77,17 @@ function cront
     export EDITOR="/usr/local/bin/mate -w"
 }
 
-
 export LANG='en_US.UTF-8'
 
+# Tab Completion
+# Link inputrc unless it is already present.
+[ -s "~/.inputrc" ] &&  ln -s ~/.inputrc ~/Dropbox/Projects/dotfiles/.inputrc
+
 # The next line updates PATH for the Google Cloud SDK.
-source '/usr/local/google-cloud-sdk/path.bash.inc'
+# source '/usr/local/google-cloud-sdk/path.bash.inc'
 
 # The next line enables shell command completion for gcloud.
-source '/usr/local/google-cloud-sdk/completion.bash.inc'
+# source '/usr/local/google-cloud-sdk/completion.bash.inc'
 
 # Automatically load git bash completion
 # TODO: Commented out because there's a modification to not show remotes.
