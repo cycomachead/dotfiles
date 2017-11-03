@@ -1,3 +1,10 @@
+# Gradescope Docker Runner
+function review_branch() {
+    docker run --rm -it -p 3001:3000 \
+        --entrypoint=/bin/bash gradescope/dev \
+        -c "cd ~/gradescope-app; git fetch; git pull; .ci/review_branch.sh $1"
+}
+
 # Determine size of a file or total size of a directory
 function fs() {
 	if du -b /dev/null > /dev/null 2>&1; then
