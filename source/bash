@@ -2,7 +2,6 @@
 # It contains shortcuts for often used commands for moving files and homework
 # Defined Variables:
 # ==============================================================================
-classsite="open -a Safari http://inst.eecs.berkeley.edu" #all EECS sites
 ser="cs.berkeley.edu"
 ph="public_html"
 git="git@github.com"
@@ -25,43 +24,6 @@ alias matw="mate"
 alias cdd="cd ${dotf}"
 alias mate.="mate ."
 alias js="jekyll serve --watch & open http://0.0.0.0:4000"
-
-cls="~/Dropbox/College"
-cur="sp16"
-# ssite="/$ph/$cur/"
-snaploc="$proj/CS10/snap/snap.html"
-
-alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
-# Command to update bjc labs for a personal webserver for testing at
-# localhost/bjc-r/ [Necessary since I can't modify httpd.conf correctly]
-# alias bjc="sudo rsync -avz --delete --exclude=".git" --exclude="README.md" --exclude=".nojekyll" ../bjc-r /Library/WebServer/Documents/"
-alias snap="open $snaploc"
-alias sshbjc="ssh $tmtunnel michael@abbenay.$ser"
-
-alias stk="stk-simply"
-alias cdc="cd $cls/$cur/"
-alias push-post="~/Dropbox/Projects/Website/tools/push-post.sh"
-
-# CLASSES
-# ==============================================================================
-# CS10 fa14 (updated)
-cs10="cs10@cory.$ser" # CS10 Master Account
-cs10t="cs10-ta@cory.$ser"
-alias ssh10="ssh $cs10"
-alias cs10="$classsite/~cs10/$cur/"
-
-# CS186
-export cs186="cs186-anv@hive16.$ser" #ARGH
-JUPYTERPORT=16360
-export fwd186="-L ${JUPYTERPORT}:localhost:${JUPYTERPORT}"
-alias ssh186="ssh $fwd186 $tmtunnel $cs186"
-
-# Info 290T
-# alias cd290="cd $cls/$cur/info290"
-# alias ssh290="ssh $tmtunnel info290t@dlab-matlab.berkeley.edu"
-
-# CS169
-# alias cd169="cd $cls/$cur/cs169"
 
 # EXPORTS:
 # ==============================================================================
