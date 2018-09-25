@@ -3,7 +3,7 @@
 # New Mac Config
 #########################
 # Setup Variables
-DEST="/Volumes/Michael/Users/Michael"
+DEST="~/Michael"
 
 sudo -v
 
