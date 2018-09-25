@@ -10,35 +10,37 @@ sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 tmtunnel='-R 52698:localhost:52698'
 export RMATE=${tmtunnel}
 
-export PROJECTS_DIR="~/Dockents/Projects"
-proj="~/Dockents/Projects"
+export PROJECTS_DIR="~/Documents/Projects"
+proj="~/Documents/Projects"
 dotf="${proj}/dotfiles/"
-cls="~/Dropbox/College"
-cur="sp16"
-# ssite="/$ph/$cur/"
-snaploc="$proj/CS10/snap/snap.html"
 
 # ALIASES:
 # ==============================================================================
 # Use the hub command for githu
 alias git=hub
-alias stk="stk-simply"
 alias ditto="ditto -v"
 #fix for common typos
 alias makw="make"
 alias matw="mate"
 alias cdd="cd ${dotf}"
 alias mate.="mate ."
-alias cdc="cd $cls/$cur/"
 alias js="jekyll serve --watch & open http://0.0.0.0:4000"
 
-alias push-post="~/Dropbox/Projects/Website/tools/push-post.sh"
+cls="~/Dropbox/College"
+cur="sp16"
+# ssite="/$ph/$cur/"
+snaploc="$proj/CS10/snap/snap.html"
+
 alias apsync="~/Dropbox/Projects/ApertureSync/sync.sh"
 # Command to update bjc labs for a personal webserver for testing at
 # localhost/bjc-r/ [Necessary since I can't modify httpd.conf correctly]
 # alias bjc="sudo rsync -avz --delete --exclude=".git" --exclude="README.md" --exclude=".nojekyll" ../bjc-r /Library/WebServer/Documents/"
 alias snap="open $snaploc"
 alias sshbjc="ssh $tmtunnel michael@abbenay.$ser"
+
+alias stk="stk-simply"
+alias cdc="cd $cls/$cur/"
+alias push-post="~/Dropbox/Projects/Website/tools/push-post.sh"
 
 # CLASSES
 # ==============================================================================
