@@ -10,7 +10,8 @@ sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 tmtunnel='-R 52698:localhost:52698'
 export RMATE=${tmtunnel}
 
-proj="~/Dropbox/Projects"
+export PROJECTS_DIR="~/Dockents/Projects"
+proj="~/Dockents/Projects"
 dotf="${proj}/dotfiles/"
 cls="~/Dropbox/College"
 cur="sp16"

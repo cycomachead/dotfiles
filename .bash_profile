@@ -1,4 +1,4 @@
-projpath='~/Dropbox/Projects/dotfiles/source/'
+projpath='~/Documents/Projects/dotfiles/source/'
 
 # Load the shell dotfiles, and then some:
 for file in "$projpath"*; do
