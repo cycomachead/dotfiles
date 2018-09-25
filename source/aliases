@@ -2,7 +2,7 @@
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/Dropbox/Projects"
+alias p="cd ~/Documents/Projects"
 alias h="history"
 alias j="jobs"
 alias m="mate ."
@@ -20,15 +20,14 @@ alias gco="git checkout"
 alias gc="git commit -am"
 alias gcm="git commit"
 alias gp="git push"
-alias gpo="git push origin" #push to main remote but specify brnach
 alias gl="git log"
 
 # Useful for *Nix boxes, but not necessary
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
+    colorflag="--color"
 else # OS X `ls`
-	colorflag="-G"
+    colorflag="-G"
 fi
 
 # List all files colorized in long format

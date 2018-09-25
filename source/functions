@@ -5,6 +5,32 @@ function review_branch() {
         -c "cd ~/gradescope-app; git fetch; git pull; .ci/review_branch.sh $1"
 }
 
+# More docker stuff because Docker is annoying.
+alias dc=docker-compose
+alias dc-ssh='docker-compose exec web bash'
+
+function docker-quit() {
+    test -z "$(docker ps -q 2>/dev/null)" && osascript -e 'quit app "Docker"'
+}
+
+function docker-start() {
+    open --background -a Docker &&
+      while ! docker system info > /dev/null 2>&1; do sleep 1; done
+      echo 'Docker is ready...'
+}
+
+function docker-stop-all() {
+    docker ps -q | xargs -L1 docker stop
+}
+
+function gs-docker() {
+    docker-start
+    docker-sync start --daemon
+    dc up
+    dc-ssh
+}
+
+
 # Determine size of a file or total size of a directory
 function fs() {
 	if du -b /dev/null > /dev/null 2>&1; then
