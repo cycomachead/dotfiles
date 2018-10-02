@@ -7,11 +7,10 @@ alias h="history"
 alias j="jobs"
 alias m="mate ."
 alias o="open"
-alias oo="open ."
 alias .='cd .'
 alias ..='cd ..'
 alias be='bundle exec'
-alias gs="cd ~/Dropbox/gradescope-app"
+alias gs="cd ~/Documents/gradescope-app"
 
 ## GIT ##
 alias g="git"
