@@ -27,7 +27,6 @@ function gs-docker() {
     docker-start
     docker-sync start --daemon
     dc up
-    dc-ssh
 }
 
 
