@@ -1,8 +1,11 @@
-projpath='~/Documents/Projects/dotfiles/source/'
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH"
 
 # Load the shell dotfiles, and then some:
-for file in "$projpath"*; do
-	[ -r "$file" ] && source "$file"
+# * .bash is my short quick settings changes.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/Documents/Projects/dotfiles/source/*; do
+    [ -r "$file" ] && source "$file"
 done
 unset file
 
@@ -19,7 +22,7 @@ shopt -s cdspell
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * Recursive globbing, e.g. `echo **/*.txt`
 for option in autocd globstar; do
-	shopt -s "$option" 2> /dev/null
+    shopt -s "$option" 2> /dev/null
 done
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
@@ -34,9 +37,17 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# Setting PATH for Python 3.4
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+export PATH
+
 export PATH="/usr/local/sbin:$PATH"
 
-# brew based bash completion.
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
