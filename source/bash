@@ -9,21 +9,8 @@ sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
 tmtunnel='-R 52698:localhost:52698'
 export RMATE=${tmtunnel}
 
-export PROJECTS_DIR="~/Documents/Projects"
-proj="~/Documents/Projects"
-dotf="${proj}/dotfiles/"
-
-# ALIASES:
-# ==============================================================================
-# Use the hub command for githu
-alias git=hub
-alias ditto="ditto -v"
-#fix for common typos
-alias makw="make"
-alias matw="mate"
-alias cdd="cd ${dotf}"
-alias mate.="mate ."
-alias js="jekyll serve --watch & open http://0.0.0.0:4000"
+export PROJECTS_HOME="~/Documents/Projects"
+export GRADESCOPE_HOME="~/Documents/gradescope/gradescope-app/"
 
 # EXPORTS:
 # ==============================================================================
