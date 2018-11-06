@@ -1,19 +1,7 @@
-Font Size view settings for finder
-Disable auto brightness
-Better Machine name settings
-    -- remove from OS X file and have a config
-Add user accounts setup
-Pull drag and drop apps folder from server
-(Apps ordering / clean up)
-Setup Dropbox/ etc defaults.
-Aperture Settings
-Clean up OS X defaults from script or move to separate file
-Auto download Xcode/Twitter/1Pass/other MAS apps
-Add apps to startup at login
-Pull Dashboard widgets and set positions
-Use iCloud to auto dl some settings?
-Update and verify with 10.9 / 10.10
-iTunes 11 Settings
-	-- Show sidebar and status bar
-	-- Set library path
-
+* Finder font size settings
+* Add a bunch of brew cask apps
+* add brew cask-font
+* make a 'link files' script
+* Something about Chrome Canary
+* setup iCloud
+* setup tabbing settings

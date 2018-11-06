@@ -10,9 +10,10 @@ alias o="open"
 alias .='cd .'
 alias ..='cd ..'
 alias be='bundle exec'
-alias gs="cd ~/Documents/gradescope-app"
+alias gs="cd $GRADESCOPE_HOMR"
 
 ## GIT ##
+alias git=hub
 alias g="git"
 alias gd="git diff"
 alias gco="git checkout"
@@ -20,6 +21,15 @@ alias gc="git commit -am"
 alias gcm="git commit"
 alias gp="git push"
 alias gl="git log"
+
+# Use the hub command for githu
+alias ditto="ditto -v"
+# fix for common typos
+alias makw="make"
+alias matw="mate"
+alias cdd="cd ${PROJECTS_HOME}/dotfiles"
+alias mate.="mate ."
+alias js="jekyll serve --watch & open http://0.0.0.0:4000" 
 
 # Useful for *Nix boxes, but not necessary
 # Detect which `ls` flavor is in use
