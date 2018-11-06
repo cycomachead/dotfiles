@@ -10,7 +10,7 @@ alias o="open"
 alias .='cd .'
 alias ..='cd ..'
 alias be='bundle exec'
-alias gs="cd $GRADESCOPE_HOMR"
+alias gs="cd $GRADESCOPE_HOME"
 
 ## GIT ##
 alias git=hub
