@@ -40,14 +40,8 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # Setting PATH for Python 3.4
 # The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
-export PATH
+export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 
 export PATH="/usr/local/sbin:$PATH"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
