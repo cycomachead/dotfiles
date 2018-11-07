@@ -1,25 +1,9 @@
-# Default editing configuration
-encoding         = UTF-8
-# Use -Light on a retina display
-fontName         = SourceCodePro-Regular
-fontSize         = 22
-spellChecking    = true
-showWrapColumn   = true
-softTabs         = true
-softWrap         = true
-tabSize          = 4
-# Cobalt Theme
-theme            = 06CD1FB2-A00A-4F8C-97B2-60E131980454
-wrapColumn       = 80
-lineEndings      = '\n'
-# Disable display of space characters
-invisiblesMap    = '~ '
-# Show the branch in the window title
-windowTitle      = "$TM_DISPLAYNAME — (git: $TM_SCM_BRANCH)"
+# Basic Settings
 
-
+TM_PYTHON        = "/usr/local/bin/python3"
 TM_C_FLAGS       = "-Wall -include stdio.h -std=c99"
 TM_FULLNAME      = "Michael Ball"
+spellChecking    = true
 
 projectDirectory = "$CWD"
 # TM_FILEPATH      = ""
@@ -27,19 +11,33 @@ TM_MAKE_FILE     = '${TM_PROJECT_DIRECTORY}/Makefile'
 # TM_MAKE_TARGET   = ""
 
 # Extra files to include
+#
 fileBrowserGlob  = "{*}"
 
 # Hide log, vendor and tmp directories from search popups.
-myExtraExcludes       = "log,vendor,tmp,.svn,*.pyc,*.class"
+#
+myExtraExcludes = "log,vendor,tmp,.svn,*.pyc,*.class"
 excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 excludeInBrowser      = "{$excludeInBrowser}"
 
 
-# Configure Default Programs
-TM_GIT    = "/usr/local/bin/git"
-TM_RUBY   = "~/.rvm/bin/rvm-auto-ruby"
-TM_PYTHON = "/usr/local/bin/python3"
+# Configure git and hg
+TM_GIT              = "/usr/local/bin/git"
+
+# Default editing configuration
+#
+fontName         = SourceCodePro-Light
+fontSize         = 22
+showWrapColumn   = true
+softTabs         = true
+softWrap         = true
+tabSize          = 4
+theme            = 06CD1FB2-A00A-4F8C-97B2-60E131980454
+wrapColumn       = 80
+lineEndings      = '\n'
+# Disable display of space characters
+invisiblesMap    = '~ '
 
 
 # File type specific configuration
@@ -52,8 +50,7 @@ tabSize          = 4
 
 [ .git/COMMIT_EDITMSG ]
 spellChecking    = true
-wrapColumn       = 72
-
+spellingLanguage = 'en'
 
 [ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib,class} ]
 binary           = true
@@ -61,6 +58,7 @@ binary           = true
 [ source ]
 softTabs         = true
 tabSize          = 4
+fontSize         = 22
 
 [ source.python ]
 softTabs         = true
@@ -76,28 +74,9 @@ tabSize         = 2
 
 [ *.{html,css} ]
 softTabs        = true
-tabSize         = 2
+tabSize         = 4
 
-[ text.html.markdown ]
-spellChecking    = true
-softWrap         = true
-wrapColumn       = 80
-softTabs         = false
-tabSize          = 4
+[ source.tex, source.latex ]
+softTabs         = true
+tabSize          = 2
 
-[ source.plist ]
-softTabs       = false
-tabSize        = 4
-
-[ source.tm-properties ]
-spellChecking  = false
-
-[ "{Capfile,Gemfile,Gemfile.lock,Guardfile}" ]
-fileType         = source.ruby
-
-[ Procfile ]
-fileType         = source.yaml
-
-[ source.ruby]
-softTabs        = true
-tabSize         = 2
