@@ -13,11 +13,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-# Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "Yosemite Pro"
-sudo scutil --set HostName "Yosemite Pro"
-sudo scutil --set LocalHostName "Yosemite-Pro"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Yosemite-Pro"
+./set_hostname.sh
 
 # Set standby delay to 30 min (default is 1 hour)
 sudo pmset -a standbydelay 1800
