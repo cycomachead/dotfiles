@@ -12,3 +12,4 @@ symlink .bash_profile
 symlink .bashrc
 symlink .tm_properties
 symlink .inputrc
+popd
