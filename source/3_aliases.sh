@@ -29,7 +29,7 @@ alias makw="make"
 alias matw="mate"
 alias cdd="cd ${PROJECTS_HOME}/dotfiles"
 alias mate.="mate ."
-alias js="jekyll serve --watch & open http://0.0.0.0:4000" 
+alias js="jekyll serve --watch & open http://0.0.0.0:4000"
 
 # Useful for *Nix boxes, but not necessary
 # Detect which `ls` flavor is in use
@@ -61,7 +61,7 @@ alias mconflicts='mate $(conflicts | cut -d " " -f 2)'
 alias conflicts="git status --short | egrep '(U[A-Z])|([A-Z]U)'"
 
 # Create a new PR on github and then open it in Safari
-alias new_pr='open $(hub pull-request)'
+alias new-pr='open $(hub pull-request)'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -71,9 +71,6 @@ alias gurl='curl --compressed'
 
 # Get week number
 alias week='date +%V'
-
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; sudo gem update'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -92,9 +89,6 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
-# Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias cleanDS="find . -type f -name '*.DS_Store' -ls -delete"
