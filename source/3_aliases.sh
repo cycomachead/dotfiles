@@ -53,8 +53,8 @@ alias lsl="ls -FlaGh"
 # List conflicting files
 alias conflicts="git status --short | egrep '(U[A-Z])|([A-Z]U)'"
 
-# Open up git conflicts in textmate.
-alias mconflicts='mate $(conflicts | cut -d " " -f 2)'
+# Open up git conflicts in the editor.
+alias cconflicts='code . $(conflicts | cut -d " " -f 2)'
 
 # Create a new PR on github and then open it in Safari
 alias new-pr='open $(hub pull-request)'
