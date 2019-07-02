@@ -29,7 +29,7 @@ alias makw="make"
 alias matw="mate"
 alias cdd="cd ${PROJECTS_HOME}/dotfiles"
 alias mate.="mate ."
-alias js="jekyll serve --watch & open http://0.0.0.0:4000" 
+alias js="jekyll serve --watch & open http://0.0.0.0:4000"
 
 # Useful for *Nix boxes, but not necessary
 # Detect which `ls` flavor is in use
@@ -61,7 +61,7 @@ alias mconflicts='mate $(conflicts | cut -d " " -f 2)'
 alias conflicts="git status --short | egrep '(U[A-Z])|([A-Z]U)'"
 
 # Create a new PR on github and then open it in Safari
-alias new_pr='open $(hub pull-request)'
+alias new-pr='open $(hub pull-request)'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
