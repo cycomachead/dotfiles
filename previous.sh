@@ -1,3 +1,12 @@
+# This file is a list of aliases used my classes at berkeley each semester
+# It contains shortcuts for often used commands for moving files and homework
+# Defined Variables:
+# ==============================================================================
+ser="cs.berkeley.edu"
+ph="public_html"
+git="git@github.com"
+sync="rsync -ahPvz --itemize-changes --progress --delete --exclude=\"lec\""
+
 # Previous Semester Settings and alaises to be used for reference
 # ==================
 # Fall 2014
