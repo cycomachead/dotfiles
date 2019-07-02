@@ -21,7 +21,7 @@ function cront
 {
     unset EDITOR
     sudo crontab -e
-    export EDITOR="/usr/local/bin/mate -w"
+    export EDITOR="$vscode/code -w"
 }
 
 # Automatically load git bash completion
