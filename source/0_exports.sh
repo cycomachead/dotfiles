@@ -22,4 +22,4 @@ export GREP_OPTIONS="--color=auto"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Put the current directory in the window title
-# export PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"; $PROMPT_COMMAND'
+# export PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"; $PROMPT_COMMAND'export PATH="/usr/local/opt/ruby/bin:$PATH"
