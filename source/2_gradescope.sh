@@ -27,5 +27,5 @@ function docker-stop-all() {
 }
 
 function gs-docker() {
-    docker-start && docker-sync start && dc up
+    docker-start && docker-sync start --daemon && dc up
 }

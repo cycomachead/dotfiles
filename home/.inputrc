@@ -7,4 +7,3 @@ TAB: menu-complete
 set completion-ignore-case on
 set mark-symlinked-directories on
 set show-all-if-ambiguous on
-
