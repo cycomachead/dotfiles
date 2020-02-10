@@ -112,3 +112,7 @@ alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 
 # Start simple python http server in the current directory
 alias server='python3 -m http.server'
+
+# Fix when origin is not set to push HEAD by default.
+# Allows `git push` without arguments.
+alias git-push-head='git config remote.origin.push HEAD'
