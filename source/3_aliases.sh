@@ -115,4 +115,4 @@ alias server='python3 -m http.server'
 
 # Fix when origin is not set to push HEAD by default.
 # Allows `git push` without arguments.
-alias git-push-head='git config remote.origin.push HEAD'
+alias git-set-push-head='git config remote.origin.push HEAD'
