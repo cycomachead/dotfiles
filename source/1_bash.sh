@@ -1,7 +1,7 @@
 # Use: `ssh $RMATE ...` to setup the tunneling.
 export RMATE='-R 52698:localhost:52698'
 
-export PROJECTS_HOME="~/Documents/Projects"
+export PROJECTS_HOME="~/Dropbox/Projects"
 export GRADESCOPE_HOME="~/Documents/gradescope/gradescope-app/"
 
 vscode="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"

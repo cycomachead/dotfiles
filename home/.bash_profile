@@ -4,7 +4,7 @@ export PATH="$HOME/bin:$PATH"
 # Load the shell dotfiles, and then some:
 # * .bash is my short quick settings changes.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/Documents/Projects/dotfiles/source/*; do
+for file in ~/Dropbox/Projects/dotfiles/source/*; do
     [ -r "$file" ] && source "$file"
 done
 unset file
@@ -38,9 +38,24 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
-# Setting PATH for Python 3.4
-# The orginal version is saved in .bash_profile.pysave
-# export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+# Bash Completion for brew programs:
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
+fi
+
+# TODO: Add the flag for zsh and uncomment.
+# if type brew &>/dev/null; then
+#   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+#   autoload -Uz compinit
+#   compinit
+# fi
 
 export PATH="/usr/local/sbin:$PATH"
 

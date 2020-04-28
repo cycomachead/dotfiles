@@ -2,7 +2,7 @@
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/Documents/Projects"
+alias p="cd $PROJECTS_HOME"
 alias h="history"
 # VSCode
 alias c="code ."
