@@ -11,6 +11,14 @@ dotfiles='~/Dropbox/Projects/dotfiles'
 echo "Setting up a new mac."
 echo "Using directory: $dotfiles".
 
+echo "Xcode Must be Installed."
+xcode-select --install
+read -p "Delaying to Install Xcode. Type something to continue. " -n 1
+echo
+if [[ $REPLY =~ ^[A-Za-z0-9]$ ]]; then
+	echo "Continuing."
+fi
+
 mkdir -p $dotfiles
 echo "Asking for password:"
 sudo -v
