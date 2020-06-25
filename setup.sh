@@ -5,7 +5,8 @@
 
 # Setup Variables
 DEST="~/Michael"
-dotfiles='~/Documents/Projects/dotfiles/home/'
+projects = '~/Dropbox/Projects'
+dotfiles='~/Dropbox/Projects/dotfiles'
 
 echo "Setting up a new mac."
 echo "Using directory: $dotfiles".
@@ -18,14 +19,10 @@ sudo -v
 # dscl . Michael -change dsAttrTypeNative:home /Users/Michael ${DEST}
 
 # Grab the full GH repo and cd into it.
-URL='https://raw.github.com/cycomachead/dotfiles/master'
-cd ~/Desktop
-mkdir setup && cd setup
-FILE='.{aliases,bash,bash_profile,bash_prompt,bashrc,exports,extra,functions,gitattributes,gitconfig,gitignore,osx,tm_properties,inputrc}'
-curl -# ${URL}/${FILE} -o "#1"
-curl -# ${URL}/'Michael.terminal' -o "#1"
-FILE='.ssh/{id_rsa,id_rsa.pub}'
-curl -# ${URL}/${FILE} -o "#1"
+cd $projects
+git clone https://github.com/cycomachead/dotfiles.git
+
+cd dotfiles;
 
 ./setup/link_home_files.sh
 ./setup/git_author.sh
