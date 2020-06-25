@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-dotfiles='~/Documents/Projects/dotfiles/home/'
+dotfiles='~/Dropbox/Projects/dotfiles/home/'
 
 function symlink {
     rm $1;
@@ -12,4 +12,5 @@ symlink .bash_profile
 symlink .bashrc
 symlink .tm_properties
 symlink .inputrc
+symlink .psqlrc
 popd
