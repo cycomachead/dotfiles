@@ -2,9 +2,16 @@
 
 # New Mac Config
 #########################
+
 # Setup Variables
 DEST="~/Michael"
+dotfiles='~/Documents/Projects/dotfiles/home/'
 
+echo "Setting up a new mac."
+echo "Using directory: $dotfiles".
+
+mkdir -p $dotfiles
+echo "Asking for password:"
 sudo -v
 
 # Setup Users Dir
@@ -20,32 +27,13 @@ curl -# ${URL}/'Michael.terminal' -o "#1"
 FILE='.ssh/{id_rsa,id_rsa.pub}'
 curl -# ${URL}/${FILE} -o "#1"
 
-cd ~/Desktop/setup/
-# Copy Source files.
-cp -f .bash_profile "${DEST}/.bash_profile"
-cp -f .bashrc "${DEST}/.bashrc"
-cp -f .gitconfig "${DEST}/.gitconfig"
-cp -f .gitignore "${DEST}/.gitignore"
-cp -f .tm_properties "${DEST}/.tm_properties"
-cp -f .tm_properties "${DEST}/.inputrc"
-# FIXME -- move RSA from encrypted file
-# cp -f .gitconfig "${DEST}/.ssh/id_rsa"
-cp -f .gitignore "${DEST}/.ssh/id_rsa.pub"
+./setup/link_home_files.sh
+./setup/git_author.sh
+./setup/set_hostname.sh
 
 # set RSA permissions
 chmod 755 ~/.ssh
 chmod 600 ~/.ssh/id*
-
-# FIXME:
-# Grab and download Dropbox installer
-DBOX = "Dropbox.app.zip"
-
-# Open it
-# Link Files
-mkdir ~/Dropbox
-# Apps Folder
-# ln -s ~/Dropbox/Drag\ and\ Drop\ apps/ /Applications/Drag\ and\ Drop\ apps
-
 
 # Break to install Xcode and CL tools
 git # Will force download of dev tools in 10.9 if they aren't installed.
@@ -59,10 +47,5 @@ fi
 ./setup/tools.sh
 
 # Configure Defaults
-Setup='./setup/osx.sh'
-chmod 777 $Setup
-$Setup
-
-# Cleanup.
-cd
-# rm -rf ~/Desktop/setup
+chmod +x ./setup/osx.sh
+./setup/osx.sh
