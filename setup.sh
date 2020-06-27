@@ -27,6 +27,7 @@ sudo -v
 # dscl . Michael -change dsAttrTypeNative:home /Users/Michael ${DEST}
 
 # Grab the full GH repo and cd into it.
+# TODO: Check if I might have already cloned the repo?
 cd $projects
 git clone https://github.com/cycomachead/dotfiles.git
 
@@ -37,6 +38,10 @@ cd dotfiles;
 ./setup/set_hostname.sh
 
 # set RSA permissions
+mkdir ~/.ssh
+cp .ssh/* ~/.ssh/
+open .ssh/ssh.dmg
+# TODO Store and copy ssh_config.
 chmod 755 ~/.ssh
 chmod 600 ~/.ssh/id*
 
@@ -54,3 +59,9 @@ fi
 # Configure Defaults
 chmod +x ./setup/osx.sh
 ./setup/osx.sh
+
+# TODO, tools I don't know how to install.
+# Blackmagic ATEM
+# Blackmagic Desktop Video
+# Safari Technology Preview
+#
