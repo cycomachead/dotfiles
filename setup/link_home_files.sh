@@ -11,6 +11,6 @@ function symlink {
 pushd ~/;
 for file in $(ls $dotfiles)
 do
-    symlink $file
+    symlink $file;
 done
 popd;
