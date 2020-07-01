@@ -1,0 +1,15 @@
+{
+    AXSClassicInvertColorsPreference = 0;
+    AccessibilityEnabled = 0;
+    ApplicationAccessibilityEnabled = 0;
+    CommandAndControlEnabled = 0;
+    DarkenSystemColors = 0;
+    DifferentiateWithoutColor = 0;
+    EnhancedBackgroundContrastEnabled = 1;
+    FullKeyboardAccessEnabled = 1;
+    GrayscaleDisplay = 0;
+    InvertColorsEnabled = 0;
+    KeyRepeatEnabled = 0;
+    ReduceMotionEnabled = 1;
+    VoiceOverTouchEnabled = 0;
+}

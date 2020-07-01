@@ -86,8 +86,6 @@ These are my current list of `defaults domains` I intend to verify and selective
  com.adobe.crashreporter
  com.agilebits.onepassword7
  com.agilebits.onepassword7.1PasswordSafariAppExtension
- com.allocinit.CamTwist
- com.allocinit.CamTwist_Assistant
  com.apple.AMPLibraryAgent
  com.apple.Accessibility
  com.apple.AccessibilityVisualsAgent
@@ -110,7 +108,6 @@ These are my current list of `defaults domains` I intend to verify and selective
  com.apple.DiskUtility
  com.apple.EmojiCache
  com.apple.EmojiPreferences
- com.apple.ExpansionSlotUtility
  com.apple.FaceTime
  com.apple.FolderActionsDispatcher
  com.apple.FontRegistry.user
@@ -135,7 +132,6 @@ These are my current list of `defaults domains` I intend to verify and selective
  com.apple.SafariBookmarksSyncAgent
  com.apple.ScreenTimeAgent
  com.apple.ServicesMenu.Services
- com.apple.SetupAssistant
  com.apple.Siri
  com.apple.Siri.SiriTodayExtension
  com.apple.SiriNCService
@@ -147,7 +143,6 @@ These are my current list of `defaults domains` I intend to verify and selective
  com.apple.TTY
  com.apple.TV
  com.apple.TelephonyUtilities
- com.apple.Terminal
  com.apple.TextEdit
  com.apple.TextInputMenu
  com.apple.TextInputMenuAgent
@@ -300,13 +295,8 @@ These are my current list of `defaults domains` I intend to verify and selective
  com.apple.systemuiserver
  com.apple.talagent
  com.apple.textInput.keyboardServices.textReplacement
- com.apple.tourist
  com.apple.touristd
- com.apple.universalaccess
- com.apple.universalaccessAuthWarning
  com.apple.xpc.activity2
- com.blackmagic-design.ATEM Setup
- com.blackmagic-design.ATEM Software Control
  com.blackmagic-design.Blackmagic Desktop Video Administration
  com.blackmagic-design.DiskSpeedTest
  com.blackmagic-design.desktopvideo.livekey
@@ -321,13 +311,9 @@ These are my current list of `defaults domains` I intend to verify and selective
  com.google.GoogleDrive
  com.google.Keystone.Agent
  com.hnc.Discord
- com.macromates.TextMate.preview
- com.microsoft.VSCode
  com.primatelabs.Geekbench5
- com.qtproject
  com.smileonmymac.textexpander
  com.tinyspeck.slackmacgap
- com.twitter.twitter-mac
  developer.apple.wwdc-Release
  findInSelectionByDefault
  info.eurocomp.Timing2
@@ -336,9 +322,7 @@ These are my current list of `defaults domains` I intend to verify and selective
  info.eurocomp.TimingHelper.InfoExtractorService
  info.eurocomp.TimingHelper.fallback
  knowledge-agent
- loginwindow
  org.cups.PrintingPrefs
- org.m0k.transmission
  pbs
  systemgroup.com.apple.icloud.searchpartyd.sharedsettings
  tv.sienna.scanconvertersdi
