@@ -1,0 +1,20 @@
+{
+    CurrentTabIndex = 0;
+    DeviceUniqueId = 7c2e0da291f7;
+    "SidebarSettings_PaletteName_Upstream Key 1" = 1;
+    ipAddress = "192.168.1.130";
+    isABMode = 0;
+    midiEnabled = 1;
+    profileAutosave = 1;
+    profilePath = "/Volumes/Michael/Users/michael/Dropbox/ATEM";
+    switcher1634231393button0cameraMapped = 0;
+    switcher1634231393button1cameraMapped = 0;
+    switcher1634231393button2cameraMapped = 0;
+    switcher1634231393button3cameraMapped = 0;
+    switcher1634231393button4cameraMapped = 0;
+    switcher1634231393button5cameraMapped = 0;
+    switcher1634231393cameraPreviewOutputAux = "-1";
+    switcher1634231393upstreamKeySizeLink = 1;
+    translationLanguage = en;
+    windowGeometry = {length = 50, bytes = 0x01d9d0cb 00020000 00000a36 00000075 ... 00010000 00000a00 };
+}
