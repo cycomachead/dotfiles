@@ -1,0 +1,289 @@
+{
+    "Default Window Settings" = Michael;
+    DefaultProfilesVersion = 1;
+    HasMigratedDefaults = 1;
+    "Man Page Window Settings" = "Man Page";
+    NSNavLastRootDirectory = "~/Dropbox/Projects/dotfiles/apps";
+    NSNavLastUserSetHideExtensionButtonState = 0;
+    NSNavPanelExpandedSizeForSaveMode = "{841, 448}";
+    "NSWindow Frame NSFontPanel" = "1906 225 445 108 0 0 2560 1417 ";
+    "NSWindow Frame NSNavPanelAutosaveName" = "540 417 841 470 0 0 2560 1417 ";
+    "NSWindow Frame TTAppPreferences" = "948 692 668 533 0 0 2560 1417 ";
+    "NSWindow Frame TTWindow" = "90 473 1455 921 0 0 1920 1057 ";
+    "NSWindow Frame TTWindow Basic" = "1038 337 985 627 0 0 2560 1417 ";
+    "NSWindow Frame TTWindow Grass" = "124 922 585 365 0 0 2560 1417 ";
+    "NSWindow Frame TTWindow Homebrew" = "124 1026 585 391 0 0 2560 1417 ";
+    "NSWindow Frame TTWindow Michael" = "132 427 1455 921 0 0 2560 1417 ";
+    "NSWindow Frame TTWindow Source Code Light AA" = "1080 469 795 449 0 0 2560 1417 ";
+    "NSWindowTabbingShoudShowTabBarKey-TTWindow-TTWindowController-TTWindowController-VT-FS" = 1;
+    ProfileCurrentVersion = "2.07";
+    SecureKeyboardEntry = 0;
+    Shell = "/bin/bash";
+    "Startup Window Settings" = Michael;
+    "TTAppPreferences Selected Tab" = 0;
+    "Window Settings" =     {
+        Basic =         {
+            Font = {length = 267, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000cf };
+            FontAntialias = 1;
+            FontWidthSpacing = "1.004032258064516";
+            ProfileCurrentVersion = "2.07";
+            name = Basic;
+            type = "Window Settings";
+        };
+        Grass =         {
+            BackgroundColor = {length = 267, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d2 };
+            CursorColor = {length = 259, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ca };
+            CursorType = 0;
+            Font = {length = 260, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c8 };
+            FontAntialias = 1;
+            ProfileCurrentVersion = "2.07";
+            SelectionColor = {length = 268, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d3 };
+            TextBoldColor = {length = 258, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c9 };
+            TextColor = {length = 259, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ca };
+            name = Grass;
+            type = "Window Settings";
+        };
+        Homebrew =         {
+            BackgroundColor = {length = 248, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000bf };
+            CursorBlink = 1;
+            CursorColor = {length = 268, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d3 };
+            CursorType = 0;
+            Font = {length = 263, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000cb };
+            FontAntialias = 0;
+            ProfileCurrentVersion = "2.07";
+            SelectionColor = {length = 265, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d0 };
+            TextBoldColor = {length = 239, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000b6 };
+            TextColor = {length = 269, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d4 };
+            name = Homebrew;
+            type = "Window Settings";
+        };
+        "Man Page" =         {
+            BackgroundColor = {length = 273, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d8 };
+            Font = {length = 267, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000cf };
+            FontAntialias = 1;
+            FontWidthSpacing = "1.004032258064516";
+            ProfileCurrentVersion = "2.07";
+            SelectionColor = {length = 265, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d0 };
+            TextBoldColor = {length = 322, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ff };
+            TextColor = {length = 322, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ff };
+            name = "Man Page";
+            rowCount = 48;
+            type = "Window Settings";
+        };
+        Michael =         {
+            ANSIBrightBlackColor = {length = 274, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d9 };
+            ANSIBrightWhiteColor = {length = 274, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d9 };
+            BackgroundBlur = "0.4028563065962358";
+            BackgroundColor = {length = 244, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000bb };
+            BackgroundSettingsForInactiveWindows = 0;
+            Bell = 0;
+            BlinkText = 1;
+            CharacterEncoding = 4;
+            CommandString = "";
+            CursorBlink = NO;
+            CursorColor = {length = 243, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ba };
+            CursorType = 0;
+            DisableANSIColor = 0;
+            Font = {length = 279, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000db };
+            FontAntialias = 1;
+            FontHeightSpacing = 1;
+            FontWidthSpacing = 1;
+            Linewrap = 1;
+            ProfileCurrentVersion = "2.07";
+            ReverseLinewrap = YES;
+            RunCommandAsShell = 1;
+            ScrollbackLines = 10000;
+            SelectionColor = {length = 253, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c4 };
+            ShouldLimitScrollback = 0;
+            ShowActiveProcessInTitle = 1;
+            ShowCommandKeyInTitle = 0;
+            ShowDimensionsInTitle = 0;
+            ShowShellCommandInTitle = 0;
+            ShowTTYNameInTitle = 0;
+            ShowWindowSettingsNameInTitle = 0;
+            StrictVTKeypad = NO;
+            TerminalType = "xterm-256color";
+            TextBoldColor = {length = 239, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000b6 };
+            TextColor = {length = 239, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000b6 };
+            UseBoldFonts = 0;
+            UseBrightBold = 1;
+            WindowTitle = "";
+            columnCount = 110;
+            deleteSendsBackspace = 0;
+            name = Michael;
+            noWarnProcesses =             (
+                                {
+                    ProcessName = rlogin;
+                },
+                                {
+                    ProcessName = telnet;
+                },
+                                {
+                    ProcessName = ssh;
+                },
+                                {
+                    ProcessName = slogin;
+                },
+                                {
+                    ProcessName = scp;
+                }
+            );
+            rowCount = 30;
+            shellExitAction = 2;
+            type = "Window Settings";
+            useOptionAsMetaKey = 0;
+            warnOnShellCloseAction = 1;
+        };
+        Novel =         {
+            BackgroundColor = {length = 261, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000cc };
+            CursorColor = {length = 277, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000dc };
+            Font = {length = 260, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c8 };
+            FontAntialias = 1;
+            ProfileCurrentVersion = "2.07";
+            SelectionColor = {length = 279, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000de };
+            ShowWindowSettingsNameInTitle = 0;
+            TextBoldColor = {length = 262, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000cd };
+            TextColor = {length = 268, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d3 };
+            name = Novel;
+            type = "Window Settings";
+        };
+        Ocean =         {
+            BackgroundColor = {length = 268, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d3 };
+            Font = {length = 267, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000cf };
+            FontAntialias = 1;
+            FontWidthSpacing = "0.9959677419354839";
+            ProfileCurrentVersion = "2.07";
+            SelectionColor = {length = 258, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c9 };
+            TextBoldColor = {length = 237, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000b4 };
+            TextColor = {length = 237, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000b4 };
+            fontAllowsDisableAntialias = 0;
+            name = Ocean;
+            type = "Window Settings";
+        };
+        Pro =         {
+            BackgroundBlur = 0;
+            BackgroundColor = {length = 248, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000bf };
+            CursorColor = {length = 246, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000bd };
+            Font = {length = 259, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c7 };
+            FontAntialias = 0;
+            FontWidthSpacing = "0.9959677419354839";
+            ProfileCurrentVersion = "2.07";
+            SelectionColor = {length = 246, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000bd };
+            ShowWindowSettingsNameInTitle = 0;
+            TextBoldColor = {length = 237, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000b4 };
+            TextColor = {length = 246, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000bd };
+            name = Pro;
+            shellExitAction = 2;
+            type = "Window Settings";
+        };
+        "Red Sands" =         {
+            BackgroundColor = {length = 279, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000de };
+            CursorColor = {length = 237, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000b4 };
+            CursorType = 1;
+            Font = {length = 267, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000cf };
+            FontAntialias = 1;
+            FontWidthSpacing = "1.004032258064516";
+            ProfileCurrentVersion = "2.07";
+            SelectionColor = {length = 270, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d5 };
+            TextBoldColor = {length = 263, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ce };
+            TextColor = {length = 268, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d3 };
+            fontAllowsDisableAntialias = 0;
+            name = "Red Sands";
+            type = "Window Settings";
+        };
+        "Silver Aerogel" =         {
+            BackgroundAlphaInactive = "0.5";
+            BackgroundBlur = 1;
+            BackgroundBlurInactive = 0;
+            BackgroundColor = {length = 363, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 00000105 };
+            BackgroundSettingsForInactiveWindows = 1;
+            CursorColor = {length = 240, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000b7 };
+            Font = {length = 267, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000cf };
+            FontAntialias = 1;
+            FontWidthSpacing = "1.004032258064516";
+            ProfileCurrentVersion = "2.07";
+            SelectionColor = {length = 271, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d6 };
+            TextBoldColor = {length = 322, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ff };
+            TextColor = {length = 322, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ff };
+            name = "Silver Aerogel";
+            type = "Window Settings";
+        };
+        "Solid Colors" =         {
+            BackgroundColor = {length = 322, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ff };
+            BackgroundImageBookmark = {length = 746, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000029a };
+            CursorColor = {length = 360, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 00000102 };
+            Font = {length = 267, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000cf };
+            FontAntialias = 1;
+            FontWidthSpacing = "1.004032258064516";
+            ProfileCurrentVersion = "2.07";
+            TextBoldColor = {length = 322, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ff };
+            TextColor = {length = 322, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ff };
+            name = "Solid Colors";
+            type = "Window Settings";
+        };
+        "Source Code Light AA" =         {
+            ANSIBrightBlackColor = {length = 274, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d9 };
+            ANSIBrightWhiteColor = {length = 274, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000d9 };
+            BackgroundBlur = "0.4028563065962358";
+            BackgroundColor = {length = 244, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000bb };
+            BackgroundSettingsForInactiveWindows = 0;
+            Bell = 0;
+            BlinkText = 1;
+            CharacterEncoding = 4;
+            CommandString = "";
+            CursorBlink = NO;
+            CursorColor = {length = 243, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ba };
+            CursorType = 0;
+            DisableANSIColor = 0;
+            Font = {length = 266, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000ce };
+            FontAntialias = 1;
+            FontHeightSpacing = 1;
+            FontWidthSpacing = 1;
+            Linewrap = 1;
+            ProfileCurrentVersion = "2.07";
+            ReverseLinewrap = YES;
+            RunCommandAsShell = 1;
+            ScrollbackLines = 10000;
+            SelectionColor = {length = 253, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000c4 };
+            ShouldLimitScrollback = 0;
+            ShowActiveProcessInTitle = 1;
+            ShowCommandKeyInTitle = 0;
+            ShowDimensionsInTitle = 0;
+            ShowShellCommandInTitle = 0;
+            ShowTTYNameInTitle = 0;
+            ShowWindowSettingsNameInTitle = 0;
+            StrictVTKeypad = NO;
+            TerminalType = "xterm-256color";
+            TextBoldColor = {length = 239, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000b6 };
+            TextColor = {length = 239, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 000000b6 };
+            UseBoldFonts = 0;
+            UseBrightBold = 1;
+            WindowTitle = "";
+            columnCount = 110;
+            deleteSendsBackspace = 0;
+            name = "Source Code Light AA";
+            noWarnProcesses =             (
+                                {
+                    ProcessName = rlogin;
+                },
+                                {
+                    ProcessName = telnet;
+                },
+                                {
+                    ProcessName = ssh;
+                },
+                                {
+                    ProcessName = slogin;
+                },
+                                {
+                    ProcessName = scp;
+                }
+            );
+            rowCount = 30;
+            shellExitAction = 2;
+            type = "Window Settings";
+            useOptionAsMetaKey = 0;
+            warnOnShellCloseAction = 1;
+        };
+    };
+}

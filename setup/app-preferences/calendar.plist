@@ -1,0 +1,53 @@
+{
+    AccountDisplayOrder =     (
+        Subscription,
+        Birthday,
+        Local,
+        "015DF93D-2F00-4C3B-9845-4E04F0C6ACBD",
+        "136882AA-7B09-4011-ADFB-2120DE0E7EE1",
+        "BFE07551-73BB-4F8D-BDA2-12514A24296B",
+        "6174F7BF-690E-406B-B457-4F7E5268F767"
+    );
+    AllDayAreaHeight = 82;
+    BirthdayEventsGenerationAttemptsToResetKey = 0;
+    BirthdayEventsGenerationLastLocale = "en_US";
+    BirthdayEventsGenerationVersion = 10;
+    CalDefaultCalendar = UseLastSelectedAsDefaultCalendar;
+    CalFirstVisibleDate = "2020-07-03 07:00:00 +0000";
+    CalForceTruthFileRestoreHashKey = 16A1;
+    CalendarSidebarShown = 1;
+    CalendarSidebarWidth = 165;
+    CollapsedTopLevelNodes =     {
+        MainWindow =         (
+        );
+    };
+    DelegatesInSeparateWindows =     {
+        iCal =         {
+        };
+    };
+    LastCheckForIgnoredPseudoEvents = "615193654.894473";
+    LastReminderMigrationCleanupSystemVersion = 19F101;
+    LastSaveDate = "2020-06-30 23:01:11 +0000";
+    NSDontMakeMainWindowKey = NO;
+    NSEventConcurrentProcessingEnabled = YES;
+    "NSWindow Frame iCal" = "473 263 1553 986 0 0 2560 1417 ";
+    RemindersLastMigratedSystemVersion = 19F101;
+    SelectedEvents =     {
+        iCal =         (
+        );
+    };
+    TabbedWindowGroups =     (
+    );
+    "display birthdays calendar" = 1;
+    "first minute of day time range" = 0;
+    "first shown minute of day" = "786.2727272727273";
+    "iCal version" = 134217728;
+    icaluuid = "94763456-44CA-4D7D-B46F-3EADB877884F";
+    "last calendar view description" = "7-day";
+    "last minute of day time range" = 1440;
+    "last selected calendar list item" = "54DA5D75-D310-4E7B-857B-D338C3E60E10";
+    lastViewsTimeZone = "America/Los_Angeles";
+    privacyPaneHasBeenAcknowledgedVersion = 4;
+    "view rects" =     {
+    };
+}
