@@ -16,4 +16,3 @@ export LUA_CPATH='/usr/local/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/loadall.so;
 export PATH="$PATH:$HOME/.luarocks/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 
 source <(luarocks completion bash)
-
