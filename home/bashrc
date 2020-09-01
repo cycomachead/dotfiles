@@ -1,4 +1,4 @@
-[ -n "$PS1" ] && source ~/.bash_profile
+# [ -n "$PS1" ] && source ~/.bash_profile
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
@@ -16,4 +16,8 @@ export LUA_CPATH='/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so;
 export PATH="$PATH:$HOME/.luarocks/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 
 source <(luarocks completion bash)
-export LUA_PATH='/usr/local/Cellar/luarocks/3.3.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;/Volumes/Michael/Users/michael/.luarocks/share/lua/5.1/?.lua;/Volumes/Michael/Users/michael/.luarocks/share/lua/5.1/?/init.lua' export LUA_CPATH='/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so;./?.so;/Volumes/Michael/Users/michael/.luarocks/lib/lua/5.1/?.so' export PATH='/Volumes/Michael/Users/michael/.rvm/gems/ruby-2.5.5/bin:/Volumes/Michael/Users/michael/.rvm/gems/ruby-2.5.5@global/bin:/Volumes/Michael/Users/michael/.rvm/rubies/ruby-2.5.5/bin:/usr/local/sbin:/Volumes/Michael/Users/michael/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS:/Volumes/Michael/Users/michael/.luarocks/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:/Volumes/Michael/Users/michael/.rvm/bin'
+
+export LUA_PATH='/usr/local/Cellar/luarocks/3.3.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;/Volumes/Michael/Users/michael/.luarocks/share/lua/5.1/?.lua;/Volumes/Michael/Users/michael/.luarocks/share/lua/5.1/?/init.lua'
+export LUA_CPATH='/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so;./?.so;/Volumes/Michael/Users/michael/.luarocks/lib/lua/5.1/?.so'
+# TODO: Luarocks isn't doing a good job. :(
+export PATH="/Volumes/Michael/Users/michael/.rvm/gems/ruby-2.5.5/bin:/Volumes/Michael/Users/michael/.rvm/gems/ruby-2.5.5@global/bin:/Volumes/Michael/Users/michael/.rvm/rubies/ruby-2.5.5/bin:/usr/local/sbin:/Volumes/Michael/Users/michael/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS:/Volumes/Michael/Users/michael/.luarocks/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:/Volumes/Michael/Users/michael/.rvm/bin:$PATH"
