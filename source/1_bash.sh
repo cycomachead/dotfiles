@@ -7,6 +7,9 @@ export GRADESCOPE_HOME="~/Documents/gradescope/gradescope-app/"
 vscode="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:$vscode"
 
+# Use 8888 since the site defaults to 8000
+export CS88_PORT='8888'
+
 # EXPORTS:
 # ==============================================================================
 # export RMATE_HOST=auto
