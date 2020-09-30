@@ -70,3 +70,7 @@ tell application "Reminders"
 end tell
 EOF
 }
+
+function start-pg() {
+	postgres -D  /usr/local/var/postgres/ &
+}
