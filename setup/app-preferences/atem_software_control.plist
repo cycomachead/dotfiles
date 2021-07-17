@@ -6,7 +6,7 @@
     isABMode = 0;
     midiEnabled = 1;
     profileAutosave = 1;
-    profilePath = "/Volumes/Michael/Users/michael/Dropbox/ATEM";
+    profilePath = "$HOME/Dropbox/ATEM";
     switcher1634231393button0cameraMapped = 0;
     switcher1634231393button1cameraMapped = 0;
     switcher1634231393button2cameraMapped = 0;

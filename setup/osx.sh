@@ -176,7 +176,7 @@ defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # New window location; must specify a full path.
-defaults write com.apple.finder NewWindowTargetPath -string "file:///Volumes/Michael/Users/Michael/Desktop/"
+defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME/Desktop/"
 
 # Change AirDrop Downloads location to Desktop
 # TODO -- Currently not possible.

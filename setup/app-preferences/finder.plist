@@ -819,16 +819,16 @@
     "PreferencesWindow.LastSelection" = ADVD;
     QLEnableTextSelection = 1;
     RecentMoveAndCopyDestinations =     (
-        "file:///Volumes/Michael/Users/michael/Pictures/",
-        "file:///Volumes/Michael/Users/michael/Desktop/",
-        "file:///Volumes/Michael/Users/michael/Movies/",
+        "file://$HOME/Pictures/",
+        "file://$HOME/Desktop/",
+        "file://$HOME/Movies/",
         "file:///Volumes/Media/",
         "file:///Volumes/Media/Lecture%20Videos/Spring%202020/",
-        "file:///Volumes/Michael/Users/michael/Dropbox/",
+        "file://$HOME/Dropbox/",
         "file:///Volumes/Media/.Trashes/501/com~apple~CloudDocs/",
-        "file:///Volumes/Michael/Users/michael/Library/Application%20Support/Code/User/",
-        "file:///Volumes/Michael/Users/michael/Documents/misc/",
-        "file:///Volumes/Michael/Users/michael/Documents/gradescope/"
+        "file://$HOME/Library/Application%20Support/Code/User/",
+        "file://$HOME/Documents/misc/",
+        "file://$HOME/Documents/gradescope/"
     );
     RecentsArrangeGroupViewBy = "Date Last Opened";
     SearchRecentsSavedViewStyle = Nlsv;
