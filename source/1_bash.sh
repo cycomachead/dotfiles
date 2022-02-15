@@ -15,7 +15,8 @@ export CS88_PORT='8888'
 # export RMATE_HOST=auto
 # export RMATE_PORT=12345
 # this needs to be fixed for editing crontabs:
-export EDITOR="$vscode/code -w"
+export EDITOR="code-insiders -w"
+export EDITOR="vim"
 export TM_SUPPORT_PATH='/Applications/TextMate.app/Contents/SharedSupport/Support'
 
 # Temporary fix for the mate editing crontabs
