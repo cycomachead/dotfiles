@@ -5,12 +5,12 @@ alias dt="cd ~/Desktop"
 alias p="cd $PROJECTS_HOME"
 alias h="history"
 # VSCode
-alias c="code ."
+alias c="code-insiders ."
 alias o="open"
 alias .='cd .'
 alias ..='cd ..'
 alias be='bundle exec'
-alias gs="cd $GRADESCOPE_HOME"
+# alias gs="cd $GRADESCOPE_HOME"
 
 ## GIT ##
 alias git=hub

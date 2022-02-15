@@ -4,7 +4,7 @@ export RMATE='-R 52698:localhost:52698'
 export PROJECTS_HOME="~/Dropbox/Projects"
 export GRADESCOPE_HOME="~/Documents/gradescope/gradescope-app/"
 
-vscode="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
+vscode="/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin"
 export PATH="$PATH:$vscode"
 
 # Use 8888 since the site defaults to 8000
