@@ -1,10 +1,7 @@
 # [ -n "$PS1" ] && source ~/.bash_profile
 
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -19,9 +16,3 @@ source <(luarocks completion bash)
 
 # export LUA_PATH='/usr/local/Cellar/luarocks/3.3.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua'
 # export LUA_CPATH='/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so;./?.so;$HOME/.luarocks/lib/lua/5.1/?.so'
-
-# TODO: Luarocks isn't doing a good job. :(
-export PATH="$HOME/.rvm/gems/ruby-2.5.5/bin:$HOME/.rvm/gems/ruby-2.5.5@global/bin:$HOME/.rvm/rubies/ruby-2.5.5/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS:$HOME/.luarocks/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$HOME/.rvm/bin:$PATH"
-
-# added by travis gem
-[ ! -s $HOME/.travis/travis.sh ] || source $HOME/.travis/travis.sh
