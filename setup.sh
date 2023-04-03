@@ -5,7 +5,7 @@
 
 # Setup Variables
 DEST="~/Michael"
-projects = '~/Dropbox/Projects'
+projects='~/Dropbox/Projects'
 dotfiles='~/Dropbox/Projects/dotfiles'
 
 echo "Setting up a new mac."
