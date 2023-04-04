@@ -1,15 +1,38 @@
  #! /bin/sh
 
-# New Mac Config
+# New Mac Config / Setup
+# Goal: Get a running mac with as little effort as possible.
 #########################
 
 # Setup Variables
-DEST="~/Michael"
-projects='~/Dropbox/Projects'
-dotfiles='~/Dropbox/Projects/dotfiles'
+projects="$HOME/Dropbox/Projects"
+dotfiles="$HOME/Dropbox/Projects/dotfiles"
 
 echo "Setting up a new mac."
 echo "Using directory: $dotfiles".
+
+mkdir -p $dotfiles
+echo "Asking for password:"
+sudo -v
+
+# Grab the full GH repo and cd into it.
+# TODO: Check if I might have already cloned the repo?
+cd $projects
+curl https://github.com/cycomachead/dotfiles/archive/refs/heads/master.zip -o dotfiles.zip
+unzip dotfiles.zip
+
+cd dotfiles;
+
+./setup/link_home_files.sh
+./setup/git_author.sh
+./setup/set_hostname.sh
+
+# Configure Defaults
+chmod +x ./setup/osx.sh
+./setup/osx.sh
+
+# Install a bunch of development tools
+./setup/tools.sh
 
 echo "Xcode Must be Installed."
 xcode-select --install
@@ -19,28 +42,10 @@ if [[ $REPLY =~ ^[A-Za-z0-9]$ ]]; then
 	echo "Continuing."
 fi
 
-mkdir -p $dotfiles
-echo "Asking for password:"
-sudo -v
-
-# Setup Users Dir
-# dscl . Michael -change dsAttrTypeNative:home /Users/Michael ${DEST}
-
-# Grab the full GH repo and cd into it.
-# TODO: Check if I might have already cloned the repo?
-cd $projects
-git clone https://github.com/cycomachead/dotfiles.git
-
-cd dotfiles;
-
-./setup/link_home_files.sh
-./setup/git_author.sh
-./setup/set_hostname.sh
-
 # set RSA permissions
 mkdir ~/.ssh
 cp .ssh/* ~/.ssh/
-open .ssh/ssh.dmg
+# open .ssh/ssh.dmg
 # TODO Store and copy ssh_config.
 chmod 755 ~/.ssh
 chmod 600 ~/.ssh/id*
@@ -53,14 +58,7 @@ if [[ $REPLY =~ ^[A-Za-z0-9]$ ]]; then
 	echo "Continuing."
 fi
 
-# Install a bunch of development tools
-./setup/tools.sh
-
-# Configure Defaults
-chmod +x ./setup/osx.sh
-./setup/osx.sh
-
-# TODO, tools I don't know how to install.
+# TODO: tools I don't know how to install.
 # Blackmagic ATEM
 # Blackmagic Desktop Video
 # Safari Technology Preview
