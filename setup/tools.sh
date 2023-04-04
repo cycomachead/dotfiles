@@ -10,8 +10,24 @@ fi
 
 brew doctor
 
+## Get essential apps setup ASAP
+export HOMEBREW_CASK_OPTS="--no-quarantine"
+brew tap homebrew/cask-versions
+
+brew install 1password
+brew install launchbar
+brew install slack
+brew install maestral
+brew install visual-studio-code-insiders
+brew install zoom
+brew install fantastical
+
+brew install bash
+brew install bash-completion2
+brew install git
+
 # Use the Brewfile in the root of the repo.
-brew bundle install --file essentials.brewfile
+BREW_PREFIX=`brew --prefix`
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
