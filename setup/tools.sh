@@ -11,7 +11,19 @@ fi
 brew doctor
 
 # Use the Brewfile in the root of the repo.
+brew bundle install --file essentials.brewfile
+
+# Switch to using brew-installed bash as default shell
+if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
+  chsh -s "${BREW_PREFIX}/bin/bash";
+fi;
+
+# Use the Brewfile in the root of the repo.
+# Regenerate with `mv Brewfile Brewfile.old && brew bundle dump`
 brew bundle install
+
+brew cleanup
 
 # Pip for default python
 # sudo easy_install pip

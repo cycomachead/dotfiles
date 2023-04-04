@@ -72,10 +72,9 @@
 # URL shorthands
 [url "git@github.com:"]
 	insteadOf = "gh:"
-	insteadOf = "https://"
 	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
+	insteadOf = "git://github.com/"
+[url "https://github.com/"]
 	insteadOf = "github:"
 [url "git@gist.github.com:"]
 	insteadOf = "gst:"
