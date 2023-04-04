@@ -35,8 +35,8 @@
 	attributesfile = ~/.gitattributes
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
 	whitespace = indent-with-non-tab,trailing-space
-    # case sensitivity fix OS X.
-    ignorecase = false
+	# case sensitivity fix OS X.
+	ignorecase = false
 
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
@@ -64,9 +64,15 @@
 	remote = origin
 	merge = refs/heads/master
 
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+
+
 # URL shorthands
 [url "git@github.com:"]
 	insteadOf = "gh:"
+	insteadOf = "https://"
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
 [url "git://github.com/"]
@@ -82,7 +88,7 @@
 	default = tracking
 [user]
 	name = Michael Ball
-	email = michael@gradescope.com
+	email = michael@mball.co
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
