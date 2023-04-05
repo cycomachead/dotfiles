@@ -106,3 +106,5 @@
 	mnemonicprefix = true
 [branch]
 	autosetupmerge = true
+[remote "origin"]
+	push = HEAD
