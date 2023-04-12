@@ -120,4 +120,4 @@ alias git-set-push-head='git config remote.origin.push HEAD'
 # default virtual-env locations.
 alias source-env='source env/bin/activate'
 
-alias cs88='p; cd cs88/cs88; source-env;'
+alias cs88='p; cd cs88/cs88; source-env; cd src;'

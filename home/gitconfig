@@ -38,6 +38,9 @@
 	# case sensitivity fix OS X.
 	ignorecase = false
 
+[init]
+	defaultBranch = main
+
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
 	ui = always
@@ -74,8 +77,11 @@
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
 	insteadOf = "git://github.com/"
-[url "https://github.com/"]
-	insteadOf = "github:"
+
+
+# [url "https://github.com/"]
+# 	insteadOf = "github:"
+
 [url "git@gist.github.com:"]
 	insteadOf = "gst:"
 	pushInsteadOf = "gist:"
@@ -84,7 +90,12 @@
 	insteadOf = "gist:"
 
 [push]
-	default = tracking
+	# default = tracking
+	# https://git-scm.com/docs/git-config#git-config-pushdefault
+	default = simple
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+
 [user]
 	name = Michael Ball
 	email = michael@mball.co
@@ -106,5 +117,14 @@
 	mnemonicprefix = true
 [branch]
 	autosetupmerge = true
+
 [remote "origin"]
 	push = HEAD
+
+# faster git server communication.
+# like a LOT faster. https://opensource.googleblog.com/2018/05/introducing-git-protocol-version-2.html
+[protocol]
+	version = 2
+
+[pull]
+	rebase = false

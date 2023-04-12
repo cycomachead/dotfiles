@@ -15,9 +15,11 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 brew tap homebrew/cask-versions
 
 brew install 1password
+open -a 1password
 brew install launchbar
-brew install slack
 brew install maestral
+open -a maestral
+brew install slack
 brew install visual-studio-code-insiders
 brew install zoom
 brew install fantastical
@@ -26,6 +28,8 @@ brew install bash
 brew install bash-completion2
 brew install git
 
+open -a 1password
+open -a launchbar
 # Use the Brewfile in the root of the repo.
 BREW_PREFIX=`brew --prefix`
 
