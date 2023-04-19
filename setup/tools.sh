@@ -19,6 +19,7 @@ open -a 1password
 brew install launchbar
 brew install maestral
 open -a maestral
+brew install python3
 brew install slack
 brew install visual-studio-code-insiders
 brew install zoom
@@ -28,7 +29,6 @@ brew install bash
 brew install bash-completion2
 brew install git
 
-open -a 1password
 open -a launchbar
 # Use the Brewfile in the root of the repo.
 BREW_PREFIX=`brew --prefix`
@@ -39,11 +39,7 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
   chsh -s "${BREW_PREFIX}/bin/bash";
 fi;
 
-# Use the Brewfile in the root of the repo.
-# Regenerate with `mv Brewfile Brewfile.old && brew bundle dump`
-brew bundle install
-
-brew cleanup
+python3 -m pip install --upgrade pip
 
 # Pip for default python
 # sudo easy_install pip
@@ -54,10 +50,16 @@ pip3 install virtualenv
 curl -sSL https://get.rvm.io | bash -s stable
 
 # rvm install 2.3.5
-rvm install 2.7.x
-rvm install 3.3.3
-rvm use stable
+# rvm install 2.7.x
+# rvm install 3.3.3
+# rvm use stable
 
 gem install jekyll bundler
 
 # sudo gem update --system
+
+# Use the Brewfile in the root of the repo.
+# Regenerate with `mv Brewfile Brewfile.old && brew bundle dump`
+brew bundle install
+
+brew cleanup
