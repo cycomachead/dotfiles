@@ -71,6 +71,7 @@ end tell
 EOF
 }
 
+brew_pg=postgresql@14;
 function start-pg() {
-	postgres -D  /usr/local/var/postgres/ &
+	postgres -D "$(brew --prefix)/var/$brew_pg/" &
 }
