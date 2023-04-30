@@ -13,7 +13,6 @@ alias be='bundle exec'
 # alias gs="cd $GRADESCOPE_HOME"
 
 ## GIT ##
-alias git=hub
 alias g="git"
 alias gd="git diff"
 alias gco="git checkout"
@@ -22,7 +21,6 @@ alias gcm="git commit"
 alias gp="git push"
 alias gl="git log"
 
-# Use the hub command for githu
 alias ditto="ditto -v"
 alias cdd="cd ${PROJECTS_HOME}/dotfiles"
 alias js="jekyll serve --watch & open http://0.0.0.0:4000"
@@ -36,7 +34,7 @@ else # OS X `ls`
 fi
 
 # List all files colorized in long format
-alias l="ls -l -G"
+alias l="ls -lGH"
 
 # List all files colorized in long format, including dot files
 alias la="ls -la ${colorflag}"
