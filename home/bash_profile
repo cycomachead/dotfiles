@@ -3,10 +3,24 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
 
-# Luarocks
-export PATH="$PATH:$HOME/.luarocks/bin"
+# Bash Completion for brew programs + brew setup
+if type brew &>/dev/null; then
+  export HOMEBREW_PREFIX="$(brew --prefix)";
+  export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar";
+  export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}";
+  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}";
+  export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:";
+  export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}";
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
+fi
+
 
 # Load the shell dotfiles, and then some:
 # * .bash is my short quick settings changes.
@@ -45,22 +59,10 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
-# Bash Completion for brew programs:
-if type brew &>/dev/null; then
-  export HOMEBREW_PREFIX="$(brew --prefix)";
-  export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar";
-  export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}";
-  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}";
-  export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:";
-  export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}";
-  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
-    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-  else
-    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
-      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
-    done
-  fi
-fi
+export PATH="/usr/local/sbin:$PATH"
+# Luarocks
+export PATH="$PATH:$HOME/.luarocks/bin"
+
 
 # TODO: Add the flag for zsh and uncomment.
 # if type brew &>/dev/null; then
