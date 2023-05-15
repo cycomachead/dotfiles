@@ -25,4 +25,4 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # export PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"; $PROMPT_COMMAND'export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Brew postgres data for easy starting.
-export PGDATA='/usr/local/var/postgres/'
+export PGDATA="$(brew --prefix)/var/postgresql@14/"

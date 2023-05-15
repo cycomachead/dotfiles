@@ -20,7 +20,10 @@ if type brew &>/dev/null; then
     done
   fi
 fi
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+[ -n "$PS1" ] && source ~/.bashrc
 
 # Load the shell dotfiles, and then some:
 # * .bash is my short quick settings changes.
@@ -70,9 +73,5 @@ export PATH="$PATH:$HOME/.luarocks/bin"
 #   autoload -Uz compinit
 #   compinit
 # fi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-[ -n "$PS1" ] && source ~/.bashrc
 
 eval "$(gh completion -s bash)"
