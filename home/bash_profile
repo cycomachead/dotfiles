@@ -26,9 +26,7 @@ fi
 [ -n "$PS1" ] && source ~/.bashrc
 
 # Load the shell dotfiles, and then some:
-# * .bash is my short quick settings changes.
-# * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/Dropbox/Projects/dotfiles/source/*; do
+for file in $HOME/Dropbox/Projects/dotfiles/source/*; do
     [ -r "$file" ] && source "$file"
 done
 unset file
