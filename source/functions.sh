@@ -75,3 +75,8 @@ brew_pg=postgresql@14;
 function start-pg() {
 	postgres -D "$(brew --prefix)/var/$brew_pg/" &
 }
+
+# https://www.reddit.com/r/Lightroom/comments/12x370r/finding_all_my_bracketed_shots_smart_folders/
+function update-exif() {
+	exiftool '-UserComment<Bracket-$BracketMode' -ext CR3 -R $1;
+}
