@@ -1,7 +1,7 @@
 # Shortcuts
-alias d="cd ~/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
+alias d='cd ~/Dropbox'
+alias dl='cd ~/Downloads'
+alias dt='cd ~/Desktop'
 alias p="cd $PROJECTS_HOME"
 alias h="history"
 # VSCode
@@ -10,7 +10,6 @@ alias o="open"
 alias .='cd .'
 alias ..='cd ..'
 alias be='bundle exec'
-# alias gs="cd $GRADESCOPE_HOME"
 
 ## GIT ##
 alias g="git"

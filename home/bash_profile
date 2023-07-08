@@ -70,3 +70,7 @@ export PATH="$PATH:$HOME/.luarocks/bin"
 # fi
 
 eval "$(gh completion -s bash)"
+source <(luarocks completion bash)
+
+source $(brew --prefix)/opt/asdf/etc/bash_completion.d/asdf.bash
+source $(brew --prefix)/opt/asdf/libexec/asdf.sh
