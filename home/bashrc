@@ -1,10 +1,6 @@
+#! /usr/bin/env bash
+
 # [ -n "$PS1" ] && source ~/.bash_profile
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # TODO: Figure out common lua lib path
 # export LUA_PATH='/usr/local/Cellar/luarocks/3.3.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua'
@@ -16,4 +12,6 @@ export PATH="$PATH:$HOME/.luarocks/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:
 
 
 # Luarocks 3 and Lua 5.1 tools (added by snapCloud).
-export LUA_PATH='/opt/homebrew/Cellar/luarocks/3.9.2/share/lua/5.1/?.lua;/usr/local/Cellar/luarocks/3.2.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua;/Users/michael/.luarocks/share/lua/5.1/?.lua;/Users/michael/.luarocks/share/lua/5.1/?/init.lua;/opt/homebrew/share/lua/5.1/?.lua;/opt/homebrew/share/lua/5.1/?/init.lua' export LUA_CPATH='/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so;./?.so;$HOME/.luarocks/lib/lua/5.1/?.so;/Users/michael/.luarocks/lib/lua/5.1/?.so;/opt/homebrew/lib/lua/5.1/?.so' export PATH='/Users/michael/.rvm/gems/ruby-3.1.3/bin:/Users/michael/.rvm/gems/ruby-3.1.3@global/bin:/Users/michael/.rvm/rubies/ruby-3.1.3/bin:/Users/michael/.nvm/versions/node/v14.20.1/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin:/Users/michael/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/michael/.luarocks/bin:/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin:/opt/X11/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:/Users/michael/.rvm/bin'
+export LUA_PATH='/opt/homebrew/Cellar/luarocks/3.9.2/share/lua/5.1/?.lua;/usr/local/Cellar/luarocks/3.2.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua;/Users/michael/.luarocks/share/lua/5.1/?.lua;/Users/michael/.luarocks/share/lua/5.1/?/init.lua;/opt/homebrew/share/lua/5.1/?.lua;/opt/homebrew/share/lua/5.1/?/init.lua'
+export LUA_CPATH='/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so;./?.so;$HOME/.luarocks/lib/lua/5.1/?.so;/Users/michael/.luarocks/lib/lua/5.1/?.so;/opt/homebrew/lib/lua/5.1/?.so'
+export PATH='/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin:/Users/michael/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/michael/.luarocks/bin:/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin:/opt/X11/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin'

@@ -20,8 +20,6 @@ if type brew &>/dev/null; then
     done
   fi
 fi
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 [ -n "$PS1" ] && source ~/.bashrc
 
@@ -57,8 +55,7 @@ complete -W "NSGlobalDomain" defaults
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
-export PATH="/usr/local/sbin:$PATH"
-# Luarocks
+export PATH="/opt/homebrew/sbin:/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.luarocks/bin"
 
 

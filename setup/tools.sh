@@ -10,6 +10,11 @@ fi
 
 brew doctor
 
+brew install bash
+brew install bash-completion2
+brew install git
+brew install asdf
+
 ## Get essential apps setup ASAP
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 brew tap homebrew/cask-versions
@@ -17,17 +22,12 @@ brew tap homebrew/cask-versions
 brew install 1password
 open -a 1password
 brew install launchbar
-brew install maestral
-open -a maestral
 brew install python3
 brew install slack
 brew install visual-studio-code-insiders
 brew install zoom
 brew install fantastical
 
-brew install bash
-brew install bash-completion2
-brew install git
 
 open -a launchbar
 # Use the Brewfile in the root of the repo.
@@ -46,15 +46,9 @@ python3 -m pip install --upgrade pip
 pip3 install virtualenv
 
 # Setup Ruby
-# TODO: This is rather dangerous. :(
-curl -sSL https://get.rvm.io | bash -s stable
+# TODO: Setup asdf
 
-# rvm install 2.3.5
-# rvm install 2.7.x
-# rvm install 3.3.3
-# rvm use stable
-
-gem install jekyll bundler
+# gem install jekyll bundler
 
 # sudo gem update --system
 
