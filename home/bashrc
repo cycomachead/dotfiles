@@ -22,3 +22,7 @@ export PATH='/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin:/Users/michael
 
 # This is odd... https://stackoverflow.com/a/53404317
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+# Needed from some homebrew functions.
+# Most especially needed for pdflatex and mactex-no-gui
+eval "$(/usr/libexec/path_helper)"
