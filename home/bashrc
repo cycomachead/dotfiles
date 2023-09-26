@@ -4,15 +4,19 @@
 
 # TODO: Figure out common lua lib path
 # export LUA_PATH='/usr/local/Cellar/luarocks/3.3.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua'
-export LUA_PATH='/usr/local/Cellar/luarocks/3.2.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua'
 
-export LUA_CPATH='/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so;./?.so;$HOME/.luarocks/lib/lua/5.1/?.so'
+# TODO: fix for intel macOS.
+BREW_PREFIX="/opt/homebrew";
 
-export PATH="$PATH:$HOME/.luarocks/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
+export LUA_PATH="$BREW_PREFIX/Cellar/luarocks/3.2.1/share/lua/5.1/?.lua;$BREW_PREFIX/share/lua/5.1/?.lua;$BREW_PREFIX/share/lua/5.1/?/init.lua;$BREW_PREFIX/lib/lua/5.1/?.lua;$BREW_PREFIX/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua"
+
+export LUA_CPATH="$BREW_PREFIX/lib/lua/5.1/?.so;$BREW_PREFIX/lib/lua/5.1/loadall.so;./?.so;$HOME/.luarocks/lib/lua/5.1/?.so"
+
+export PATH="$PATH:$HOME/.luarocks/bin:$BREW_PREFIX/sbin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 
 
 # Luarocks 3 and Lua 5.1 tools (added by snapCloud).
-export LUA_PATH='/opt/homebrew/Cellar/luarocks/3.9.2/share/lua/5.1/?.lua;/usr/local/Cellar/luarocks/3.2.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua;/Users/michael/.luarocks/share/lua/5.1/?.lua;/Users/michael/.luarocks/share/lua/5.1/?/init.lua;/opt/homebrew/share/lua/5.1/?.lua;/opt/homebrew/share/lua/5.1/?/init.lua'
+export LUA_PATH='/opt/homebrew/Cellar/luarocks/3.9.2/share/lua/5.1/?.lua;$BREW_PREFIX/Cellar/luarocks/3.2.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua;/Users/michael/.luarocks/share/lua/5.1/?.lua;/Users/michael/.luarocks/share/lua/5.1/?/init.lua;/opt/homebrew/share/lua/5.1/?.lua;/opt/homebrew/share/lua/5.1/?/init.lua'
 export LUA_CPATH='/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so;./?.so;$HOME/.luarocks/lib/lua/5.1/?.so;/Users/michael/.luarocks/lib/lua/5.1/?.so;/opt/homebrew/lib/lua/5.1/?.so'
 export PATH='/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin:/Users/michael/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/michael/.luarocks/bin:/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin:/opt/X11/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin'
 
