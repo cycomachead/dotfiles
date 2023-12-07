@@ -12,6 +12,12 @@ function fs() {
 	fi
 }
 
+# use generate-random to get a base64 string, such as for generating keys.
+# generate-random N will make it N bytes long.
+function generate-random() {
+    local num_bytes=${1:-30}
+    head -c "$num_bytes" /dev/urandom | base64
+}
 # Decode \x{ABCD}-style Unicode escape sequences
 function unidecode() {
 	perl -e "binmode(STDOUT, ':utf8'); print \"$@\""
