@@ -1,9 +1,8 @@
 # Sigh...macOS....
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
-
+# Setup homebrew first.
+# Complexity here handles both ARM + Intal macOS versions
 # Bash Completion for brew programs + brew setup
 if type brew &>/dev/null; then
   export HOMEBREW_PREFIX="$(brew --prefix)";
@@ -21,6 +20,7 @@ if type brew &>/dev/null; then
   fi
 fi
 
+# Setup ALL PATH customizations here, HOMEBREW is setup.
 [ -n "$PS1" ] && source ~/.bashrc
 
 # Load the shell dotfiles, and then some:
@@ -55,10 +55,6 @@ complete -W "NSGlobalDomain" defaults
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
-export PATH="/opt/homebrew/sbin:/usr/local/sbin:$PATH"
-export PATH="$PATH:$HOME/.luarocks/bin"
-
-
 # TODO: Add the flag for zsh and uncomment.
 # if type brew &>/dev/null; then
 #   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -71,4 +67,3 @@ source <(luarocks completion bash)
 
 source $(brew --prefix)/opt/asdf/etc/bash_completion.d/asdf.bash
 source $(brew --prefix)/opt/asdf/libexec/asdf.sh
-export PATH="/opt/homebrew/bin:$PATH"

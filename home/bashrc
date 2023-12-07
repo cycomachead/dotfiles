@@ -1,26 +1,64 @@
 #! /usr/bin/env bash
+# macOS: This file is sourced by bash_profile, close to the top.
 
-# [ -n "$PS1" ] && source ~/.bash_profile
+# Shorthand just for readability.
+BREW=$HOMEBREW_PREFIX;
+# TODO: Do I need INTEL_BREW or ARM_BREW prefixes...
 
-# TODO: Figure out common lua lib path
-# export LUA_PATH='/usr/local/Cellar/luarocks/3.3.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua'
+# Luarocks 3 and Lua 5.1 tools (added by snapCloud)
+# This assumes everything is lua 5.1, fine for me...
+LUAROCKS_VERSION=$(ls $HOMEBREW_CELLAR/luarocks | tail -n 1);
+export LUA_VERSION="5.1"
+lua_paths=(
+  "./?.lua"
+  "./?/init.lua"
+  "$BREW/lib/lua/5.1/?.lua"
+  "$BREW/lib/lua/5.1/?/init.lua"
+  "$BREW/share/lua/5.1/?.lua"
+  "$BREW/share/lua/5.1/?/init.lua"
+  "$HOME/.luarocks/share/lua/5.1/?.lua"
+  "$HOME/.luarocks/share/lua/5.1/?/init.lua"
+  "$HOMEBREW_CELLAR/luarocks/$LUAROCKS_VERSION/share/lua/5.1/?.lua"
+)
+for str in ${lua_paths[@]}; do
+  export LUA_PATH="$str;$LUA_PATH";
+done
 
-# TODO: fix for intel macOS.
-BREW_PREFIX="/opt/homebrew";
+lua_cpaths=(
+"./?.so"
+"$BREW/lib/lua/5.1/?.so"
+"$BREW/lib/lua/5.1/loadall.so"
+"$HOME/.luarocks/lib/lua/5.1/?.so"
+)
+for str in ${lua_cpaths[@]}; do
+  export LUA_CPATH="$str;$LUA_CPATH";
+done
 
-export LUA_PATH="$BREW_PREFIX/Cellar/luarocks/3.2.1/share/lua/5.1/?.lua;$BREW_PREFIX/share/lua/5.1/?.lua;$BREW_PREFIX/share/lua/5.1/?/init.lua;$BREW_PREFIX/lib/lua/5.1/?.lua;$BREW_PREFIX/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua"
-
-export LUA_CPATH="$BREW_PREFIX/lib/lua/5.1/?.so;$BREW_PREFIX/lib/lua/5.1/loadall.so;./?.so;$HOME/.luarocks/lib/lua/5.1/?.so"
-
-export PATH="$PATH:$HOME/.luarocks/bin:$BREW_PREFIX/sbin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
-
-
-# Luarocks 3 and Lua 5.1 tools (added by snapCloud).
-export LUA_PATH='/opt/homebrew/Cellar/luarocks/3.9.2/share/lua/5.1/?.lua;$BREW_PREFIX/Cellar/luarocks/3.2.1/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua;/Users/michael/.luarocks/share/lua/5.1/?.lua;/Users/michael/.luarocks/share/lua/5.1/?/init.lua;/opt/homebrew/share/lua/5.1/?.lua;/opt/homebrew/share/lua/5.1/?/init.lua'
-
-export LUA_CPATH='/usr/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so;./?.so;$HOME/.luarocks/lib/lua/5.1/?.so;/Users/michael/.luarocks/lib/lua/5.1/?.so;/opt/homebrew/lib/lua/5.1/?.so'
-# TODO: Clean this up...
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin:/Users/michael/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/michael/.luarocks/bin:/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin:/opt/X11/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH"
+# /usr/local/bin deprecated on ARM but included b/c some tools still use it.
+paths=(
+  "./bin"
+  "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
+  "/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin"
+  "/bin"
+  "/Library/Apple/usr/bin"
+  "/opt/X11/bin"
+  "/sbin"
+  "/System/Cryptexes/App/usr/bin"
+  "/usr/bin"
+  "/usr/local/bin"
+  "/usr/local/sbin"
+  "/usr/sbin"
+  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+  "$BREW/bin"
+  "$BREW/sbin"
+  "$HOME/.luarocks/bin"
+  "$HOME/bin"
+)
+for str in ${paths[@]}; do
+  export PATH="$str:$PATH";
+done
 
 # This is odd... https://stackoverflow.com/a/53404317
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
@@ -28,8 +66,6 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # Needed from some homebrew functions.
 # Most especially needed for pdflatex and mactex-no-gui
 eval "$(/usr/libexec/path_helper)"
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
