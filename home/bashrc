@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+echo "BASHRC START"
 # macOS: This file is sourced by bash_profile, close to the top.
 
 # Shorthand just for readability.
@@ -34,7 +35,7 @@ for str in ${lua_cpaths[@]}; do
   export LUA_CPATH="$str;$LUA_CPATH";
 done
 
-# /usr/local/bin deprecated on ARM but included b/c some tools still use it.
+# Brew bin paths already loaded so brew can be loaded.
 paths=(
   "./bin"
   "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
@@ -45,13 +46,10 @@ paths=(
   "/sbin"
   "/System/Cryptexes/App/usr/bin"
   "/usr/bin"
-  "/usr/local/bin"
-  "/usr/local/sbin"
   "/usr/sbin"
   "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
   "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
   "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-  "$BREW/bin"
   "$BREW/sbin"
   "$HOME/.luarocks/bin"
   "$HOME/bin"

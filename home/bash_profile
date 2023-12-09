@@ -2,9 +2,15 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Setup homebrew first.
+# /usr/local/bin deprecated on ARM but included b/c some tools still use it.
+# brew needs to be in the PATH first.
+BREW_INTEL='/usr/local'
+BREW_ARM='/opt/homebrew'
+export PATH="$BREW_INTEL/bin:$BREW_ARM/bin:$PATH"
+
 # Complexity here handles both ARM + Intal macOS versions
 # Bash Completion for brew programs + brew setup
-if type brew &>/dev/null; then
+if type brew &> /dev/null; then
   export HOMEBREW_PREFIX="$(brew --prefix)";
   export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar";
   export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}";
@@ -18,8 +24,11 @@ if type brew &>/dev/null; then
       [[ -r "$COMPLETION" ]] && source "$COMPLETION"
     done
   fi
+else
+  echo "BREW NOT FOUND"
 fi
 
+echo $HOMEBREW_PREFIX;
 # Setup ALL PATH customizations here, HOMEBREW is setup.
 [ -n "$PS1" ] && source ~/.bashrc
 
