@@ -1,5 +1,4 @@
 #! /usr/bin/env bash
-echo "BASHRC START"
 # macOS: This file is sourced by bash_profile, close to the top.
 
 # Shorthand just for readability.
@@ -53,18 +52,14 @@ paths=(
   "$BREW/sbin"
   "$HOME/.luarocks/bin"
   "$HOME/bin"
+  "$HOME/Library/Python/3.9/bin"
+  "$HOME/Library/TexShop/bin"
+  "/Library/Tex/texbin"
 )
 for str in ${paths[@]}; do
-  export PATH="$str:$PATH";
+  PATH="$str:$PATH";
 done
+export PATH=$PATH;
 
 # This is odd... https://stackoverflow.com/a/53404317
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
-# Needed from some homebrew functions.
-# Most especially needed for pdflatex and mactex-no-gui
-eval "$(/usr/libexec/path_helper)"
-
-if command -v ngrok &>/dev/null; then
-  eval "$(ngrok completion)"
-fi

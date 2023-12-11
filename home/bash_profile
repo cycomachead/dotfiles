@@ -28,7 +28,6 @@ else
   echo "BREW NOT FOUND"
 fi
 
-echo $HOMEBREW_PREFIX;
 # Setup ALL PATH customizations here, HOMEBREW is setup.
 [ -n "$PS1" ] && source ~/.bashrc
 
@@ -76,3 +75,11 @@ source <(luarocks completion bash)
 
 source $(brew --prefix)/opt/asdf/etc/bash_completion.d/asdf.bash
 source $(brew --prefix)/opt/asdf/libexec/asdf.sh
+
+# Needed from some homebrew functions.
+# Most especially needed for pdflatex and mactex-no-gui
+eval "$(/usr/libexec/path_helper)"
+
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
