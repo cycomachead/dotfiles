@@ -1,12 +1,13 @@
 # Sigh...macOS....
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+
 # Setup homebrew first.
 # /usr/local/bin deprecated on ARM but included b/c some tools still use it.
 # brew needs to be in the PATH first.
 BREW_INTEL='/usr/local'
 BREW_ARM='/opt/homebrew'
-export PATH="$BREW_INTEL/bin:$BREW_ARM/bin:$PATH"
+export PATH="$BREW_ARM/bin:$BREW_INTEL/bin:$PATH"
 
 # Complexity here handles both ARM + Intal macOS versions
 # Bash Completion for brew programs + brew setup
@@ -14,7 +15,7 @@ if type brew &> /dev/null; then
   export HOMEBREW_PREFIX="$(brew --prefix)";
   export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar";
   export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}";
-  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}";
+  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin:$PATH";
   export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:";
   export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}";
   if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
@@ -27,6 +28,7 @@ if type brew &> /dev/null; then
 else
   echo "BREW NOT FOUND"
 fi
+
 
 # Setup ALL PATH customizations here, HOMEBREW is setup.
 [ -n "$PS1" ] && source ~/.bashrc
@@ -73,9 +75,6 @@ complete -W "NSGlobalDomain" defaults
 eval "$(gh completion -s bash)"
 source <(luarocks completion bash)
 
-source $(brew --prefix)/opt/asdf/etc/bash_completion.d/asdf.bash
-source $(brew --prefix)/opt/asdf/libexec/asdf.sh
-
 # Needed from some homebrew functions.
 # Most especially needed for pdflatex and mactex-no-gui
 eval "$(/usr/libexec/path_helper)"
@@ -83,3 +82,34 @@ eval "$(/usr/libexec/path_helper)"
 if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
 fi
+
+source $(brew --prefix)/opt/asdf/libexec/asdf.sh
+source $(brew --prefix)/opt/asdf/etc/bash_completion.d/asdf.bash
+
+export PATH="$(brew --prefix)/sbin:$PATH"
+
+# Brew bin paths already loaded so brew can be loaded.
+paths=(
+  "./bin"
+  "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
+  "/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin"
+  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+  "$HOME/.luarocks/bin"
+  "$HOME/bin"
+  "$HOME/Library/Python/3.9/bin"
+  "$HOME/Library/TexShop/bin"
+  "/Library/Tex/texbin"
+  "/Library/Apple/usr/bin"
+  "/opt/X11/bin"
+  "/System/Cryptexes/App/usr/bin"
+  "/usr/bin"
+  "/usr/sbin"
+  "/sbin"
+  "/bin"
+)
+for str in ${paths[@]}; do
+  PATH="$PATH:$str";
+done
+export PATH=$PATH

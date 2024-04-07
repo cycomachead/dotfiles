@@ -34,32 +34,10 @@ for str in ${lua_cpaths[@]}; do
   export LUA_CPATH="$str;$LUA_CPATH";
 done
 
-# Brew bin paths already loaded so brew can be loaded.
-paths=(
-  "./bin"
-  "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
-  "/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin"
-  "/bin"
-  "/Library/Apple/usr/bin"
-  "/opt/X11/bin"
-  "/sbin"
-  "/System/Cryptexes/App/usr/bin"
-  "/usr/bin"
-  "/usr/sbin"
-  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-  "$BREW/sbin"
-  "$HOME/.luarocks/bin"
-  "$HOME/bin"
-  "$HOME/Library/Python/3.9/bin"
-  "$HOME/Library/TexShop/bin"
-  "/Library/Tex/texbin"
-)
-for str in ${paths[@]}; do
-  PATH="$str:$PATH";
-done
-export PATH=$PATH;
 
 # This is odd... https://stackoverflow.com/a/53404317
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+# Luarocks 3 and Lua 5.1 tools (added by snapCloud).
+export LUA_PATH='/opt/homebrew/Cellar/luarocks/3.9.2/share/lua/5.1/?.lua;/usr/local/Cellar/luarocks/3.9.2/share/lua/5.1/?.lua;/Volumes/Michael/Users/michael/.luarocks/share/lua/5.1/?/init.lua;/Volumes/Michael/Users/michael/.luarocks/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;./?/init.lua;./?.lua;;/Users/michael/.luarocks/share/lua/5.1/?.lua;/Users/michael/.luarocks/share/lua/5.1/?/init.lua;/opt/homebrew/share/lua/5.1/?.lua;/opt/homebrew/share/lua/5.1/?/init.lua'
+export LUA_CPATH='/Volumes/Michael/Users/michael/.luarocks/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so;/usr/local/lib/lua/5.1/?.so;./?.so;;/Users/michael/.luarocks/lib/lua/5.1/?.so;/opt/homebrew/lib/lua/5.1/?.so'
