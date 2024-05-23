@@ -1,11 +1,12 @@
 # Use: `ssh $RMATE ...` to setup the tunneling.
 export RMATE='-R 52698:localhost:52698'
 
-export PROJECTS_HOME="~/Dropbox/Projects"
+export PROJECTS_HOME="~/Dropbox/Projects/"
 export GRADESCOPE_HOME="~/Documents/gradescope/gradescope-app/"
 
-vscode="/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin"
-export PATH="$PATH:$vscode"
+vscode="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
+vscode_insiders="/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin"
+export PATH="$PATH:$vscode" #":$vscode_insiders"
 
 # Use 8888 since the site defaults to 8000
 export CS88_PORT='8888'
@@ -15,7 +16,7 @@ export CS88_PORT='8888'
 # export RMATE_HOST=auto
 # export RMATE_PORT=12345
 # this needs to be fixed for editing crontabs:
-export EDITOR="code-insiders -w"
+export EDITOR="code -w"
 # export EDITOR="vim"
 # export TM_SUPPORT_PATH='/Applications/TextMate.app/Contents/SharedSupport/Support'
 
