@@ -334,6 +334,7 @@ defaults write com.apple.terminal "Startup Window Settings" -string "Michael"
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
 # Add exclusions
 
 ###############################################################################
@@ -348,6 +349,7 @@ defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
+
 # Open and save files as UTF-8 in TextEdit
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
@@ -361,6 +363,14 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
 # Enable Debug Menu in the Mac App Store
 defaults write com.apple.appstore ShowDebugMenu -bool true
+
+## Menu Bar Spacing
+defaults -currentHost write -globalDomain NSStatusItemSpacing -int 10
+defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 10
+
+# To uset:
+# defaults -currentHost delete -globalDomain NSStatusItemSpacing
+# defaults -currentHost delete -globalDomain NSStatusItemSelectionPadding
 
 ###############################################################################
 # Kill affected applications                                                  #
