@@ -130,3 +130,5 @@
 	rebase = false
 [url "https://github"]
 	insteadOf = git://github
+[safe]
+	directory = /usr/local/Homebrew

@@ -113,3 +113,4 @@ for str in ${paths[@]}; do
   PATH="$PATH:$str";
 done
 export PATH=$PATH
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
