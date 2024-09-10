@@ -86,3 +86,10 @@ function start-pg() {
 function update-exif() {
 	exiftool '-UserComment<Bracket-$BracketMode' -ext CR3 -R $1;
 }
+
+# Chrome installation via brew is a cluster...
+# Easily ensure all versions are up to date, including (chromedriver, google-chrome)
+# being in sync for tools that require matching versions
+function update-chrome() {
+	brew reinstall --force chromedriver google-chrome google-chrome@canary;
+}
