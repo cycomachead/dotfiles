@@ -5,49 +5,71 @@ PHOTO_DIR="${HOME}/Desktop/photos_to_print"
 PRINTED_DIR="${PHOTO_DIR}/printed"
 PRINTER="Canon_PRO_1100_series"
 LOG_FILE="/tmp/photo_print.log"
+NOTE_NAME="Photo Print Log"
 
-# Function to send iMessage with attachment
+# Function to send iMessage
 send_imessage() {
     local message="$1"
-    local attachment="$2"  # Optional attachment path
-    local email="cycomachead@gmail.com"
-
-    # If there's an attachment, create a compressed copy
-    if [ -n "$attachment" ]; then
-        local temp_dir="/tmp/print_photos"
-        mkdir -p "$temp_dir"
-        local compressed="${temp_dir}/$(basename "$attachment")"
-
-        # Use sips to create a compressed copy (50% of original size)
-        sips --resampleHeightWidth 1000 1000 \
-             --setProperty formatOptions 70 \
-             "$attachment" --out "$compressed" >/dev/null 2>&1
-
-        # Get the absolute path for the attachment
-        compressed=$(cd "$(dirname "$compressed")" && pwd)/$(basename "$compressed")
-
-        # Send message with attachment
-        osascript -e 'tell application "Messages"' \
-                  -e "    send \"$message\" to buddy \"+19099933988\"" \
-                  -e "    send POSIX file \"$compressed\" to buddy \"+19099933988\"" \
-                  -e 'end tell'
-
-        # Clean up temporary file
-        sleep 56 && rm -f "$compressed"
-    else
-        # Send message only
-        osascript -e 'tell application "Messages"' \
-                  -e "    send \"$message\" to buddy \"cycomachead@gmail.com\"" \
-                  -e 'end tell'
-    fi
+    osascript -e 'tell application "Messages"' \
+              -e "    send \"$message\" to buddy \"cycomachead@gmail.com\"" \
+              -e 'end tell'
 }
 
-# Function to log messages and send notifications
+# Function to append to Apple Notes
+append_to_notes() {
+    local message="$1"
+    local date_str=$(date '+%Y-%m-%d %H:%M:%S')
+    osascript <<EOF
+tell application "Notes"
+    tell account "iCloud"
+        if not (exists note "$NOTE_NAME") then
+            make new note with properties {name:"$NOTE_NAME"}
+        end if
+        set noteBody to body of note "$NOTE_NAME"
+        set body of note "$NOTE_NAME" to noteBody & return & "$date_str: $message"
+    end tell
+end tell
+EOF
+}
+
+# Function to monitor print job status
+monitor_print_job() {
+    local job_id="$1"
+    local filename="$2"
+    local max_attempts=60  # 5 minutes maximum wait
+    local attempt=0
+
+    while [ $attempt -lt $max_attempts ]; do
+        local status=$(lpstat -W "completed" | grep "$job_id" > /dev/null 2>&1)
+        if [ $? -eq 0 ]; then
+            send_imessage "✅ Print completed: $filename"
+            append_to_notes "Print completed: $filename"
+            return 0
+        fi
+
+        # Check if job failed or was cancelled
+        if ! lpstat -W "not-completed" | grep "$job_id" > /dev/null 2>&1; then
+            send_imessage "❌ Print job failed or cancelled: $filename"
+            append_to_notes "Print job failed or cancelled: $filename"
+            return 1
+        fi
+
+        sleep 5
+        ((attempt++))
+    done
+
+    send_imessage "⚠️ Print job status unknown (timeout): $filename"
+    append_to_notes "Print job status unknown (timeout): $filename"
+    return 1
+}
+
+# Function to log messages
 log_message() {
     local message="$1"
     local is_error=${2:-false}
 
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $message" | tee -a "$LOG_FILE"
+    append_to_notes "$message"
 
     if [ "$is_error" = true ]; then
         send_imessage "❌ Error: $message"
@@ -101,7 +123,7 @@ print-next-image() {
 
         # Print the photo
         log_message "Printing photo..."
-        lp -d "$PRINTER" \
+        local job_id=$(lp -d "$PRINTER" \
            -o media=4x6.FullBleed \
            -o CNIJPrintQuality=15 \
            -o CNIJAmountOfExtension=1 \
@@ -109,21 +131,24 @@ print-next-image() {
            -o CNIJPQualitySlider=4 \
            -o CNIJDisablePDEMarginAlert=1 \
            -o CNImageBrightnessSlider=10 \
-           "$PHOTO"
+           "$PHOTO" | grep -o '[0-9]*$')
 
-        # Check if printing was successful
-        if [ $? -eq 0 ]; then
-            log_message "Print job submitted successfully"
+        if [ -n "$job_id" ]; then
+            log_message "Print job submitted successfully (Job ID: $job_id)"
 
-            # Move the file to printed directory
-            mv "$PHOTO" "$PRINTED_DIR/"
+            # Monitor print job status
+            monitor_print_job "$job_id" "$(basename "$PHOTO")"
 
             if [ $? -eq 0 ]; then
-                log_message "File moved to $PRINTED_DIR"
-                ((success_count++))
-                send_imessage "✅ Successfully printed and moved: $(basename "$PHOTO")" "$PHOTO"
-            else
-                log_message "Error moving file to $PRINTED_DIR" true
+                # Move the file to printed directory
+                mv "$PHOTO" "$PRINTED_DIR/"
+
+                if [ $? -eq 0 ]; then
+                    log_message "File moved to $PRINTED_DIR"
+                    ((success_count++))
+                else
+                    log_message "Error moving file to $PRINTED_DIR" true
+                fi
             fi
         else
             log_message "Error: Printing failed" true
