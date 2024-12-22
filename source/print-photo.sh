@@ -6,6 +6,7 @@ PRINTED_DIR="${PHOTO_DIR}/printed"
 PRINTER="Canon_PRO_1100_series"
 LOG_FILE="/tmp/photo_print.log"
 NOTE_NAME="Photo Print Log"
+TIME_LIMIT_HOURS=24
 
 # Function to send iMessage
 send_imessage() {
@@ -32,35 +33,50 @@ end tell
 EOF
 }
 
-# Function to monitor print job status
-monitor_print_job() {
-    local job_id="$1"
-    local filename="$2"
-    local max_attempts=60  # 5 minutes maximum wait
-    local attempt=0
+# Function to check last print time from CUPS history
+check_last_print_time() {
+    # Get the timestamp of the last print job to our printer
+    # Look at both completed and pending jobs
+    local last_completed=$(lpstat -W completed | grep "$PRINTER" | tail -n 1 | awk '{print $4, $5, $6, $7}')
+    local last_pending=$(lpstat -W not-completed | grep "$PRINTER" | tail -n 1 | awk '{print $4, $5, $6, $7}')
 
-    while [ $attempt -lt $max_attempts ]; do
-        local status=$(lpstat -W "completed" | grep "$job_id" > /dev/null 2>&1)
-        if [ $? -eq 0 ]; then
-            send_imessage "✅ Print completed: $filename"
-            append_to_notes "✅ Print completed: $filename"
-            return 0
+    process_time() {
+        local time_str="$1"
+        if [ -n "$time_str" ]; then
+            # Convert time string to epoch
+            local epoch=$(date -j -f "%a %b %d %H:%M:%S" "$time_str" "+%s" 2>/dev/null)
+            if [ -n "$epoch" ]; then
+                echo "$epoch"
+                return 0
+            fi
         fi
+        echo "0"
+    }
 
-        # Check if job failed or was cancelled
-        if ! lpstat -W "not-completed" | grep "$job_id" > /dev/null 2>&1; then
-            send_imessage "❌ Print job failed or cancelled: $filename"
-            append_to_notes "❌ Print job failed or cancelled: $filename"
+    local completed_epoch=$(process_time "$last_completed")
+    local pending_epoch=$(process_time "$last_pending")
+
+    # Use the most recent time between completed and pending
+    local last_print_epoch
+    if [ "$completed_epoch" -gt "$pending_epoch" ]; then
+        last_print_epoch=$completed_epoch
+    else
+        last_print_epoch=$pending_epoch
+    fi
+
+    if [ "$last_print_epoch" -ne 0 ]; then
+        local current_time=$(date +%s)
+        local time_diff=$((current_time - last_print_epoch))
+        local hours_diff=$((time_diff / 3600))
+
+        log_message "⏳ Last print was $hours_diff hours ago"
+
+        if [ $hours_diff -lt $TIME_LIMIT_HOURS ]; then
             return 1
         fi
+    fi
 
-        sleep 5
-        ((attempt++))
-    done
-
-    send_imessage "⚠️ Print job status unknown (timeout): $filename"
-    append_to_notes "⚠️ Print job status unknown (timeout): $filename"
-    return 1
+    return 0
 }
 
 # Function to log messages
@@ -86,9 +102,17 @@ print-next-image() {
         return 1
     fi
 
+    # Check last print time
+    if ! check_last_print_time; then
+                    local message="⏭️ Skipping print job - less than ${TIME_LIMIT_HOURS} hours since last print"
+        log_message "$message"
+        send_imessage "⏭️ $message"
+        return 0
+    fi
+
     # Create printed directory if it doesn't exist
     if [ ! -d "$PRINTED_DIR" ]; then
-        log_message "Creating directory: $PRINTED_DIR"
+        log_message "📁 Creating directory: $PRINTED_DIR"
         mkdir -p "$PRINTED_DIR"
     fi
 
@@ -119,11 +143,13 @@ print-next-image() {
 
     # Process each photo
     echo "$PHOTOS" | while read -r PHOTO; do
-        log_message "Processing file: $PHOTO"
+        local filename=$(basename "$PHOTO")
+        log_message "🖨️ Processing file: $filename"
 
         # Print the photo
         log_message "Printing photo..."
-        local job_id=$(lp -d "$PRINTER" \
+        lp -d "$PRINTER" \
+           -t "$filename" \
            -o media=4x6.FullBleed \
            -o CNIJPrintQuality=15 \
            -o CNIJAmountOfExtension=1 \
@@ -131,31 +157,27 @@ print-next-image() {
            -o CNIJPQualitySlider=4 \
            -o CNIJDisablePDEMarginAlert=1 \
            -o CNImageBrightnessSlider=10 \
-           "$PHOTO" | grep -o '[0-9]*$')
+           "$PHOTO"
 
-        if [ -n "$job_id" ]; then
-            log_message "Print job submitted successfully (Job ID: $job_id)"
+        if [ $? -eq 0 ]; then
+            log_message "✅ Print job submitted successfully"
 
-            # Monitor print job status
-            monitor_print_job "$job_id" "$(basename "$PHOTO")"
+            # Move the file to printed directory
+            mv "$PHOTO" "$PRINTED_DIR/"
 
             if [ $? -eq 0 ]; then
-                # Move the file to printed directory
-                mv "$PHOTO" "$PRINTED_DIR/"
-
-                if [ $? -eq 0 ]; then
-                    log_message "File moved to $PRINTED_DIR"
-                    ((success_count++))
-                else
-                    log_message "Error moving file to $PRINTED_DIR" true
-                fi
+                log_message "📦 File moved to $PRINTED_DIR"
+                send_imessage "✅ Successfully printed: $filename"
+                ((success_count++))
+            else
+                log_message "Error moving file to $PRINTED_DIR" true
             fi
         else
             log_message "Error: Printing failed" true
         fi
     done
 
-    log_message "Completed processing $success_count out of $num_files files"
+    log_message "📊 Completed processing $success_count out of $num_files files"
     return 0
 }
 
