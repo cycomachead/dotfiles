@@ -156,7 +156,7 @@ print-next-image() {
            -o CNIJPrintMode2=3 \
            -o CNIJPQualitySlider=4 \
            -o CNIJDisablePDEMarginAlert=1 \
-           -o CNImageBrightnessSlider=10 \
+           -o CNImageBrightnessSlider=30 \
            "$PHOTO"
 
         if [ $? -eq 0 ]; then
