@@ -43,14 +43,14 @@ monitor_print_job() {
         local status=$(lpstat -W "completed" | grep "$job_id" > /dev/null 2>&1)
         if [ $? -eq 0 ]; then
             send_imessage "✅ Print completed: $filename"
-            append_to_notes "Print completed: $filename"
+            append_to_notes "✅ Print completed: $filename"
             return 0
         fi
 
         # Check if job failed or was cancelled
         if ! lpstat -W "not-completed" | grep "$job_id" > /dev/null 2>&1; then
             send_imessage "❌ Print job failed or cancelled: $filename"
-            append_to_notes "Print job failed or cancelled: $filename"
+            append_to_notes "❌ Print job failed or cancelled: $filename"
             return 1
         fi
 
@@ -59,7 +59,7 @@ monitor_print_job() {
     done
 
     send_imessage "⚠️ Print job status unknown (timeout): $filename"
-    append_to_notes "Print job status unknown (timeout): $filename"
+    append_to_notes "⚠️ Print job status unknown (timeout): $filename"
     return 1
 }
 
