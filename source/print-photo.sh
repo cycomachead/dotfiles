@@ -154,7 +154,7 @@ print-next-image() {
            -o CNIJPrintQuality=15 \
            -o CNIJAmountOfExtension=1 \
            -o CNIJPrintMode2=3 \
-           -o CNIJPQualitySlider=4 \
+           -o CNIJPQualitySlider=2 \
            -o CNIJDisablePDEMarginAlert=1 \
            -o CNImageBrightnessSlider=30 \
            "$PHOTO"
