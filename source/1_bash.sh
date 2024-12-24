@@ -22,11 +22,14 @@ export EDITOR="code -w"
 
 # Temporary fix for the mate editing crontabs
 # Use cront to edit crontabs.
+export VISUAL=~/Dropbox/Projects/dotfiles/apps/code-wait.sh
+export EDITOR=~/Dropbox/Projects/dotfiles/apps/code-wait.sh
+
 function cront
 {
-    unset EDITOR
-    sudo crontab -e
-    export EDITOR="$vscode/code -w"
+    # unset EDITOR
+    export VISUAL="code-wait"
+    crontab -e
 }
 
 # Automatically load git bash completion
