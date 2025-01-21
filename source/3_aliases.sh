@@ -5,7 +5,9 @@ alias dt='cd ~/Desktop'
 alias p="cd $PROJECTS_HOME"
 alias h="history"
 # VSCode
-alias c="code-insiders ."
+alias c="code ."
+# Enable this to default to the beta.
+# alias c="code-insiders ."
 alias o="open"
 alias .='cd .'
 alias ..='cd ..'
