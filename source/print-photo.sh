@@ -37,8 +37,8 @@ EOF
 check_last_print_time() {
     # Get the timestamp of the last print job to our printer
     # Look at both completed and pending jobs
-    local last_completed=$(lpstat -W completed | grep "$PRINTER" | tail -n 1 | awk '{print $4, $5, $6, $7}')
-    local last_pending=$(lpstat -W not-completed | grep "$PRINTER" | tail -n 1 | awk '{print $4, $5, $6, $7}')
+    local last_completed=$(lpstat -W completed | grep "$PRINTER" | head -n 1 | awk '{print $4, $5, $6, $7}')
+    local last_pending=$(lpstat -W not-completed | grep "$PRINTER" | head -n 1 | awk '{print $4, $5, $6, $7}')
 
     process_time() {
         local time_str="$1"
