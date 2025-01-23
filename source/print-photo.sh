@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# crontab configuration:
+# This will run the script every other day at 8:45 PM
+# 45 20 */2 * * ~/Dropbox/Projects/dotfiles/source/print-photo.sh
+
 # Configuration
 PHOTO_DIR="${HOME}/Desktop/photos_to_print"
 PRINTED_DIR="${PHOTO_DIR}/printed"
