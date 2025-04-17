@@ -4,10 +4,6 @@ alias dl='cd ~/Downloads'
 alias dt='cd ~/Desktop'
 alias p="cd $PROJECTS_HOME"
 alias h="history"
-# VSCode
-alias c="code ."
-# Enable this to default to the beta.
-# alias c="code-insiders ."
 alias o="open"
 alias .='cd .'
 alias ..='cd ..'
@@ -32,6 +28,14 @@ if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
 else # OS X `ls`
     colorflag="-G"
+fi
+
+# VSCode -- Default to stable, unless missing.
+# Enable this to default to the beta.
+if $(which code > /dev/null 2>&1); then
+    alias c="code ."
+else
+    alias c="code-insiders ."
 fi
 
 # List all files colorized in long format
