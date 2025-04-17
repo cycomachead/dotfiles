@@ -83,9 +83,6 @@ if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
 fi
 
-source $(brew --prefix)/opt/asdf/libexec/asdf.sh
-source $(brew --prefix)/opt/asdf/etc/bash_completion.d/asdf.bash
-
 export PATH="$(brew --prefix)/sbin:$PATH"
 
 # Brew bin paths already loaded so brew can be loaded.
