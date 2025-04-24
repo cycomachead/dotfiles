@@ -15,3 +15,5 @@ mise install node@16
 mise install python
 mise install python@3.10
 mise install python@3.9
+
+echo 'eval "$(mise activate bash)"' >> ~/.bashrc
