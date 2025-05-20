@@ -2,3 +2,15 @@
 .DS_Store
 .tm_properties
 .vscode
+.env
+
+# Compiled Python files
+*.pyc
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes

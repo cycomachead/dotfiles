@@ -76,16 +76,17 @@
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
-	insteadOf = "git://github.com/"
+	# insteadOf = "git://github.com/"
 
-
-# [url "https://github.com/"]
-# 	insteadOf = "github:"
+# Useful for `git clone` tools that don't support SSH
+[url "https://github"]
+	insteadOf = git://github
 
 [url "git@gist.github.com:"]
 	insteadOf = "gst:"
 	pushInsteadOf = "gist:"
 	pushInsteadOf = "git://gist.github.com/"
+
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 
@@ -99,6 +100,7 @@
 [user]
 	name = Michael Ball
 	email = michael@mball.co
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
@@ -122,13 +124,11 @@
 	push = HEAD
 
 # faster git server communication.
-# like a LOT faster. https://opensource.googleblog.com/2018/05/introducing-git-protocol-version-2.html
 [protocol]
 	version = 2
 
 [pull]
 	rebase = false
-[url "https://github"]
-	insteadOf = git://github
+
 [safe]
 	directory = /usr/local/Homebrew
