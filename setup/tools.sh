@@ -13,23 +13,27 @@ brew doctor
 brew install bash
 brew install bash-completion2
 brew install git
-brew install asdf
+brew install mise
 
 ## Get essential apps setup ASAP
 export HOMEBREW_CASK_OPTS="--no-quarantine"
-brew tap homebrew/cask-versions
+# brew tap homebrew/cask-versions
 
 brew install 1password
 open -a 1password
 brew install launchbar
+brew install visual-studio-code
+brew install dropbox
 brew install python3
 brew install slack
-brew install visual-studio-code-insiders
 brew install zoom
 brew install fantastical
 
 
 open -a launchbar
+open -a "Visual Studio Code"
+open -a "1Password 8"
+open -a "Dropbox"
 # Use the Brewfile in the root of the repo.
 BREW_PREFIX=`brew --prefix`
 

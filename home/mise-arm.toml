@@ -1,0 +1,12 @@
+[tools]
+node = ["lts", "18", "20"]
+ruby = ["3.3.8", "3.4"]
+python = "3.13"
+
+[env]
+# Python with tkinter support
+PYTHON_CONFIGURE_OPTS = "--with-tkinter"
+# Arm brew paths
+LDFLAGS = "-L/opt/homebrew/lib"
+CPPFLAGS = "-I/opt/homebrew/include"
+PKG_CONFIG_PATH = "/opt/homebrew/lib/pkgconfig"

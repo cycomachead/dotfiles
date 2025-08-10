@@ -1,19 +1,35 @@
-# Install and setup mise
+#!/bin/bash
 
-# This is probably a no-op, but just for convenience.
+set -e  # Exit on error
+
+echo "Setting up mise and development tools..."
+
+# Install mise
+echo "Installing mise..."
 brew install mise
 
-mise install ruby 3.3
-mise install ruby 3.3.7
-mise install ruby 3.2.2
-mise install node@20
+# Detect architecture and symlink appropriate config
+echo "Detecting architecture..."
+ARCH=$(uname -m)
 
-# Some projects still need node 16.x
-mise install node@16
+if [[ "$ARCH" == "arm64" ]]; then
+    echo "Apple Silicon -- mise-arm.toml"
+    CONFIG_FILE="../home/mise-arm.toml"
+else
+    echo "Intel Mac -- mise-intel.toml"
+    CONFIG_FILE="../home/mise-intel.toml"
+fi
 
-# Python
-mise install python
-mise install python@3.10
-mise install python@3.9
+# Create symlink to .mise.toml
+echo "Symlinking configuration..."
+ln -sf "$(pwd)/$CONFIG_FILE" "$HOME/.mise.toml"
+
+# Install all tools from config
+echo "Installing development tools..."
+mise install
+
+echo "Install complete!"
+
+mise use -g node@lts ruby@3.4 python@3.12
 
 echo 'eval "$(mise activate bash)"' >> ~/.bashrc

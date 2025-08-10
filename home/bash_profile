@@ -1,7 +1,6 @@
 # Sigh...macOS....
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-
 # Setup homebrew first.
 # /usr/local/bin deprecated on ARM but included b/c some tools still use it.
 # brew needs to be in the PATH first.
