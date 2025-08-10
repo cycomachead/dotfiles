@@ -8,6 +8,10 @@ BREW_INTEL='/usr/local'
 BREW_ARM='/opt/homebrew'
 export PATH="$BREW_ARM/bin:$BREW_INTEL/bin:$PATH"
 
+export DEV_HOME="$HOME/dev"
+export PROJECTS_HOME="$HOME/Dropbox/Projects/"
+export DOTFILES="$DEV_HOME/dotfiles"
+
 # Complexity here handles both ARM + Intal macOS versions
 # Bash Completion for brew programs + brew setup
 if type brew &> /dev/null; then
@@ -33,7 +37,7 @@ fi
 [ -n "$PS1" ] && source ~/.bashrc
 
 # Load the shell dotfiles, and then some:
-for file in $HOME/Dropbox/Projects/dotfiles/source/*; do
+for file in $DOTFILES/source/*; do
     [ -r "$file" ] && source "$file"
 done
 unset file
@@ -81,32 +85,3 @@ eval "$(/usr/libexec/path_helper)"
 if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
 fi
-
-export PATH="$(brew --prefix)/sbin:$PATH"
-
-# Brew bin paths already loaded so brew can be loaded.
-paths=(
-  "./bin"
-  "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
-  "/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin"
-  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-  "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-  "$HOME/.luarocks/bin"
-  "$HOME/bin"
-  "$HOME/Library/Python/3.9/bin"
-  "$HOME/Library/TexShop/bin"
-  "/Library/Tex/texbin"
-  "/Library/Apple/usr/bin"
-  "/opt/X11/bin"
-  "/System/Cryptexes/App/usr/bin"
-  "/usr/bin"
-  "/usr/sbin"
-  "/sbin"
-  "/bin"
-)
-for str in ${paths[@]}; do
-  PATH="$PATH:$str";
-done
-export PATH=$PATH
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"

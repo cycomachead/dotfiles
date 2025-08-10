@@ -1,8 +1,11 @@
 # Shortcuts
-alias d='cd ~/Dropbox'
+alias d="cd $DEV_HOME"
+alias cdd="cd $DEV_HOME/dotfiles"
+alias p="cd $PROJECTS_HOME"
+
+alias db='cd ~/Dropbox'
 alias dl='cd ~/Downloads'
 alias dt='cd ~/Desktop'
-alias p="cd $PROJECTS_HOME"
 alias h="history"
 alias o="open"
 alias .='cd .'
@@ -19,7 +22,6 @@ alias gp="git push"
 alias gl="git log"
 
 alias ditto="ditto -v"
-alias cdd="cd ${PROJECTS_HOME}/dotfiles"
 alias js="jekyll serve --watch & open http://0.0.0.0:4000"
 
 # Useful for *Nix boxes, but not necessary
@@ -30,12 +32,12 @@ else # OS X `ls`
     colorflag="-G"
 fi
 
-# VSCode -- Default to stable, unless missing.
-# Enable this to default to the beta.
-if $(which code > /dev/null 2>&1); then
-    alias c="code ."
-else
+# VSCode -- Default to stable, unless requested.
+# Detect if .use-code-insiders is present in $DEV_HOME
+if [ -f "$DEV_HOME/.use-code-insiders" ]; then
     alias c="code-insiders ."
+else
+    alias c="code ."
 fi
 
 # List all files colorized in long format
@@ -123,4 +125,5 @@ alias git-set-push-head='git config remote.origin.push HEAD'
 # default virtual-env locations.
 alias source-env='source env/bin/activate'
 
-alias cs88='p; cd cs88/cs88; source-env; cd src;'
+# alias cs88='d; cd cs88/cs88; source-env; cd src;'
+alias cs88='d; cd cs88/berkeley-cs61a; source-env; cd src;'

@@ -1,23 +1,23 @@
 #! /usr/bin/env bash
 
-# Creates a symlink to all the files in home/
-# Uses ~/ to be independent of home folder/drive path
-# (incase it changes after the script has been run.)
-linkPath='Dropbox/Projects/dotfiles/home/';
-# Otherwise, can't correctly loop over ~/...
-# dotfiles=$(printf %q "$HOME/$linkPath")
-dotfiles=$HOME/$linkPath;
+# symlink all .* files in home/ to the actual home folder.
+# symlinks allow keeping the content in git without having to manually sync.
+# Because there are a few settings files (mise-*), skip over files
+# that don't start with a dot.
+# This must be setup inside $HOME or else the script fails.
+dotfiles='dev/dotfiles/home/.*';
+# dotfiles=$HOME/$dotfiles;
 
 function symlink {
     echo "Linking $1"
-    rm .$1;
-    ln -s "$dotfiles$1" .$1;
+    f=$(basename $1);
+    rm $f;
+    ln -s "$1" $f;
 }
 
-pushd ~/;
+pushd $HOME;
 echo "Linking files in $dotfiles";
-# files=`ls '/Volumes/Michael 1/Users/michael/Dropbox/Projects/dotfiles/home'`;
-files=`ls "$dotfiles"`;
+files=`ls $dotfiles`;
 for file in $files
 do
     symlink $file;

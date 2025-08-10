@@ -1,9 +1,6 @@
 {
     AlwaysRestoreSessionAtLaunch = 1;
     AlwaysShowTabBar = 1;
-    AppExtensionToolbarItemsIndexes =     {
-        "com.agilebits.onepassword7.1PasswordSafariAppExtension (2BUA8C4S2C) Button" = 3;
-    };
     AutoOpenSafeDownloads = 0;
     Command1Through9SwitchesTabs = 0;
     DefaultBrowserPromptingState2 = 4;
@@ -24,7 +21,6 @@
     ExcludePrivateWindowWhenRestoringSessionAtLaunch = 1;
     ExtensionsEnabled = 1;
     ForYouExperienceWelcomeViewNumberOfTimesShown = 3;
-    HomePage = "about:blank";
     IncludeDevelopMenu = 1;
     IncludeInternalDebugMenu = 1;
     LocalFileRestrictionsEnabled = 1;

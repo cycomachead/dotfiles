@@ -1,54 +1,7 @@
-# Install Ideas 2025
-
-* What order should things happen in?
-  * Manually, before script?
-  * mball.co/setup | bash
-  * then fastest to productivity.
-* Before running script:
-  * macOS install succeeds.
-  * setup bash, and home directory as expected
-  * have background installed xcode tools / git.
-*
-* Dropbox / loading files should come first.
-  * Load the files, then link them?
-
-
-```
-rclone copy nas:/dropbox ~/Dropbox \
-  --transfers=10 \
-  --checkers=20 \
-  --buffer-size=32M \
-  --multi-thread-streams=4   --fast-list \
-  --use-mmap \
-  --progress
-```
-
 * Finder font size settings
 * Add a bunch of brew cask apps
 * add brew cask-font
+* make a 'link files' script
+* Something about Chrome Canary
 * setup iCloud
 * setup tabbing settings
-
-## Personal Settings
-
-* move dotfiles out of ~/Dropbox/Projects to just ~/Dropbox
-* move other stuff from Dropbox to iCloud drive or Google
-
-## Stuff I manually had to setup
-
-* turn on iCloud drive sync
-* setup finder column view / sort, size, settings
-* setup finder sidebar
-* Launchbar prefs
-* 1Password settings
-  * option toggle, no menu icon, no auto-submit
-  * turn on dev settings
-  * Set default vault
-* VS Code and signing into GitHub
-  * Sync works OK, but can I get the first run to be easier?
-* Review the installers/ directory on the NAS and go through all of those.
-
-## Post Login script
-
-* Seems like some things need to be done after logout/login once
-* Set terminal font and them to SCP font

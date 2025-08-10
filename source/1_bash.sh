@@ -1,9 +1,12 @@
-export PROJECTS_HOME="~/Dropbox/Projects/"
+# Note $DEV_HOME, $PROJECTS_HOME, $DOTFILES are setup in .bash_profile
+# (so they have access to this repo...)
+
+# just for nostalgia.
 export GRADESCOPE_HOME="~/Documents/gradescope/gradescope-app/"
 
-vscode="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
-vscode_insiders="/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin"
-export PATH="$PATH:$vscode" #":$vscode_insiders"
+# vscode="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
+# vscode_insiders="/Applications/Visual\ Studio\ Code\ Insiders.app/Contents/Resources/app/bin"
+# export PATH="$PATH:$vscode" #":$vscode_insiders"
 
 # Use 8888 since the site defaults to 8000
 export CS88_PORT='8888'
