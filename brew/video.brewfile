@@ -1,0 +1,21 @@
+brew "gphoto2"
+brew "imagemagick"
+brew "exiftool"
+brew "ffmpeg"
+
+cask "audio-hijack"
+cask "obs"
+cask "canon-eos-utility"
+# cask "canon-captureontouch-utility"
+cask "canon-eos-webcam-utility"
+cask "displaycal"
+
+
+mas "Blackmagic Disk Speed Test", id: 425264550
+mas "Compressor", id: 424390742
+mas "Final Cut Pro", id: 424389933
+mas "Motion", id: 434290957
+mas "MixEffect", id: 1555812675
+mas "Photomator", id: 1444636541
+mas "SDIScanConverter", id: 1132602463
+mas "ShutterCount Pro", id: 1441290690

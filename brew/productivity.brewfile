@@ -1,0 +1,13 @@
+# Mostly applications that are used regularly.
+
+cask "slack"
+cask "visual-studio-code-insiders"
+cask "fantastical"
+cask "firefox"
+cask "font-inconsolata"
+cask "dropbox"
+
+
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Patterns", id: 429449079
