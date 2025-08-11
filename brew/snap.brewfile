@@ -1,0 +1,5 @@
+tap "openresty/brew"
+brew "lua@5.1"
+brew "luarocks"
+
+brew "openresty/brew/openresty"

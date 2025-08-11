@@ -1,1 +1,14 @@
 # All the additioanal utilities I often use...
+
+cask "carbon-copy-cloner"
+cask "discord"
+
+mas "Apple Configurator", id: 1037126344
+mas "Bandbreite", id: 1528561380
+mas "Calculate84", id: 1459712793
+mas "Facades", id: 6443868157
+mas "TestFlight", id: 899247664
+mas "HomePass", id: 1330266650
+mas "Health Auto Export", id: 1115567069
+mas "Tailscale", id: 1475387142
+mas "Under My Roof", id: 1524335878

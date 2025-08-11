@@ -11,7 +11,12 @@ cask "1password"
 cask "fantastical"
 cask "font-source-code-pro"
 cask "launchbar"
+cask "maestral"
 cask "slack"
 cask "visual-studio-code"
 cask "zoom"
 cask "zulip"
+
+mas "1Password for Safari", id: 1569813296
+mas "Flighty", id: 1358823008
+mas "Parcel", id: 639968404

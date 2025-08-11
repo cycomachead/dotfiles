@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 mas "1Password for Safari", id: 1569813296
 mas "Adobe Lightroom", id: 1451544217
 mas "Bandbreite", id: 1528561380
@@ -38,6 +39,8 @@ mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
 mas "Xerox Print and Scan Experience", id: 6443456959
 mas "Yubico Authenticator", id: 1497506650
+=======
+>>>>>>> 5fccced96ecf47032499a769f7fb7aa20091d4d4
 vscode "adamhartford.vscode-base64"
 vscode "aki77.haml-lint"
 vscode "aki77.rails-routes"
