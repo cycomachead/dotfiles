@@ -1,6 +1,4 @@
 # Larger bash history (allow 2^15 entries; default is 500)
-echo "Running 0_exports.sh"
-
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
