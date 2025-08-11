@@ -1,0 +1,17 @@
+# These are the basics I think I cannot get by without annoyance. :)
+
+brew "bash"
+brew "bash-completion"
+brew "git"
+brew "jq"
+brew "mise"
+brew "postgresql@16"
+
+cask "1password"
+cask "fantastical"
+cask "font-source-code-pro"
+cask "launchbar"
+cask "slack"
+cask "visual-studio-code"
+cask "zoom"
+cask "zulip"

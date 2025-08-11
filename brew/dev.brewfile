@@ -1,0 +1,22 @@
+# Common and useful dev utilities
+
+brew "heroku/brew/heroku"
+brew "wget"
+brew "pandoc"
+brew "python@3.13"
+brew "jupyterlab", link: false
+brew "python@3.13"
+brew "overmind"
+brew "pcre"
+brew "qt"
+brew "rclone"
+cask "docker-desktop"
+
+
+cask "1password-cli"
+# Chrome is definitely my secodary browser.
+cask "chromedriver"
+cask "google-chrome"
+cask "google-chrome@canary"
+cask "mactex-no-gui"
+cask "ngrok"
