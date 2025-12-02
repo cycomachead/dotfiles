@@ -80,7 +80,8 @@ EOF
 function start-pg() {
 	version=${1:-14};
 	brew_pg="postgresql@$version";
-	postgres -D "$(brew --prefix)/var/$brew_pg/" &
+	pg="$(brew --prefix)/opt/$brew_pg/bin/postgres";
+	$pg -D "$(brew --prefix)/var/$brew_pg/" &
 }
 
 # https://www.reddit.com/r/Lightroom/comments/12x370r/finding_all_my_bracketed_shots_smart_folders/

@@ -21,7 +21,8 @@ export EDITOR="code -w"
 # Temporary fix for the mate editing crontabs
 # Use cront to edit crontabs.
 export VISUAL=$DOTFILES/apps/code-wait.sh
-export EDITOR=$DOTFILES/apps/code-wait.sh
+# export EDITOR=$DOTFILES/apps/code-wait.sh
+export EDITOR='code'
 
 function cront
 {
