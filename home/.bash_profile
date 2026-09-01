@@ -75,12 +75,20 @@ complete -W "NSGlobalDomain" defaults
 #   compinit
 # fi
 
-eval "$(gh completion -s bash)"
-source <(luarocks completion bash)
+if command -v gh &> /dev/null; then
+  eval "$(gh completion -s bash)"
+fi
+
+if command -v luarocks &> /dev/null; then
+  source <(luarocks completion bash)
+fi
 
 # Needed from some homebrew functions.
-# Most especially needed for pdflatex and mactex-no-gui
-eval "$(/usr/libexec/path_helper)"
+# Most especially needed for pdflatex and mactex-no-gui.
+# macOS-only binary; doesn't exist on Linux.
+if [ -x /usr/libexec/path_helper ]; then
+  eval "$(/usr/libexec/path_helper)"
+fi
 
 if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"

@@ -94,18 +94,29 @@ else
 	yellow="\e[1;33m";
 fi;
 
+# Platform accent color: macOS keeps the red/orange theme, everything else
+# (Linux boxes, the DGX Spark) goes blue, so user@host makes it obvious at a
+# glance which system the prompt belongs to.
+if [[ "$(uname -s)" == "Darwin" ]]; then
+	accent="${red}";
+	accentDim="${orange}";
+else
+	accent="${blue}";
+	accentDim="${blue}";
+fi;
+
 # Highlight the user name when logged in as root.
 if [[ "${USER}" != "root" ]]; then
-	userStyle="${red}";
+	userStyle="${accent}";
 else
-	userStyle="${orange}";
+	userStyle="${bold}${accentDim}";
 fi;
 
 # Highlight the hostname when connected via SSH.
 if [[ "${SSH_TTY}" ]]; then
-	hostStyle="${bold}${red}";
+	hostStyle="${bold}${accent}";
 else
-	hostStyle="${orange}";
+	hostStyle="${accentDim}";
 fi;
 
 # Set the terminal title and prompt.

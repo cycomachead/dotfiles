@@ -33,7 +33,9 @@ function cront
 
 # Automatically load git bash completion
 # TODO: Commented out because there's a modification to not show remotes.
-source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
+git_completion="$(brew --prefix git 2> /dev/null)/etc/bash_completion.d/git-completion.bash"
+[ -r "$git_completion" ] && source "$git_completion"
+unset git_completion
 
 # Autocomplete for git as 'g' as well
 complete -o default -o nospace -F _git g

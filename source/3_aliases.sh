@@ -8,7 +8,6 @@ alias dl='cd ~/Downloads'
 alias dt='cd ~/Desktop'
 alias h="history"
 alias o="open"
-alias .='cd .'
 alias ..='cd ..'
 alias be='bundle exec'
 
@@ -30,6 +29,16 @@ if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
 else # OS X `ls`
     colorflag="-G"
+fi
+
+# Always use color output for `grep`.
+# Replaces the old GREP_OPTIONS export, which GNU grep removed in 2.21.
+# `egrep`/`fgrep` are themselves deprecated in GNU grep 3.8, so route them
+# through `grep -E` / `grep -F` to keep the shorthand without the warning.
+if echo | grep --color=auto "" > /dev/null 2>&1; then
+    alias grep='grep --color=auto'
+    alias egrep='grep -E --color=auto'
+    alias fgrep='grep -F --color=auto'
 fi
 
 # VSCode -- Default to stable, unless requested.
