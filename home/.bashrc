@@ -91,3 +91,6 @@ fi
 if command -v mise > /dev/null 2>&1; then
   eval "$(mise activate bash)"
 fi
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/Users/michael/.lmstudio/bin"

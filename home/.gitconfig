@@ -132,3 +132,5 @@
 
 [safe]
 	directory = /usr/local/Homebrew
+[credential "https://git.heroku.com"]
+	helper = !heroku git:credentials

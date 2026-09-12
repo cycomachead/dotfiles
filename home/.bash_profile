@@ -93,3 +93,6 @@ fi
 if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
 fi
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/Users/michael/.lmstudio/bin"
